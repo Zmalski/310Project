@@ -2,7 +2,6 @@
 public class PersonalityGenerator {
 	// James Boonstra
 	
-	// Choices for generator
 	String[] sports = {""};
 	
 	String[] foods = {""};
@@ -14,7 +13,4 @@ public class PersonalityGenerator {
 	String[] animals = {""};
 	
 	
-	private String[] interests(String[] array) {
-		return array;
-	}
 }
