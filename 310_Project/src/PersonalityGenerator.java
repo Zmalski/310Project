@@ -3,18 +3,17 @@ public class PersonalityGenerator {
 	// James Boonstra
 	
 	// Choices for generator
-	String[] sports = {""};
+	static String[] sports = {""};
 	
-	String[] foods = {""};
+	static String[] foods = {""};
 	
-	String[] music = {""};
+	static String[] music = {""};
 	
-	String[] musicians = {""};
+	static String[] occupations = {""};
 	
-	String[] animals = {""};
+	static String[] likes = {""};
 	
+	static String[] dislikes = {""};
 	
-	private String[] interests(String[] array) {
-		return array;
-	}
+	static String[] zodiacSigns = {""};
 }

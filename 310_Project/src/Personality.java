@@ -2,32 +2,53 @@
 public class Personality {
 	// James Boonstra
 	
-	public Personality() {
-		
+	public Personality(String gender) {
+		setGender(gender);
+		setZodiacSign(setString(PersonalityGenerator.zodiacSigns));
+		setOccupation(setString(PersonalityGenerator.occupations));
+		setLikes(setArray(PersonalityGenerator.likes));
+		setDislikes(setArray(PersonalityGenerator.dislikes));
 	}
 	
-	boolean gender;
-	int age;
-	String zodiacSign;
-	String occupation;
+	private String gender;
+	private String zodiacSign;
+	private String occupation;
 	
 	
-	String[] likes;
-	String[] dislikes;
+	private String[] likes;
+	private String[] dislikes;
 	
-	private void setPersonality() {}
 	
-	public boolean isGender() {
+	
+	private String setString(String[] string) {
+		return "string";
+	}
+	
+	/**
+	 * 
+	 * @param array
+	 * @return An array of randomized strings from the given list
+	 */
+	private String[] setArray(String[] array) {
+		return array;
+	}
+	
+	/**
+	* A random number generator
+	*@param upperBound 
+	*@return A number between 0 and upperBound
+	*/
+	static int random(int upperBound) {
+		return (int)(Math.random() * upperBound +1);
+	}
+	
+	
+	
+	public String isGender() {
 		return gender;
 	}
-	private void setGender(boolean gender) {
+	private void setGender(String gender) {
 		this.gender = gender;
-	}
-	public int getAge() {
-		return age;
-	}
-	private void setAge(int age) {
-		this.age = age;
 	}
 	public String getZodiacSign() {
 		return zodiacSign;
@@ -53,6 +74,8 @@ public class Personality {
 	private void setDislikes(String[] dislikes) {
 		this.dislikes = dislikes;
 	}
+	
+	
 
 	
 		
