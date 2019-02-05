@@ -2,15 +2,58 @@
 public class PersonalityGenerator {
 	// James Boonstra
 	
-	String[] sports = {""};
+	// Choices for generator
+	static String[] sports = {""};
 	
-	String[] foods = {""};
+	static String[] foods = {""};
 	
-	String[] music = {""};
+	static String[] music = {""};
 	
-	String[] musicians = {""};
+	static String[] occupations = {""};
 	
-	String[] animals = {""};
+	static String[] likes = {""};
 	
+	static String[] dislikes = {""};
+	
+	static String[] zodiacSigns = {""};
+}= {""};
+	
+	static Stri
+	static String[] music = {""};
+	
+	static String[] occupations = {""};
+	
+	static String[] likes = {""};
+	
+	static String[] dislikes = {""};
+	
+	static String[] zodiacSigns = {""};
+}
+ng[] dislikes = {""};
+	
+	static String[] zodiacSigns = {""};
+}
+g[] occupations = {""};
+	
+	static String[] likes = {""};
+	
+	static String[] dislikes = {""};
+	
+	static String[] zodiacSigns = {""};
+}
+	static String[] occupations = {""};
+	
+	static String[] likes = {""};
+	
+	static String[] dislikes = {""};
+	
+	static String[] zodiacSigns = {""};
+}
+	
+	static String[] likes = {""};
+	
+	static String[] dislikes = {""};
+	
+	static String[] zodiacSigns = {""};
 	
 }
