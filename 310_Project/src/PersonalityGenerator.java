@@ -16,4 +16,5 @@ public class PersonalityGenerator {
 	static String[] dislikes = {""};
 	
 	static String[] zodiacSigns = {""};
+}
 
