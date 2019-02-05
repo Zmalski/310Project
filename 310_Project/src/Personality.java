@@ -4,6 +4,10 @@ public class Personality {
 	
 	public Personality(String gender) {
 		setGender(gender);
+		setZodiacSign(setString(PersonalityGenerator.zodiacSigns));
+		setOccupation(setString(PersonalityGenerator.occupations));
+		setLikes(setArray(PersonalityGenerator.likes));
+		setDislikes(setArray(PersonalityGenerator.dislikes));
 	}
 	
 	private String gender;
@@ -25,7 +29,7 @@ public class Personality {
 	 * @param array
 	 * @return An array of randomized strings from the given list
 	 */
-	private String[] interests(String[] array) {
+	private String[] setArray(String[] array) {
 		return array;
 	}
 	

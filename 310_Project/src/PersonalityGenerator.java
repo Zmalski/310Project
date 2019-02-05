@@ -9,9 +9,11 @@ public class PersonalityGenerator {
 	
 	static String[] music = {""};
 	
-	static String[] musicians = {""};
+	static String[] occupations = {""};
 	
-	static String[] animals = {""};
+	static String[] likes = {""};
 	
+	static String[] dislikes = {""};
 	
+	static String[] zodiacSigns = {""};
 }
