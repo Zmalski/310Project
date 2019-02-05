@@ -16,44 +16,4 @@ public class PersonalityGenerator {
 	static String[] dislikes = {""};
 	
 	static String[] zodiacSigns = {""};
-}= {""};
-	
-	static Stri
-	static String[] music = {""};
-	
-	static String[] occupations = {""};
-	
-	static String[] likes = {""};
-	
-	static String[] dislikes = {""};
-	
-	static String[] zodiacSigns = {""};
-}
-ng[] dislikes = {""};
-	
-	static String[] zodiacSigns = {""};
-}
-g[] occupations = {""};
-	
-	static String[] likes = {""};
-	
-	static String[] dislikes = {""};
-	
-	static String[] zodiacSigns = {""};
-}
-	static String[] occupations = {""};
-	
-	static String[] likes = {""};
-	
-	static String[] dislikes = {""};
-	
-	static String[] zodiacSigns = {""};
-}
-	
-	static String[] likes = {""};
-	
-	static String[] dislikes = {""};
-	
-	static String[] zodiacSigns = {""};
-	
-}
+
