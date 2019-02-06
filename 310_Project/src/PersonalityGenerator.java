@@ -17,3 +17,4 @@ public class PersonalityGenerator {
 	
 	static String[] zodiacSigns = {""};
 }
+
