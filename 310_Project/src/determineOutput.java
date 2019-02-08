@@ -19,13 +19,30 @@ public class determineOutput {
 		if(bye.equals("bye")) {
 			exit = false;
 		}else {
-			System.out.println("What do you do for living " + name);
-		}	
+			System.out.println("What do you do for living " + name + "?");
+			String profession = reader.nextLine();
+		        String professionResponse;
+		        switch (profession) {
+		            case "I am software developer.":
+		            		 System.out.println("Wow! thats great.");
+		                     break;
+		            case "I am a musician.":
+	            		 System.out.println("Wow! thats great.");
+	                     break;
+		            case "I am a sports player.":
+	            		 System.out.println("Wow! thats great.");
+	                     break;
+		            default: professionResponse = "Invalid entry";
+		                     System.out.println("This input is not allowed. ");
+		                     break;
+		        }
+		    }	
 		/*
 		handleInput inputHandler = new handleInput(name);
 		inputHandler.getName();
 		inputHandler.getUserInput();	
 	*/
-		}
+
+		}	System.out.println("Have a good day!!! ");
 	}
 }
