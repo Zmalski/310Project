@@ -3,11 +3,9 @@ public class Personality {
 	// James Boonstra
 	
 	public Personality(String gender) {
-		/*setGender(gender);
+		setGender(gender);
 		setZodiacSign(setString(PersonalityGenerator.zodiacSigns));
 		setOccupation(setString(PersonalityGenerator.occupations));
-		setLikes(setArray(PersonalityGenerator.likes));
-		setDislikes(setArray(PersonalityGenerator.dislikes));*/
 	}
 	
 	private String gender;
@@ -30,12 +28,13 @@ public class Personality {
 	 * @param array
 	 * @return An array of randomized strings from the given list
 	 */
-	/*private String[] setArray(String[] array) {
+	private String[] setArray(String[] array, int choose) {
 		for(int i = 0; i < choose; i++) {
-			int random = random(string.length);
+			int random = random(array.length-1);
+			
 			}
 		return array;
-	}*/
+	}
 	
 	/**
 	* A random number generator

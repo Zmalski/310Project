@@ -4,11 +4,11 @@ public class PersonalityGenerator {
 	
 	// Choices for generator
 	
-	String[] occupations = {"butcher", "cook", "farmer", "fireman", "hairdresser", "journalist", "lawyer", "mechanic", "painter", "plumber", "policeman", "secretary", "singer", "soldier", "teacher", "waiter", "pilot", "engineer", "doctor", "nurse", "actor"};
+	static String[] occupations = {"butcher", "cook", "farmer", "fireman", "hairdresser", "journalist", "lawyer", "mechanic", "painter", "plumber", "policeman", "secretary", "singer", "soldier", "teacher", "waiter", "pilot", "engineer", "doctor", "nurse", "actor", "software engineer", "computer programmer"};
 	
 	static String[] likes = {"sports", "cooking", "music"};
 	
-	static String[] sports = {"hockey"};
+	static String[] sports = {"hockey", "soccer", "football", "snowboarding", "skiing", "basketball"};
 	
 	static String[] musicGenres = {""};
 	
