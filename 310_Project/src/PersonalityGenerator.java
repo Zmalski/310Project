@@ -3,18 +3,15 @@ public class PersonalityGenerator {
 	// James Boonstra
 	
 	// Choices for generator
+	
+	String[] occupations = {"butcher", "cook", "farmer", "fireman", "hairdresser", "journalist", "lawyer", "mechanic", "painter", "plumber", "policeman", "secretary", "singer", "soldier", "teacher", "waiter", "pilot", "engineer", "doctor", "nurse", "actor"};
+	
+	static String[] likes = {"sports", "cooking", "music"};
+	
 	static String[] sports = {""};
 	
-	static String[] foods = {""};
+	static String[] musicGenres = {""};
 	
-	static String[] music = {""};
-	
-	static String[] occupations = {""};
-	
-	static String[] likes = {""};
-	
-	static String[] dislikes = {""};
-	
-	static String[] zodiacSigns = {""};
+	static String[] zodiacSigns = {"Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"};
 }
 
