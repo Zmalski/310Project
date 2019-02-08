@@ -4,8 +4,8 @@ public class Personality {
 	
 	public Personality(String gender) {
 		setGender(gender);
-		setZodiacSign(setString(PersonalityGenerator.zodiacSigns));
-		setOccupation(setString(PersonalityGenerator.occupations));
+		setZodiacSign(setString(Attributes.zodiacSigns));
+		setOccupation(setString(Attributes.occupations));
 	}
 	
 	private String gender;

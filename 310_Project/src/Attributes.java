@@ -1,5 +1,5 @@
 
-public class PersonalityGenerator {
+public class Attributes {
 	// James Boonstra
 	
 	// Choices for generator
