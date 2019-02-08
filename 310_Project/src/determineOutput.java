@@ -9,10 +9,24 @@ public class determineOutput {
 		System.out.println("Hello, nice to meet you! I'm BerthaBot, what's your name?");
 		String name = reader.nextLine(); 
 		System.out.println("Alright " + name + " lets start out blind date!");	
+		boolean exit = true;
+		while(exit) {
+		String bye = reader.nextLine();
+		if(bye.equals("bye")) {
+			exit = false;
+		}else {
+			System.out.println("What do you do for living " + name);
+		}
+			
 		
+		
+		
+		
+		/*
 		handleInput inputHandler = new handleInput(name);
 		inputHandler.getName();
-		inputHandler.getUserInput();
-	
+		inputHandler.getUserInput();	
+	*/
+		}
 	}
 }
