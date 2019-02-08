@@ -8,7 +8,7 @@ public class PersonalityGenerator {
 	
 	static String[] likes = {"sports", "cooking", "music"};
 	
-	static String[] sports = {""};
+	static String[] sports = {"hockey"};
 	
 	static String[] musicGenres = {""};
 	
