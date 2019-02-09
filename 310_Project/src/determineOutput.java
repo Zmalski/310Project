@@ -7,6 +7,11 @@ public class determineOutput {
 	String responseback = hInput.checkOccupation(inputReceive);
 	static String professionResponse = null;
 
+	/**
+	 * Returns the response to occupations
+	 * @param output
+	 * @return occupation contained within the input string
+	 */
 	public static String responseBack(String responseback) {
 		// Switch statement returns the output according to the response.
 		switch (responseback) {
@@ -70,18 +75,34 @@ public class determineOutput {
 		return professionResponse;
 	}
 
+	/**
+	 * Returns the response to greeting
+	 * @param output
+	 * @return greeting contained within the input string
+	 */
 	public static String respond(String data) {
-		String response = "";
-		if(data.equals("greeting")) {
-			response = "Hi! How are you?";
+		String Response = null;
+		switch (data) {
+		case "greeting":
+			Response = "Hi! How are you?";
+			break;
+		case "bye":
+			Response = "Goodbye!";
+			break;
+		case "insult":
+			Response = "It is not appropriate.";
+			break;
+		case "Swearing":
+			Response = "You cannot swear.";
+			break;
+		default:
+			Response = data;
+			break;
 		}
-		else if(data.equals("bye"))
-			response = "Goodbye!";
-		else
-			response = "Hello?";
-		return response;
+	return Response;
 	}
 }
+
 	/*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will
