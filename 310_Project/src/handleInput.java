@@ -66,6 +66,7 @@ public class handleInput {
 	 */
 	public String checkGender(String input) {
 		boolean gender = false;
+		input = processInput(input);
 		String[] boy = {"girl","woman","female","dudette"};
 		String[] girl = {"boy","man","male","guy","dude"};
 		for(String g : girl) {
