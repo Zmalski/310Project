@@ -1,3 +1,15 @@
-/scoring.class
-/testclass.class
+/bin/
+/Attributes.class
+/Personality.class
+/addaiml.class
+/aiml/
+/aimlif/
+/chatbotexample.class
+/config/
+/determineOutput.class
+/handleInput.class
 /main/
+/maps/
+/scoring.class
+/sets/
+/target/

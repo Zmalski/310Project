@@ -5,12 +5,14 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/classes" path="src">
+	<classpathentry excluding="main/resources/bots/super/|main/resources/bots/super/" kind="src" output="target/classes" path="src">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="src/|src/main/resources/bots/super/" kind="src" path=""/>
+	<classpathentry kind="src" path="src/main/resources/bots/super"/>
 	<classpathentry kind="lib" path="lib/bsh.jar"/>
 	<classpathentry kind="lib" path="lib/junit.jar"/>
 	<classpathentry kind="lib" path="lib/jfxrt.jar"/>

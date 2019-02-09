@@ -21,19 +21,21 @@ public class determineOutput {
 		}else {
 			System.out.println("What do you do for living " + name + "?");
 			String profession = reader.nextLine();
-		        String professionResponse;
-		        switch (profession) {
-		            case "I am software developer.":
-		            		 System.out.println("Wow! thats great.");
+			int responseback = response(profession);
+		    String professionResponse;
+		        switch (responseback) {
+		            case 1:  System.out.println("Software developer. Wow! thats great.");
+		            		 exit = false;
 		                     break;
-		            case "I am a musician.":
-	            		 System.out.println("Wow! thats great.");
-	                     break;
-		            case "I am a sports player.":
-	            		 System.out.println("Wow! thats great.");
-	                     break;
+		            case 2:  System.out.println("Musician. I love music.");
+		                     exit = false;
+                    		 break;
+		            case 3:  System.out.println("Player!!! Are you a soccer player. I love soccer");
+		            		 exit = false;
+		            		 break;
 		            default: professionResponse = "Invalid entry";
 		                     System.out.println("This input is not allowed. ");
+		                     exit = false;
 		                     break;
 		        }
 		    }	
@@ -42,7 +44,19 @@ public class determineOutput {
 		inputHandler.getName();
 		inputHandler.getUserInput();	
 	*/
-
-		}	System.out.println("Have a good day!!! ");
+		} 
+	 System.out.println("Have a good day!!! ");
 	}
+	
+	public static int response(String profession) {
+		String Str = new String(profession);
+		if(Str.matches("(.*)developer(.*)")) {
+			return 1;
+		}if(Str.matches("(.*)musician(.*)")) {
+			return 2;
+		}if(Str.matches("(.*)player(.*)")) {
+			return 3;	
+		}else 
+			return -1;
+	 }
 }
