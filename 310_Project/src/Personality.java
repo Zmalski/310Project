@@ -1,27 +1,30 @@
-
 public class Personality {
 	// James Boonstra
 	
 	public Personality(String gender) {
 		setGender(gender);
-		setZodiacSign(setString(PersonalityGenerator.zodiacSigns));
-		setOccupation(setString(PersonalityGenerator.occupations));
-		setLikes(setArray(PersonalityGenerator.likes));
-		setDislikes(setArray(PersonalityGenerator.dislikes));
+		setZodiacSign(setString(Attributes.zodiacSigns));
+		setOccupation(setString(Attributes.occupations));
+		setLikesSports(setArray(Attributes.sports,3));
+		for(String n : this.getLikesSports()) {
+			System.out.println(n);
+		}
 	}
+	
 	
 	private String gender;
 	private String zodiacSign;
 	private String occupation;
 	
 	
-	private String[] likes;
+	private String[] likesSports;
 	private String[] dislikes;
 	
 	
 	
-	private String setString(String[] string) {
-		return "string";
+	public static String setString(String[] string) {
+		int random = random(string.length-1);
+		return string[random];
 	}
 	
 	/**
@@ -29,9 +32,33 @@ public class Personality {
 	 * @param array
 	 * @return An array of randomized strings from the given list
 	 */
-	private String[] setArray(String[] array) {
-		return array;
+	private String[] setArray(String[] array, int choose) {
+		
+		String[] newArray = new String[choose];
+		for(int i = 0; i < newArray.length; i++) {
+			newArray[i] = "";
+		}
+		
+		for(int i = 0; i < choose; i++) {
+			int random = random(array.length-1);
+			if(i>0 && contains(newArray,array[random])) {
+				i--;
+			}
+			else {
+				newArray[i] = array[random];
+			}
+		}
+		return newArray;
 	}
+	
+	public static boolean contains(String[] arr, String item) {
+	      for (String n : arr) {
+	         if (n.equals(item)) {
+	            return true;
+	         }
+	      }
+	      return false;
+	   }
 	
 	/**
 	* A random number generator
@@ -62,11 +89,11 @@ public class Personality {
 	private void setOccupation(String occupation) {
 		this.occupation = occupation;
 	}
-	public String[] getLikes() {
-		return likes;
+	public String[] getLikesSports() {
+		return likesSports;
 	}
-	private void setLikes(String[] likes) {
-		this.likes = likes;
+	private void setLikesSports(String[] likesSports) {
+		this.likesSports = likesSports;
 	}
 	public String[] getDislikes() {
 		return dislikes;
@@ -81,3 +108,4 @@ public class Personality {
 		
 	
 }
+
