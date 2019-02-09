@@ -17,5 +17,24 @@ public class handleInput {
 		return input;
 		//call method for parsing input, pass input string
 	}
+	/**
+	 * Returns an output string that is much easier to parse, with all case ignored and punctuation removed.
+	 * @param input
+	 * @return String converted to lowercase, with all punctuation removed
+	 */
+	public String processInput(String input) {
+		String output = input.toLowerCase();
+		output = output.replaceAll("(?:--|[\\[\\]{}()+/\\\\]).,", "");
+		return output;
+	}
+	public String checkOccupation(String inpout) {
+		
+	}
+	
+	
+	
+
+	
+	
 	//method for parsing input and returning relvenat values / semantics / meaing of the string.
 }
