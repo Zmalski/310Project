@@ -47,7 +47,9 @@ public class determineOutput {
 		} 
 	 System.out.println("Have a good day!!! ");
 	}
-	
+	/*
+	 * I have created a method that parse the whole string, and if in the given string by the user has the profession matches to our scope, the bot will response accordingly. 
+	 */
 	public static int response(String profession) {
 		String Str = new String(profession);
 		if(Str.matches("(.*)developer(.*)")) {
