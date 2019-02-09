@@ -35,7 +35,7 @@ public class handleInput {
 	 */
 	public String checkOccupation(String input) {
 		input = processInput(input);
-		String output = "Unemployed";
+		String output = "notfound";
 	    Scanner scanner = null;
 	    boolean end = false;
 	    try {
