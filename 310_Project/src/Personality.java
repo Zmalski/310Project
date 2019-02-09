@@ -8,6 +8,7 @@ public class Personality {
 		setLikesSports(setArray(Attributes.sports,3));
 		for(String n : this.getLikesSports()) {
 			System.out.println(n);
+			
 		}
 	}
 	
