@@ -59,6 +59,11 @@ public class handleInput {
 	    return output;
 	}
 	
+	/**
+	 * Returns the gender based on string
+	 * @param input
+	 * @return gender contained within the input string
+	 */
 	public String checkGender(String input) {
 		boolean gender = false;
 		String[] boy = {"girl","woman","female","dudette"};
@@ -75,8 +80,37 @@ public class handleInput {
 			return "man";
 		else
 			return "woman";
-		
-		
+	}
+	
+	/**
+	 * Returns the gender based on string
+	 * @param input
+	 * @return gender contained within the input string
+	 */
+	public String parseInput(String input) {
+	input = processInput(input);
+	String data = "";
+    Scanner scanner = null;
+    boolean end = false;
+    try {
+        scanner = new Scanner(new File("greetings.txt"));
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();  
+    }
+    while (scanner.hasNextLine()) {
+            Scanner scanner2 = new Scanner(scanner.nextLine());
+        while (scanner2.hasNext()) {
+            String s = scanner2.next();
+            if (input.matches("(.*)" + s + "(.*)")) {
+            	data = "greeting";
+            	end = true;
+            	break;
+            }
+        }
+        if(end == true)
+        	break;
+    }
+    return data;
 	}
 	
 	
@@ -85,4 +119,4 @@ public class handleInput {
 	
 	
 	//method for parsing input and returning relvenat values / semantics / meaing of the string.
-}
+	}

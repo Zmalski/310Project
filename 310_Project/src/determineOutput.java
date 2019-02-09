@@ -75,6 +75,8 @@ public class determineOutput {
 		if(data.equals("greeting")) {
 			response = "Hi! How are you?";
 		}
+		else if(data.equals("bye"))
+			response = "Goodbye!";
 		else
 			response = "Hello?";
 		return response;
