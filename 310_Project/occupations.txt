@@ -13,3 +13,11 @@ painter
 soldier
 nurse
 salesman
+police
+chef
+accountant
+military
+manager
+banker
+philosopher
+comedian
