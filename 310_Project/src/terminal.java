@@ -10,8 +10,10 @@ public class terminal {
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while(true) {
 			String response = reader.nextLine();
-			String occ = inputHandler.checkOccupation(response);
-			System.out.println(occ);
+			String gender = inputHandler.checkGender(response);
+			System.out.println("You are now on a date with a " + gender + ".  Say Hi!");
+			//if(response.equals("bye"))
+				break;
 		}
 
 	}

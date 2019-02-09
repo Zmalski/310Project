@@ -59,6 +59,26 @@ public class handleInput {
 	    return output;
 	}
 	
+	public String checkGender(String input) {
+		boolean gender = false;
+		String[] boy = {"girl","woman","female","dudette"};
+		String[] girl = {"boy","man","male","guy","dude"};
+		for(String g : girl) {
+			if(input.matches("(.*)" + g + "(.*)"))
+			gender = false;
+		}
+		for(String b : boy) {
+			if(input.matches("(.*)" + b + "(.*)"))
+			gender = true;
+		}
+		if(gender == false)
+			return "man";
+		else
+			return "woman";
+		
+		
+	}
+	
 	
 	
 
