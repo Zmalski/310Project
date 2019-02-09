@@ -8,7 +8,7 @@ public class terminal {
 		//determineOutput outputDeterminer = new determineOutput();
 		
 		Scanner reader = new Scanner(System.in);
-		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
+		System.out.println("Chatbot: You are on a blind date. Would you like to date a man or a woman?");
 		while(true) {
 			String response = reader.nextLine();
 			String gender = inputHandler.checkGender(response);

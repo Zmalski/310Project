@@ -64,10 +64,20 @@ public class determineOutput {
 			break;	
 		default:
 			professionResponse = responseback;
-			System.out.println("You are a "+ responseback+". Sounds cool");
+			System.out.println("You are a "+ responseback+". Sounds cool.");
 			break;
 		}
 		return professionResponse;
+	}
+
+	public static String respond(String data) {
+		String response = "";
+		if(data.equals("greeting")) {
+			response = "Hi! How are you?";
+		}
+		else
+			response = "Hello?";
+		return response;
 	}
 }
 	/*
