@@ -27,8 +27,36 @@ public class handleInput {
 		output = output.replaceAll("(?:--|[\\[\\]{}()+/\\\\]).,", "");
 		return output;
 	}
-	public String checkOccupation(String inpout) {
-		
+	
+	/**
+	 * Returns the occupation
+	 * @param input
+	 * @return occupation contained within the input string
+	 */
+	public String checkOccupation(String input) {
+		input = processInput(input);
+		String output = "Unemployed";
+	    Scanner scanner = null;
+	    boolean end = false;
+	    try {
+	        scanner = new Scanner(new File("occupations.txt"));
+	    } catch (FileNotFoundException e) {
+	        e.printStackTrace();  
+	    }
+	    while (scanner.hasNextLine()) {
+	            Scanner scanner2 = new Scanner(scanner.nextLine());
+	        while (scanner2.hasNext()) {
+	            String s = scanner2.next();
+	            if (input.matches("(.*)" + s + "(.*)")) {
+	            	output = s;
+	            	end = true;
+	            	break;
+	            }
+	        }
+	        if(end == true)
+	        	break;
+	    }
+	    return output;
 	}
 	
 	
