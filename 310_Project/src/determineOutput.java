@@ -101,7 +101,12 @@ public class determineOutput {
 		}
 		return Response;
 	}
-
+	/**
+	 * Returns the response to username
+	 * 
+	 * @param output
+	 * @return username contained within the input string
+	 */
 	public static String name(String name) {
 		String nameReturn = "Nice to meet you " + name + ". What do you do for living?";
 		System.out.println(nameReturn);
