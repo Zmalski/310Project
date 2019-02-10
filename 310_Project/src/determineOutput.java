@@ -6,70 +6,69 @@ public class determineOutput {
 	String inputReceive = hInput.getUserInput();
 	String responseback = hInput.checkOccupation(inputReceive);
 	static String professionResponse = null;
-
 	/**
 	 * Returns the response to occupations
 	 * @param output
 	 * @return occupation contained within the input string
 	 */
-	public static String responseBack(String responseback) {
+	public static String occupation(String response) {
 		// Switch statement returns the output according to the response.
-		switch (responseback) {
+		switch (response) {
 		case "developer":
 			professionResponse = "Software Developer";
-			System.out.println("Software developer. Wow! thats great.");
+			System.out.println("CHATBOTNAME: Software developer. Wow! thats great.");
 			break;
 		case "musician":
 			professionResponse = "Musician";
-			System.out.println("Musician. I love music.");
+			System.out.println("CHATBOTNAME: Musician. I love music.");
 			break;
 		case "player":
 			professionResponse = "Sports Player";
-			System.out.println("Player!!! Are you a soccer player. I love soccer");
+			System.out.println("CHATBOTNAME: Player!!! Are you a soccer player. I love soccer");
 			break;
 		case "butcher":
 			professionResponse = "butcher";
-			System.out.println("Butcher!!! thats a good job.");
+			System.out.println("CHATBOTNAME: Butcher!!! thats a good job.");
 			break;
 		case "cook":
 			professionResponse = "cook";
-			System.out.println("Cook!!! I love cooking.");
+			System.out.println("CHATBOTNAME: Cook!!! I love cooking.");
 			break;
 		case "farmer":
 			professionResponse = "farmer";
-			System.out.println("Farmer!!! I love fields");
+			System.out.println("CHATBOTNAME: Farmer!!! I love fields");
 			break;
 		case "firefighter":
 			professionResponse = "firefighter";
-			System.out.println("Firefighter!!! that's cool.");
+			System.out.println("CHATBOTNAME: Firefighter!!! that's cool.");
 			break;
 		case "hairdresser":
 			professionResponse = "hairdresser";
-			System.out.println("Hairdresser, wow!!! thats a cool job.");
+			System.out.println("CHATBOTNAME: Hairdresser, wow!!! thats a cool job.");
 			break;
 		case "journalist":
 			professionResponse = "journalist";
-			System.out.println("Journalist!!! it must be a hectic job.");
+			System.out.println("CHATBOTNAME: Journalist!!! it must be a hectic job.");
 			break;
 		case "lawyer":
 			professionResponse = "lawyer";
-			System.out.println("Lawyer!!! great.");
+			System.out.println("CHATBOTNAME: Lawyer!!! great.");
 			break;
 		case "mechanic":
 			professionResponse = "mechanic";
-			System.out.println("Mechanic!!! great.");
+			System.out.println("CHATBOTNAME: Mechanic!!! great.");
 			break;
 		case "painter":
 			professionResponse = "painter";
-			System.out.println("Painter!!! You are an artist.");
+			System.out.println("CHATBOTNAME: Painter!!! You are an artist.");
 			break;
 		case "notfound":
 			professionResponse = "WOW!!";
-			System.out.println("Sounds cool, but I never heard about this before.");
-			break;	
+			System.out.println("CHATBOTNAME: Sounds cool, but I never heard about this before.");
+			break;
 		default:
-			professionResponse = responseback;
-			System.out.println("You are a "+ responseback+". Sounds cool.");
+			professionResponse = response;
+			System.out.println("CHATBOTNAME: You are a " + response + ". Sounds cool.");
 			break;
 		}
 		return professionResponse;
@@ -77,6 +76,7 @@ public class determineOutput {
 
 	/**
 	 * Returns the response to greeting
+	 * 
 	 * @param output
 	 * @return greeting contained within the input string
 	 */
@@ -99,10 +99,15 @@ public class determineOutput {
 			Response = data;
 			break;
 		}
-	return Response;
+		return Response;
+	}
+
+	public static String name(String name) {
+		String nameReturn = "CHATBOTNAME: Nice to meet you " + name + ". What do you do for living?";
+		System.out.println(nameReturn);
+		return nameReturn;
 	}
 }
-
 	/*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will
