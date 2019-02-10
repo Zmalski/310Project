@@ -5,6 +5,7 @@ public class handleInput {
 	public handleInput(String name) {
 		this.name = name;
 	}
+
 	public handleInput() {
 		// TODO Auto-generated constructor stub
 	}
