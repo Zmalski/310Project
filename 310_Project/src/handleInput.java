@@ -66,7 +66,7 @@ public class handleInput {
 	 * @return gender contained within the input string
 	 */
 	public String checkGender(String input) {
-		boolean gender = false;
+		boolean gender = true;
 		input = processInput(input);
 		String[] boy = {"girl","woman","female","dudette"};
 		String[] girl = {"boy","man","male","guy","dude"};
@@ -113,6 +113,34 @@ public class handleInput {
         	break;
     }
     return data;
+	}
+	
+	
+	 /**
+	 * Does a decent job at guessing what a name from a string after being requested
+	 * @param input
+	 * @return name contained within the input string
+	 */
+	public String parseName(String input) {
+		String [] words = input.split(" ");
+		if(words.length < 2)
+			return words[words.length-1];
+		int capcount = 0;
+		int lastindex = 0;
+		int count = 0;
+		for(String word : words) {
+			if(Character.isUpperCase(word.charAt(0))) {
+				capcount++;
+				lastindex = count;
+			}
+			count++;
+		}
+		if(capcount > 1)
+			return words[lastindex];
+		else if (words[0].toLowerCase().equals("my") || words[0].toLowerCase().equals("i'm") || words[0].toLowerCase().equals("im"))
+			return words[words.length-1];
+		else
+			return words[0];
 	}
 	
 	
