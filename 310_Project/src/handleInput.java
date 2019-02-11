@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class handleInput {
 	private String name;
@@ -14,7 +15,15 @@ public class handleInput {
 	}
 	public String getUserInput() {
 		Scanner reader = new Scanner(System.in);
-		String input = reader.nextLine();
+		String input = "";
+		try {
+			input = reader.nextLine();
+		}
+		catch(InputMismatchException e) {
+			System.out.println("Please enter words I can understand.");
+			//Recursive call if they don't enter a string.
+			getUserInput();
+		}
 		return input;
 		//call method for parsing input, pass input string
 	}
