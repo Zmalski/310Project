@@ -3,64 +3,50 @@ public class determineOutput {
 	/*
 	 * Pardeep
 	 */
-	String inputReceive = hInput.getUserInput();
-	String responseback = hInput.checkOccupation(inputReceive);
-	static String professionResponse = null;
+	String professionResponse = "";
 	/**
 	 * Returns the response to occupations
 	 * @param output
 	 * @return occupation contained within the input string
 	 */
-	public static String occupation(String response) {
+	public String occupation(String response) {
 		// Switch statement returns the output according to the response.
 		switch (response) {
 		case "developer":
-			professionResponse = "Software Developer";
-			System.out.println("Software developer. Wow! thats great.");
+			professionResponse = "Software developer. Wow! thats great.";
 			break;
 		case "musician":
-			professionResponse = "Musician";
-			System.out.println("Musician. I love music.");
+			professionResponse = "Musician. I love music.";
 			break;
 		case "player":
-			professionResponse = "Sports Player";
-			System.out.println("Player!!! Are you a soccer player. I love soccer");
+			professionResponse = "Player!!! Are you a soccer player. I love soccer";
 			break;
 		case "butcher":
-			professionResponse = "butcher";
-			System.out.println("Butcher!!! thats a good job.");
+			professionResponse = "Butcher!!! thats a good job.";
 			break;
 		case "cook":
-			professionResponse = "cook";
-			System.out.println("Cook!!! I love cooking.");
+			professionResponse = "Cook!!! I love cooking.";
 			break;
 		case "farmer":
-			professionResponse = "farmer";
-			System.out.println("Farmer!!! I love fields");
+			professionResponse = "Farmer!!! I love fields.";
 			break;
 		case "firefighter":
-			professionResponse = "firefighter";
-			System.out.println("Firefighter!!! that's cool.");
+			professionResponse = "Firefighter!!! that's cool.";
 			break;
 		case "hairdresser":
-			professionResponse = "hairdresser";
-			System.out.println("Hairdresser, wow!!! thats a cool job.");
+			professionResponse = "Hairdresser, wow!!! thats a cool job.";
 			break;
 		case "journalist":
-			professionResponse = "journalist";
-			System.out.println("Journalist!!! it must be a hectic job.");
+			professionResponse = "Journalist!!! it must be a hectic job.";
 			break;
 		case "lawyer":
-			professionResponse = "lawyer";
-			System.out.println("Lawyer!!! great.");
+			professionResponse = "Lawyer!!! great.";
 			break;
 		case "mechanic":
-			professionResponse = "mechanic";
-			System.out.println("Mechanic!!! great.");
+			professionResponse = "Mechanic!!! great.";
 			break;
 		case "painter":
-			professionResponse = "painter";
-			System.out.println("Painter!!! You are an artist.");
+			professionResponse = "Painter!!! You are an artist.";
 			break;
 		case "notfound":
 			professionResponse = "WOW!!";
@@ -80,8 +66,8 @@ public class determineOutput {
 	 * @param output
 	 * @return greeting contained within the input string
 	 */
-	public static String respond(String data) {
-		String Response = null;
+	public String respond(String data) {
+		String Response = "";
 		switch (data) {
 		case "greeting":
 			Response = "Hi! How are you?";
@@ -95,6 +81,12 @@ public class determineOutput {
 		case "Swearing":
 			Response = "You cannot swear.";
 			break;
+		/*
+		 * This case for testing.	
+		 */
+		case "i am a software developer":
+			String receiveInput = hInput.checkOccupation("I am a software developer.");
+			Response = occupation(receiveInput);
 		default:
 			Response = data;
 			break;
@@ -107,7 +99,7 @@ public class determineOutput {
 	 * @param output
 	 * @return username contained within the input string
 	 */
-	public static String name(String name) {
+	public String name(String name) {
 		String nameReturn = "Nice to meet you " + name + ". What do you do for living?";
 		System.out.println(nameReturn);
 		return nameReturn;

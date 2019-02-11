@@ -4,7 +4,7 @@ public class terminal {
 
 	public static void main(String[] args) {
 		handleInput inputHandler = new handleInput();
-		// determineOutput outputDeterminer = new determineOutput();
+		determineOutput outputDeterminer = new determineOutput();
 		boolean genderchosen = false;
 		boolean turn = false;
 		boolean nameknown = false;
@@ -19,7 +19,7 @@ public class terminal {
 			String userinput = reader.nextLine();
 			if (genderchosen == true && nameknown == true) {
 				String data = inputHandler.parseInput(userinput);
-				String botoutput = determineOutput.respond(data);
+				String botoutput = outputDeterminer.respond(data);
 				System.out.print("CHATBOTNAME: " + botoutput);
 			}
 			// Determine desired gender
@@ -44,13 +44,12 @@ public class terminal {
 							"CHATBOTNAME: That's a lovely name, " + username + ". So, what do you do for a living?");
 				System.out.println("Human: ");
 				userinput = reader.nextLine();
-				System.out.println("CHATBOTNAME:" + determineOutput.occupation(inputHandler.checkOccupation(userinput)).toString());
+				System.out.println("CHATBOTNAME:" + determineOutput.occupation(inputHandler.checkOccupation(userinput)));
 
 			}
 			if (userinput.equals("bye"))
 				break;
 			turn = !turn;
-
 		}
 	}
 
