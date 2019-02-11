@@ -13,6 +13,10 @@ public class handleInput {
 	public String getName() {
 		return this.name;
 	}
+	/**
+	 Call this when you want user input.  
+	 It makes sure a user enters a string.
+	 **/
 	public String getUserInput() {
 		Scanner reader = new Scanner(System.in);
 		String input = "";
@@ -25,7 +29,6 @@ public class handleInput {
 			getUserInput();
 		}
 		return input;
-		//call method for parsing input, pass input string
 	}
 	/**
 	 * Returns an output string that is much easier to parse, with all case ignored and punctuation removed.
@@ -122,9 +125,7 @@ public class handleInput {
         	break;
     }
     return data;
-	}
-	
-	
+	}	
 	 /**
 	 * Does a decent job at guessing what a name from a string after being requested
 	 * @param input
@@ -151,11 +152,5 @@ public class handleInput {
 		else
 			return words[0];
 	}
-	
-	
-	
-
-	
-	
-	//method for parsing input and returning relvenat values / semantics / meaing of the string.
+	//method for parsing input and returning relvenat values / semantics / meaning of the string.
 	}
