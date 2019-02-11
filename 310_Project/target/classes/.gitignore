@@ -1,4 +1,5 @@
 /bin/
+<<<<<<< HEAD
 /aiml/
 /aimlif/
 /config/
@@ -20,3 +21,7 @@
 /terminal.class
 /META-INF/
 /main.class
+=======
+/target/
+/questionIndicators
+>>>>>>> branch 'development' of https://github.com/Zmalski/310Project.git
