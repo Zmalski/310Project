@@ -31,6 +31,7 @@ public class terminal {
 			// Determining users name
 			if (nameknown == false) {
 				System.out.println("CHATBOTNAME: Hi! What's your name?");
+				System.out.println("Human: ");
 				userinput = reader.nextLine();
 				username = inputHandler.parseName(userinput);
 				nameknown = true;
@@ -41,6 +42,9 @@ public class terminal {
 				else
 					System.out.println(
 							"CHATBOTNAME: That's a lovely name, " + username + ". So, what do you do for a living?");
+				System.out.println("Human: ");
+				userinput = reader.nextLine();
+				System.out.println("CHATBOTNAME:" + determineOutput.occupation(inputHandler.checkOccupation(userinput)).toString());
 
 			}
 			if (userinput.equals("bye"))
