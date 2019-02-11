@@ -36,8 +36,7 @@ public class handleInput {
 	 * @return String converted to lowercase, with all punctuation removed
 	 */
 	public String processInput(String input) {
-		String output = input.toLowerCase();
-		output = output.replaceAll("(?:--|[\\[\\]{}()+/\\\\]).,", "");
+		String output = input.replaceAll("[^a-zA-Z ]", "").toLowerCase();
 		return output;
 	}
 	
@@ -97,9 +96,9 @@ public class handleInput {
 	}
 	
 	/**
-	 * Returns the gender based on string
-	 * @param input
-	 * @return gender contained within the input string
+	 * Extremely brute force method of parsing input, checks every file
+	 * @param input string
+	 * @return basic intention contained within the input string
 	 */
 	public String parseInput(String input) {
 	input = processInput(input);
@@ -117,6 +116,42 @@ public class handleInput {
             String s = scanner2.next();
             if (input.matches("(.*)" + s + "(.*)")) {
             	data = "greeting";
+            	end = true;
+            	break;
+            }
+        }
+        if(end == true)
+        	break;
+    }
+    try {
+        scanner = new Scanner(new File("insults.txt"));
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();  
+    }
+    while (scanner.hasNextLine()) {
+            Scanner scanner2 = new Scanner(scanner.nextLine());
+        while (scanner2.hasNext()) {
+            String s = scanner2.next();
+            if (input.matches("(.*)" + s + "(.*)")) {
+            	data = "insult";
+            	end = true;
+            	break;
+            }
+        }
+        if(end == true)
+        	break;
+    }
+    try {
+        scanner = new Scanner(new File("swears.txt"));
+    } catch (FileNotFoundException e) {
+        e.printStackTrace();  
+    }
+    while (scanner.hasNextLine()) {
+            Scanner scanner2 = new Scanner(scanner.nextLine());
+        while (scanner2.hasNext()) {
+            String s = scanner2.next();
+            if (input.matches("(.*)" + s + "(.*)")) {
+            	data = "swear";
             	end = true;
             	break;
             }
