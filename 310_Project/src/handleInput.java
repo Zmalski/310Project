@@ -4,12 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 public class handleInput {
 	private String name;
-	Pattern qdoing = Pattern.compile("(?i)(what)(.*)(doing)(.*)(?)");
-	Pattern qname = Pattern.compile("(?i)(what)(.*)(name)(.*)(?)");
-	Pattern qage = Pattern.compile("((?i)((how)(.*)(old)(.*)(?))|((what)(.*)(age)(.*)(?))|((when)(.*)(born)(.*)(?))");
-	Pattern qlikes = Pattern.compile("((?i)((what)(.*)(hobbies)(.*)(?))|((what)(.*)(do for fun)(.*)(?))|((what)(.*)(likes)(.*)(?))");
-	Pattern qdislikes = Pattern.compile("((?i)((what)(.*)(dislike)(.*)(?))|((what)(.*)(not like)(.*)(?))|((do you)(.*)(not like)(.*)(?))");
-	Pattern qoccup = Pattern.compile("((?i)((what)(.*)(for living)(.*)(?))|((what)(.*)(job)(.*)(?))|((what)(.*)(work)(.*)(?))");
+	Pattern qdoing = Pattern.compile("(?i)((what)(.*)(doing)(.*)(?))|((what's)(.*)(up)(.*)(?))");
+	Pattern qname = Pattern.compile("(?i)((what)(.*)(name)(.*)(?))|((what)(.*)(are you called)(.*)(?))|((who)(.*)(you)(.*)(?))");
+	Pattern qage = Pattern.compile("(?i)((how)(.*)(old)(.*)(?))|((what)(.*)(age)(.*)(?))|((when)(.*)(born)(.*)(?))");
+	Pattern qlikes = Pattern.compile("(?i)((what)(.*)(hobbies)(.*)(?))|((what)(.*)(do for fun)(.*)(?))|((what)(.*)(likes)(.*)(?))");
+	Pattern qdislikes = Pattern.compile("(?i)((what)(.*)(dislike)(.*)(?))|((what)(.*)(not like)(.*)(?))|((do you)(.*)(not like)(.*)(?))");
+	Pattern qoccup = Pattern.compile("(?i)((what)(.*)(for living)(.*)(?))|((what)(.*)(job)(.*)(?))|((what)(.*)(work)(.*)(?))");
 	Pattern qzosign = Pattern.compile("(?i)(what)(.*)(sign)(.*)(?)");
 	public handleInput(String name) {
 		this.name = name;
