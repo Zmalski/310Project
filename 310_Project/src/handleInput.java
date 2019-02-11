@@ -1,8 +1,16 @@
 import java.io.*;
+import java.util.regex.Pattern;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class handleInput {
 	private String name;
+	Pattern qdoing = Pattern.compile("(?i)(what)(.*)(doing)(.*)(?)");
+	Pattern qname = Pattern.compile("(?i)(what)(.*)(name)(.*)(?)");
+	Pattern qage = Pattern.compile("((?i)((how)(.*)(old)(.*)(?))|((what)(.*)(age)(.*)(?))|((when)(.*)(born)(.*)(?))");
+	Pattern qlikes = Pattern.compile("((?i)((what)(.*)(hobbies)(.*)(?))|((what)(.*)(do for fun)(.*)(?))|((what)(.*)(likes)(.*)(?))");
+	Pattern qdislikes = Pattern.compile("((?i)((what)(.*)(dislike)(.*)(?))|((what)(.*)(not like)(.*)(?))|((do you)(.*)(not like)(.*)(?))");
+	Pattern qoccup = Pattern.compile("((?i)((what)(.*)(for living)(.*)(?))|((what)(.*)(job)(.*)(?))|((what)(.*)(work)(.*)(?))");
+	Pattern qzosign = Pattern.compile("(?i)(what)(.*)(sign)(.*)(?)");
 	public handleInput(String name) {
 		this.name = name;
 	}
@@ -103,7 +111,7 @@ public class handleInput {
 	public String parseInput(String input) {
 	input = processInput(input);
 	String data = "";
-    Scanner scanner = null;
+    Scanner scanner = null;// REGEX for what followed by doing followed by ? = (?i)(what)(.*)(doing)(.*)(?)
     boolean end = false;
     try {
         scanner = new Scanner(new File("greetings.txt"));
