@@ -36,7 +36,7 @@ public class Personality {
 	 */
 	public Personality(String gender) {
 		
-		
+		 
 		
 		setGender(gender);
 		setLikes(setArray(txtToArray("sports.txt"), random(3)+2));
