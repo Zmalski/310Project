@@ -35,6 +35,7 @@ public class Personality {
 	 * @param gender
 	 */
 	public Personality(String gender) {
+		
 		setGender(gender);
 		setLikes(setArray(txtToArray("sports.txt"), random(3)+2));
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
