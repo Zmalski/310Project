@@ -17,6 +17,12 @@ public class Personality {
 	private ArrayList<String> likesAnimals;
 	private ArrayList<String> likesCountries;
 	private ArrayList<String> likesHobbies;
+	private ArrayList<String> dislikesSports;
+	private ArrayList<String> dislikesMusic;
+	private ArrayList<String> dislikesMovies;
+	private ArrayList<String> dislikesAnimals;
+	private ArrayList<String> dislikesCountries;
+	private ArrayList<String> dislikesHobbies;
 	
 	
 	/**
