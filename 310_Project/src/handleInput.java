@@ -6,24 +6,24 @@ import java.util.Scanner;
 
 public class handleInput {
 	private String name;
-	Pattern qdoing = Pattern.compile("(?i)((what)(.*)(doing)(.*)(?))|((what's)(.*)(up)(.*)(?))");
+	Pattern qdoing = Pattern.compile("(?i)((what)(.*)(doing)(.*)(\\?))|((what's)(.*)(up)(.*)(\\?))");
 	Pattern qname = Pattern
-			.compile("(?i)((what)(.*)(name)(.*)(?))|((what)(.*)(are you called)(.*)(?))|((who)(.*)(you)(.*)(?))");
-	Pattern qage = Pattern.compile("(?i)((how)(.*)(old)(.*)(?))|((what)(.*)(age)(.*)(?))|((when)(.*)(born)(.*)(?))");
+			.compile("(?i)((what)(.*)(name)(.*)(\\?))|((what)(.*)(are you called)(.*)(\\?))|((who)(.*)(you)(.*)(\\?))");
+	Pattern qage = Pattern.compile("(?i)((how)(.*)(old)(.*)(\\?))|((what)(.*)(age)(.*)(\\?))|((when)(.*)(born)(.*)(\\?))");
 	Pattern qlikes = Pattern
-			.compile("(?i)((what)(.*)(hobbies)(.*)(?))|((what)(.*)(do for fun)(.*)(?))|((what)(.*)(likes)(.*)(?))");
+			.compile("(?i)((what)(.*)(hobbies)(.*)(\\?))|((what)(.*)(do for fun)(.*)(\\?))|((what)(.*)(likes)(.*)(\\?))");
 	Pattern qdislikes = Pattern
-			.compile("(?i)((what)(.*)(dislike)(.*)(?))|((what)(.*)(not like)(.*)(?))|((do you)(.*)(not like)(.*)(?))");
+			.compile("(?i)((what)(.*)(dislike)(.*)(\\?))|((what)(.*)(not like)(.*)(\\?))|((do you)(.*)(not like)(.*)(\\?))");
 	Pattern qjob = Pattern
-			.compile("(?i)((what)(.*)(for living)(.*)(?))|((what)(.*)(job)(.*)(?))|((what)(.*)(work)(.*)(?))");
-	Pattern qzosign = Pattern.compile("(?i)(what)(.*)(sign)(.*)(?)");
+			.compile("(?i)((what)(.*)(for living)(.*)(\\?))|((what)(.*)(job)(.*)(\\?))|((what)(.*)(work)(.*)(\\?))");
+	Pattern qzosign = Pattern.compile("(?i)(what)(.*)(sign)(.*)(\\?)");
+	Pattern howru = Pattern.compile("(?i)(how)(.*)(you)(.*)(\\?)");
 
 	public handleInput(String name) {
 		this.name = name;
 	}
 
 	public handleInput() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getName() {
@@ -81,12 +81,14 @@ public class handleInput {
 				if (input.matches("(.*)" + s + "(.*)")) {
 					output = s;
 					end = true;
+					scanner2.close();
 					break;
 				}
 			}
 			if (end == true)
 				break;
 		}
+
 		return output;
 	}
 
@@ -122,7 +124,7 @@ public class handleInput {
 	 * @return basic intention contained within the input string
 	 */
 	public String parseInput(String input) {
-		input = processInput(input);
+		String pinput = processInput(input);
 		String data = "";
 		Scanner scanner = null;// REGEX for what followed by doing followed by ? = (?i)(what)(.*)(doing)(.*)(?)
 		boolean end = false;
@@ -136,9 +138,10 @@ public class handleInput {
 			Scanner scanner2 = new Scanner(scanner.nextLine());
 			while (scanner2.hasNext()) {
 				String s = scanner2.next();
-				if (input.matches("(.*)" + s + "(.*)")) {
+				if (pinput.matches("(.*)" + s + "(.*)")) {
 					data = "greeting";
 					end = true;
+					scanner2.close();
 					break;
 				}
 			}
@@ -156,9 +159,10 @@ public class handleInput {
 			Scanner scanner2 = new Scanner(scanner.nextLine());
 			while (scanner2.hasNext()) {
 				String s = scanner2.next();
-				if (input.matches("(.*)" + s + "(.*)")) {
+				if (pinput.matches("(.*)" + s + "(.*)")) {
 					data = "insult";
 					end = true;
+					scanner2.close();
 					break;
 				}
 			}
@@ -175,9 +179,10 @@ public class handleInput {
 			Scanner scanner2 = new Scanner(scanner.nextLine());
 			while (scanner2.hasNext()) {
 				String s = scanner2.next();
-				if (input.matches("(.*)" + s + "(.*)")) {
+				if (pinput.matches("(.*)" + s + "(.*)")) {
 					data = "swear";
 					end = true;
+					scanner2.close();
 					break;
 				}
 			}
@@ -236,8 +241,15 @@ public class handleInput {
 				data = "qzosign";
 				matchfound = true;
 				break;
+			} else
+				m = howru.matcher(input);
+			// Asks what the bot's zodiac sign is
+			if (m.matches()) {
+				data = "howru";
+				matchfound = true;
+				break;
 			}
-			if(matchfound == false) {
+			if (matchfound == false) {
 				matchfound = true;
 				data = "invalid";
 			}

@@ -35,7 +35,29 @@ public class Personality {
 	 * @param gender
 	 */
 	public Personality(String gender) {
+		
+		 
+		
 		setGender(gender);
+		setLikes(setArray(txtToArray("sports.txt"), random(3)+2));
+		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
+		setOccupation(setString(txtToArray("occupations.txt")));
+		setLikesSports(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesMusic(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesMovies(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesAnimals(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesCountries(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesHobbies(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesFoods(setArray(txtToArray("sports.txt"), random(3)+2));
+		setDislikesFoods(setArray(txtToArray("sports.txt"), 3));
+		setDislikesSports(setArray(txtToArray("sports.txt"), 3));
+		setDislikesMusic(setArray(txtToArray("sports.txt"), 3));
+		setDislikesMovies(setArray(txtToArray("sports.txt"), 3));
+		setDislikesAnimals(setArray(txtToArray("sports.txt"), 3));
+		setDislikesCountries(setArray(txtToArray("sports.txt"), 3));
+		setDislikesHobbies(setArray(txtToArray("sports.txt"), 3));
+		
+		/*
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
 		setLikesSports(setArray(txtToArray("sports.txt"), random(3)+2));
@@ -52,7 +74,7 @@ public class Personality {
 		setDislikesAnimals(setArray(txtToArray("animals.txt"), 3));
 		setDislikesCountries(setArray(txtToArray("countries.txt"), 3));
 		setDislikesHobbies(setArray(txtToArray("hobbies.txt"), 3));
-		
+		*/
 		if(gender.equals("man"))
 			setName("David Beckham");
 		else
