@@ -49,12 +49,10 @@ public class determineOutput {
 			professionResponse = "Painter!!! You are an artist.";
 			break;
 		case "notfound":
-			professionResponse = "WOW!!";
-			System.out.println("Sounds cool, but I never heard about this before.");
+			professionResponse = "Sounds cool, but I never heard about this before.";
 			break;
 		default:
-			professionResponse = response;
-			System.out.println("You are a " + response + ". Sounds cool.");
+			professionResponse = "You are a " + response + ". Sounds cool.";
 			break;
 		}
 		return professionResponse;
