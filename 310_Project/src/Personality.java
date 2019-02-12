@@ -7,11 +7,17 @@ public class Personality {
 	// James Boonstra
 
 	private String gender;
+	private String name;
 	private String zodiacSign;
 	private String occupation;
 
 	private ArrayList<String> likesSports;
-	private ArrayList<String> dislikes;
+	private ArrayList<String> likesMusic;
+	private ArrayList<String> likesMovies;
+	private ArrayList<String> likesAnimals;
+	private ArrayList<String> likesCountries;
+	private ArrayList<String> likesHobbies;
+	
 	
 	/**
 	 * 
@@ -21,8 +27,19 @@ public class Personality {
 		setGender(gender);
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
-		setLikesSports(setArray(txtToArray("occupations.txt"), 3));
+		setLikesSports(setArray(txtToArray("sports.txt"), 3));
+		setLikesMusic(setArray(txtToArray("music.txt"), 3));
+		setLikesMovies(setArray(txtToArray("movies.txt"), 3));
+		setLikesAnimals(setArray(txtToArray("animals.txt"), 3));
+		setLikesCountries(setArray(txtToArray("countries.txt"), 3));
+		setLikesHobbies(setArray(txtToArray("hobbies.txt"), 3));
+		if(gender.equals("male"))
+			setName(setString(txtToArray("names_boys.txt")));
+		else
+			setName(setString(txtToArray("names_girls.txt")));
 	}
+
+	
 
 	/**
 	 * 
@@ -102,12 +119,20 @@ public class Personality {
 		return (int) (Math.random() * upperBound + 1);
 	}
 
-	public String isGender() {
+	public String getGender() {
 		return gender;
 	}
 
 	private void setGender(String gender) {
 		this.gender = gender;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getZodiacSign() {
@@ -134,12 +159,44 @@ public class Personality {
 		this.likesSports = likesSports;
 	}
 
-	public ArrayList<String> getDislikes() {
-		return dislikes;
+	public ArrayList<String> getLikesMusic() {
+		return likesMusic;
 	}
 
-	private void setDislikes(ArrayList<String> dislikes) {
-		this.dislikes = dislikes;
+	public void setLikesMusic(ArrayList<String> likesMusic) {
+		this.likesMusic = likesMusic;
+	}
+
+	public ArrayList<String> getLikesMovies() {
+		return likesMovies;
+	}
+
+	public void setLikesMovies(ArrayList<String> likesMovies) {
+		this.likesMovies = likesMovies;
+	}
+
+	public ArrayList<String> getLikesAnimals() {
+		return likesAnimals;
+	}
+
+	public void setLikesAnimals(ArrayList<String> likesAnimals) {
+		this.likesAnimals = likesAnimals;
+	}
+
+	public ArrayList<String> getLikesCountries() {
+		return likesCountries;
+	}
+
+	public void setLikesCountries(ArrayList<String> likesCountries) {
+		this.likesCountries = likesCountries;
+	}
+
+	public ArrayList<String> getLikesHobbies() {
+		return likesHobbies;
+	}
+
+	public void setLikesHobbies(ArrayList<String> likesHobbies) {
+		this.likesHobbies = likesHobbies;
 	}
 
 }
