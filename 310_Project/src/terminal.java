@@ -16,7 +16,7 @@ public class terminal {
 		String chatbotname = "CHATBOTNAME";
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {
-			System.out.print(username + ":");
+			System.out.print("\n" + username + ":");
 			String userinput = inputHandler.getUserInput();
 			// Loop is called after desired gender and name are chosen, and begins to loop through response/questions
 			if (genderchosen == true && nameknown == true) {
@@ -27,11 +27,8 @@ public class terminal {
 			// Determine desired gender from user
 			if (genderchosen == false) {
 				String gender = inputHandler.checkGender(userinput);
+				chatbotname = outputDeterminer.gender(gender);
 				//This is just an example of setting the chatbotname, will be changed
-				if(gender.equals("woman"))
-					chatbotname = "Jane";
-				else if(gender.equals("man"))
-					chatbotname = "John";
 				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
 				genderchosen = true;
 			}
@@ -52,8 +49,7 @@ public class terminal {
 							chatbotname + ": That's a lovely name, " + username + ". So, what do you do for a living?");
 				System.out.println(username + ":");
 				userinput = inputHandler.getUserInput();
-				System.out
-						.println(chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(userinput)));
+				System.out.println(chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(userinput)));
 
 			}
 			//End conversation if user types "bye"
