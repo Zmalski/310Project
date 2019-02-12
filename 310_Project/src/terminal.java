@@ -44,7 +44,7 @@ public class terminal {
 							"CHATBOTNAME: That's a lovely name, " + username + ". So, what do you do for a living?");
 				System.out.println("Human: ");
 				userinput = reader.nextLine();
-				System.out.println("CHATBOTNAME:" + determineOutput.occupation(inputHandler.checkOccupation(userinput)));
+				System.out.println("CHATBOTNAME:" + outputDeterminer.occupation(inputHandler.checkOccupation(userinput)));
 
 			}
 			if (userinput.equals("bye"))
