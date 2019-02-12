@@ -10,6 +10,9 @@ public class Personality {
 	private String name;
 	private String zodiacSign;
 	private String occupation;
+	
+	private ArrayList<String> likes;
+	private ArrayList<String> dislikes;
 
 	private ArrayList<String> likesSports;
 	private ArrayList<String> likesMusic;
@@ -17,12 +20,14 @@ public class Personality {
 	private ArrayList<String> likesAnimals;
 	private ArrayList<String> likesCountries;
 	private ArrayList<String> likesHobbies;
+	private ArrayList<String> likesFoods;
 	private ArrayList<String> dislikesSports;
 	private ArrayList<String> dislikesMusic;
 	private ArrayList<String> dislikesMovies;
 	private ArrayList<String> dislikesAnimals;
 	private ArrayList<String> dislikesCountries;
 	private ArrayList<String> dislikesHobbies;
+	private ArrayList<String> dislikesFoods;
 	
 	
 	/**
@@ -33,19 +38,100 @@ public class Personality {
 		setGender(gender);
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
-		setLikesSports(setArray(txtToArray("sports.txt"), 3));
-		setLikesMusic(setArray(txtToArray("music.txt"), 3));
-		setLikesMovies(setArray(txtToArray("movies.txt"), 3));
-		setLikesAnimals(setArray(txtToArray("animals.txt"), 3));
-		setLikesCountries(setArray(txtToArray("countries.txt"), 3));
-		setLikesHobbies(setArray(txtToArray("hobbies.txt"), 3));
-		if(gender.equals("male"))
-			setName(setString(txtToArray("names_boys.txt")));
+		setLikesSports(setArray(txtToArray("sports.txt"), random(3)+2));
+		setLikesMusic(setArray(txtToArray("music.txt"), random(3)+2));
+		setLikesMovies(setArray(txtToArray("movies.txt"), random(3)+2));
+		setLikesAnimals(setArray(txtToArray("animals.txt"), random(3)+2));
+		setLikesCountries(setArray(txtToArray("countries.txt"), random(3)+2));
+		setLikesHobbies(setArray(txtToArray("hobbies.txt"), random(3)+2));
+		setLikesFoods(setArray(txtToArray("food.txt"), random(3)+2));
+		setDislikesFoods(setArray(txtToArray("food.txt"), 3));
+		setDislikesSports(setArray(txtToArray("sports.txt"), 3));
+		setDislikesMusic(setArray(txtToArray("music.txt"), 3));
+		setDislikesMovies(setArray(txtToArray("movies.txt"), 3));
+		setDislikesAnimals(setArray(txtToArray("animals.txt"), 3));
+		setDislikesCountries(setArray(txtToArray("countries.txt"), 3));
+		setDislikesHobbies(setArray(txtToArray("hobbies.txt"), 3));
+		
+		if(gender.equals("man"))
+			setName("David Beckham");
 		else
-			setName(setString(txtToArray("names_girls.txt")));
+			setName("Jessica Alba");
 	}
 
 	
+
+	public ArrayList<String> getDislikesSports() {
+		return dislikesSports;
+	}
+
+
+
+	public void setDislikesSports(ArrayList<String> dislikesSports) {
+		this.dislikesSports = dislikesSports;
+	}
+
+
+
+	public ArrayList<String> getDislikesMusic() {
+		return dislikesMusic;
+	}
+
+
+
+	public void setDislikesMusic(ArrayList<String> dislikesMusic) {
+		this.dislikesMusic = dislikesMusic;
+	}
+
+
+
+	public ArrayList<String> getDislikesMovies() {
+		return dislikesMovies;
+	}
+
+
+
+	public void setDislikesMovies(ArrayList<String> dislikesMovies) {
+		this.dislikesMovies = dislikesMovies;
+	}
+
+
+
+	public ArrayList<String> getDislikesAnimals() {
+		return dislikesAnimals;
+	}
+
+
+
+	public void setDislikesAnimals(ArrayList<String> dislikesAnimals) {
+		this.dislikesAnimals = dislikesAnimals;
+	}
+
+
+
+	public ArrayList<String> getDislikesCountries() {
+		return dislikesCountries;
+	}
+
+
+
+	public void setDislikesCountries(ArrayList<String> dislikesCountries) {
+		this.dislikesCountries = dislikesCountries;
+	}
+
+
+
+	public ArrayList<String> getDislikesHobbies() {
+		return dislikesHobbies;
+	}
+
+
+
+	public void setDislikesHobbies(ArrayList<String> dislikesHobbies) {
+		this.dislikesHobbies = dislikesHobbies;
+	}
+
+
 
 	/**
 	 * 
@@ -203,6 +289,38 @@ public class Personality {
 
 	public void setLikesHobbies(ArrayList<String> likesHobbies) {
 		this.likesHobbies = likesHobbies;
+	}
+	
+	public ArrayList<String> getLikesFoods() {
+		return likesFoods;
+	}
+	
+	public void setLikesFoods(ArrayList<String> likesFoods) {
+		this.likesFoods = likesFoods;
+	}
+	
+	public ArrayList<String> getDislikesFoods() {
+		return dislikesFoods;
+	}
+	
+	public void setDislikesFoods(ArrayList<String> dislikesFoods) {
+		this.dislikesFoods = dislikesFoods;
+	}
+
+	public ArrayList<String> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(ArrayList<String> likes) {
+		this.likes = likes;
+	}
+
+	public ArrayList<String> getDislikes() {
+		return dislikes;
+	}
+
+	public void setDislikes(ArrayList<String> dislikes) {
+		this.dislikes = dislikes;
 	}
 
 }
