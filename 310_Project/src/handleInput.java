@@ -9,15 +9,27 @@ public class handleInput {
 	Pattern qdoing = Pattern.compile("(?i)((what)(.*)(doing)(.*)(\\?))|((what's)(.*)(up)(.*)(\\?))");
 	Pattern qname = Pattern
 			.compile("(?i)((what)(.*)(name)(.*)(\\?))|((what)(.*)(are you called)(.*)(\\?))|((who)(.*)(you)(.*)(\\?))");
-	Pattern qage = Pattern.compile("(?i)((how)(.*)(old)(.*)(\\?))|((what)(.*)(age)(.*)(\\?))|((when)(.*)(born)(.*)(\\?))");
-	Pattern qlikes = Pattern
-			.compile("(?i)((what)(.*)(hobbies)(.*)(\\?))|((what)(.*)(do for fun)(.*)(\\?))|((what)(.*)(likes)(.*)(\\?))");
-	Pattern qdislikes = Pattern
-			.compile("(?i)((what)(.*)(dislike)(.*)(\\?))|((what)(.*)(not like)(.*)(\\?))|((do you)(.*)(not like)(.*)(\\?))");
+	Pattern qage = Pattern
+			.compile("(?i)((how)(.*)(old)(.*)(\\?))|((what)(.*)(age)(.*)(\\?))|((when)(.*)(born)(.*)(\\?))");
+	Pattern qlikes = Pattern.compile(
+			"(?i)((what)(.*)(hobbies)(.*)(\\?))|((what)(.*)(do for fun)(.*)(\\?))|((what)(.*)(likes)(.*)(\\?))");
+	Pattern qdislikes = Pattern.compile(
+			"(?i)((what)(.*)(dislike)(.*)(\\?))|((what)(.*)(not like)(.*)(\\?))|((do you)(.*)(not like)(.*)(\\?))");
 	Pattern qjob = Pattern
 			.compile("(?i)((what)(.*)(for living)(.*)(\\?))|((what)(.*)(job)(.*)(\\?))|((what)(.*)(work)(.*)(\\?))");
 	Pattern qzosign = Pattern.compile("(?i)(what)(.*)(sign)(.*)(\\?)");
 	Pattern howru = Pattern.compile("(?i)(how)(.*)(you)(.*)(\\?)");
+	Pattern student = Pattern.compile("(?i)((Are)(.*)(you)(.*)(student)(.*)(\\?))|((What)(.*)(study)(.*)(\\\\?))");
+	Pattern qsports = Pattern
+			.compile("(?i)((do)(.*)(sports)(.*)(\\?))|((what)(.*)(sports)(.*)(\\?))|((play)(.*)(sports)(.*)(\\?))");
+	Pattern qmusic = Pattern
+			.compile("(?i)((do)(.*)(music)(.*)(\\?))|((what)(.*)(music)(.*)(\\?))|((what)(.*)(listen to)(.*)(\\?))");
+	Pattern qmovies = Pattern
+			.compile("(?i)((do)(.*)(movies)(.*)(\\?))|((what)(.*)(movies)(.*)(\\?))|((seen)(.*)(movies)(.*)(\\?))");
+	Pattern qanimals = Pattern.compile(
+			"(?i)((what)(.*)(animals)(.*)(\\?))|((do)(.*)(pets|animals)(.*)(\\?))|((like)(.*)(cats|dogs)(.*)(\\?))");
+	Pattern qcountries = Pattern
+			.compile("(?i)((where)(.*)(travel)(.*)(\\?))|((do)(.*)(travel)(.*)(\\?))|((if)(.*)(travel)(.*)(\\?))");
 
 	public handleInput(String name) {
 		this.name = name;
@@ -243,9 +255,51 @@ public class handleInput {
 				break;
 			} else
 				m = howru.matcher(input);
-			// Asks what the bot's zodiac sign is
+			// Asks how the bot is doing
 			if (m.matches()) {
 				data = "howru";
+				matchfound = true;
+				break;
+			} else
+				m = student.matcher(input);
+			// Asks if the bot is a student
+			if (m.matches()) {
+				data = "student";
+				matchfound = true;
+				break;
+			} else
+				m = qsports.matcher(input);
+			// Asks what sports the bot likes
+			if (m.matches()) {
+				data = "qsports";
+				matchfound = true;
+				break;
+			} else
+				m = qmusic.matcher(input);
+			// Asks what music the bot likes
+			if (m.matches()) {
+				data = "qmusic";
+				matchfound = true;
+				break;
+			} else
+				m = qmovies.matcher(input);
+			// Asks what movies the bot likes
+			if (m.matches()) {
+				data = "qmovies";
+				matchfound = true;
+				break;
+			} else
+				m = qanimals.matcher(input);
+			// Asks what animals the bot likes or if it has pets
+			if (m.matches()) {
+				data = "qanimals";
+				matchfound = true;
+				break;
+			} else
+				m = qcountries.matcher(input);
+			// Asks what countries or travel aspirations the bot likes
+			if (m.matches()) {
+				data = "qcountries";
 				matchfound = true;
 				break;
 			}
