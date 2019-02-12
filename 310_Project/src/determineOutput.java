@@ -110,7 +110,6 @@ public class determineOutput {
 			return ChatbotName;
 		}
 	}
-
 /*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will
