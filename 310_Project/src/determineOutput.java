@@ -1,11 +1,11 @@
-import java.lang.reflect.Array;
 import java.util.HashMap;
 
 public class determineOutput {
-	handleInput hInput = new handleInput();
 	/*
 	 * Pardeep
 	 */
+	handleInput hInput = new handleInput();
+	Personality likes = new Personality(); 
 	String professionResponse = "";
 	/**
 	 * Returns the response to occupations
@@ -75,12 +75,12 @@ public class determineOutput {
 		 hash_map.put("insult", "It is not appropriate.");
 		 hash_map.put("swearing", "You cannot swear.");
 		 hash_map.put("qdoing", "I will call the method here. wowowowowow");
-		 hash_map.put("qage", "I will call the method here.");
-		 hash_map.put("qlikes", "I will call the method here.");
-		 hash_map.put("qdislikes", "I will call the method here.");
-		 hash_map.put("qjob", "I will call the method here.");
-		 hash_map.put("qzosign", "I will call the method here.");
-		 
+		 hash_map.put("qage", "I am 22 year old.");
+		 hash_map.put("qlikes", likes.getLikes());
+		 hash_map.put("qdislikes", likes.getDislikes());
+		 hash_map.put("qjob", likes.getOccupation());
+		 hash_map.put("qzosign", likes.getZodiacSign());
+		 hash_map.put("qname", likes.getName());
 	/*
 	 * 
 	 * Working on default response.
@@ -95,45 +95,6 @@ public class determineOutput {
 			 responseBack = "I am sorry, I don't get it what do you mean?";
 		 return responseBack;
 	 }
-	
-/*	
-	public String respond1(String data) {
-		String Response = "";
-		switch (data) {
-		case "greeting":
-			Response = "Hi! How are you?";
-			break;
-		case "bye":
-			Response = "Goodbye!";
-			break;
-		case "insult":
-			Response = "It is not appropriate.";
-			break;
-		case "swearing":
-			Response = "You cannot swear.";
-			break;
-		case "qdoing":
-			Response = "";
-		case "qage":
-			Response ="";
-		case "qlikes":
-			Response ="";
-		case "qdislikes":
-			Response ="";
-		case "qname":
-			Response ="";
-		case "qjob":
-			Response ="";
-		case "qzosign":
-			Response ="";
-
-		default:
-			Response = data;
-			break;
-		}
-		return Response;
-	}
-*/
 		/**
 		 * Returns the response to gender
 		 * 
@@ -149,7 +110,8 @@ public class determineOutput {
 			return ChatbotName;
 		}
 	}
-	/*
+
+/*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will
 	 * response accordingly. 
