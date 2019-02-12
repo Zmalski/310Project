@@ -11,7 +11,7 @@ public class terminal {
 		boolean genderchosen = false;
 		boolean turn = false;
 		boolean nameknown = false;
-		// Initialize names for identifying speaker
+		// Initialize names for identifying speakers
 		String username = "Human";
 		String chatbotname = "CHATBOTNAME";
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
@@ -27,7 +27,12 @@ public class terminal {
 			// Determine desired gender from user
 			if (genderchosen == false) {
 				String gender = inputHandler.checkGender(userinput);
-				System.out.println("You are now on a date with a " + gender + ".");
+				//This is just an example of setting the chatbotname, will be changed
+				if(gender.equals("woman"))
+					chatbotname = "Jane";
+				else if(gender.equals("man"))
+					chatbotname = "John";
+				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
 				genderchosen = true;
 			}
 			// Determining users name, occupation from user
