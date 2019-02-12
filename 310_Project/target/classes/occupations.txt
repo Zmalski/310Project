@@ -20,4 +20,3 @@ military
 manager
 banker
 philosopher
-comedian
