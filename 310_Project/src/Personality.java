@@ -19,7 +19,7 @@ public class Personality {
 	 */
 	public Personality(String gender) {
 		setGender(gender);
-		setZodiacSign(setString(txtToArray("occupations.txt")));
+		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
 		setLikesSports(setArray(txtToArray("occupations.txt"), 3));
 	}
