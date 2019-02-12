@@ -38,10 +38,10 @@ public class terminal {
 				int random = (int) (Math.random() * 2 + 1);
 				if (random == 1)
 					System.out.println(
-							"CHATBOTNAME: It's nice to meet you, " + username + ". What do you do for a living?");
+							"CHATBOTNAME: It's nice to meet you, " + username.substring(0,1).toUpperCase() + username.substring(1) + ". What do you do for a living?");
 				else
 					System.out.println(
-							"CHATBOTNAME: That's a lovely name, " + username + ". So, what do you do for a living?");
+							"CHATBOTNAME: That's a lovely name, " + username.substring(0,1).toUpperCase() + username.substring(1) + ". So, what do you do for a living?");
 				System.out.println("Human: ");
 				userinput = reader.nextLine();
 				System.out.println("CHATBOTNAME:" + outputDeterminer.occupation(inputHandler.checkOccupation(userinput)));

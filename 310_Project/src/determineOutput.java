@@ -91,18 +91,40 @@ public class determineOutput {
 		}
 		return Response;
 	}
-	/**
-	 * Returns the response to username
-	 * 
-	 * @param output
-	 * @return username contained within the input string
-	 */
-	public String name(String name) {
-		String nameReturn = "Nice to meet you " + name + ". What do you do for living?";
-		System.out.println(nameReturn);
-		return nameReturn;
+	
+		/**
+		 * Returns the response to username
+		 * 
+		 * @param output
+		 * @return username contained within the input string
+		 */
+		public String name(String name) {
+			String nameReturn = "Nice to meet you " + name + ". What do you do for living?";
+			System.out.println(nameReturn);
+			return nameReturn;
+		}
 	}
-}
+		/*
+		 * I have created a method that parse the whole string, and if in the given
+		 * string by the user has the profession matches to our scope, the bot will
+		 * response accordingly. 
+		 * 
+		 * public static int response(String profession) { 
+		 * 		String Str = new String(profession); 
+		 * 		if(Str.matches("(.*)developer(.*)")) {
+		 *  	return 1; 
+		 *  	}
+		 *  	if(Str.matches("(.*)musician(.*)")) { 
+		 *  	return 2;
+		 * 		}
+		 * 		if(Str.matches("(.*)player(.*)")) { 
+		 * 		return 3; }
+		 * 		else 
+		 * 		return -1; 
+		 * }
+		 */
+
+
 	/*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will
