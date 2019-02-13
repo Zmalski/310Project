@@ -6,7 +6,6 @@ public class determineOutput {
 	 * Pardeep
 	 */
 	handleInput hInput = new handleInput();
-	Personality personality = new Personality(); 
 	String professionResponse = "";
 	/**
 	 * Returns the response to occupations
@@ -65,14 +64,19 @@ public class determineOutput {
 	/**
 	 * Returns the response for given String
 	 * 
-	 * @param data
+	 * @param data, personality
 	 * @return response contained within the input string
 	 */	
-	 public String respond(String data) {
+	 public String respond(String data, Personality personality) {
 		 HashMap<String, Object> hash_map = new HashMap<String, Object>();	 
 		 String responseBack = "";
+		 /*
+		 * Create two ArrayLists to store the arraylists received from two different methods.
+		 * With the help of these two different list, we can call the method(converting arraylist to string) as per user input.
+		 */
 		 ArrayList<String> list1 = personality.getLikes();
 		 ArrayList<String> list2 = personality.getDislikes();
+		 
 		 hash_map.put("greeting", "Hi! How are you?");
 		 hash_map.put("bye", "Goodbye");
 		 hash_map.put("insult", "It is not appropriate.");
