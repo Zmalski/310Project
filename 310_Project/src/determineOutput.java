@@ -5,7 +5,7 @@ public class determineOutput {
 	 * Pardeep
 	 */
 	handleInput hInput = new handleInput();
-	Personality likes = new Personality(); 
+	//Personality likes = new Personality(); 
 	String professionResponse = "";
 	/**
 	 * Returns the response to occupations
@@ -76,11 +76,11 @@ public class determineOutput {
 		 hash_map.put("swearing", "You cannot swear.");
 		 hash_map.put("qdoing", "I will call the method here. wowowowowow");
 		 hash_map.put("qage", "I am 22 year old.");
-		 hash_map.put("qlikes", likes.getLikes());
-		 hash_map.put("qdislikes", likes.getDislikes());
-		 hash_map.put("qjob", likes.getOccupation());
-		 hash_map.put("qzosign", likes.getZodiacSign());
-		 hash_map.put("qname", likes.getName());
+		 //hash_map.put("qlikes", likes.getLikes());
+		 //hash_map.put("qdislikes", likes.getDislikes());
+		 //hash_map.put("qjob", likes.getOccupation());
+		 //hash_map.put("qzosign", likes.getZodiacSign());
+		 //hash_map.put("qname", likes.getName());
 	/*
 	 * 
 	 * Working on default response.
