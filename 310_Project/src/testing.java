@@ -2,6 +2,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.junit.jupiter.api.Test;
@@ -23,4 +24,16 @@ public class testing {
 		String s2 = "developer";
 		assertTrue(s.equals(occ));
 	}	
+	public void testgender() {
+		
+	}
+
+	/*
+	 * Main class for testing.
+	 */
+ public static class testing2{
+	public static void main(String[] args) {
+				 
+    	}
+	}
 }

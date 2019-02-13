@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class determineOutput {
@@ -5,7 +6,7 @@ public class determineOutput {
 	 * Pardeep
 	 */
 	handleInput hInput = new handleInput();
-	//Personality likes = new Personality(); 
+	Personality personality = new Personality(); 
 	String professionResponse = "";
 	/**
 	 * Returns the response to occupations
@@ -74,27 +75,52 @@ public class determineOutput {
 		 hash_map.put("bye", "Goodbye");
 		 hash_map.put("insult", "It is not appropriate.");
 		 hash_map.put("swearing", "You cannot swear.");
-		 hash_map.put("qdoing", "I will call the method here. wowowowowow");
+		 hash_map.put("qdoing", "I am talking to you.");
 		 hash_map.put("qage", "I am 22 year old.");
-		 //hash_map.put("qlikes", likes.getLikes());
-		 //hash_map.put("qdislikes", likes.getDislikes());
-		 //hash_map.put("qjob", likes.getOccupation());
-		 //hash_map.put("qzosign", likes.getZodiacSign());
-		 //hash_map.put("qname", likes.getName());
-	/*
-	 * 
-	 * Working on default response.
-		 while() {
-			 if(hash_map.containsValue(key));
-		 }
-		 
-	*/	 
+		 hash_map.put("Invalid", "Ask more question");
+		 hash_map.put("qlikes", personality.getLikes());
+		 hash_map.put("qdislikes", personality.getDislikes());
+		 hash_map.put("qjob", personality.getOccupation());
+		 hash_map.put("qzosign", personality.getZodiacSign());
+		 hash_map.put("qname", personality.getName());
+
 		 if(!hash_map.isEmpty()) {
 			responseBack = (String) hash_map.get(data);
 		 }else
 			 responseBack = "I am sorry, I don't get it what do you mean?";
 		 return responseBack;
 	 }
+	 
+	 /**
+		 * Returns the response for given String
+		 * 
+		 * Covert ArrayList to String
+		 * @return String with respect to getLikes() method
+		 */
+	 public String returnArrayList() {
+	   ArrayList<String> list = personality.getLikes();
+	   String listString = "";
+	   for(String s : list) {
+		   listString += s + "\n";
+	   }
+		 return listString;
+	 }
+	 
+	 /**
+		 * Returns the response for given String
+		 * 
+		 * Covert ArrayList to String
+		 * @return string with respect to getDisLikes() method
+		 */
+	 public String returnArrayList2() {
+	   ArrayList<String> list = personality.getDislikes();
+	   String listString = "";
+	   for(String s : list) {
+		   listString += s + "\n";
+	   }
+		 return listString;
+	 }
+
 		/**
 		 * Returns the response to gender
 		 * 
@@ -110,6 +136,7 @@ public class determineOutput {
 			return ChatbotName;
 		}
 	}
+
 /*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will
