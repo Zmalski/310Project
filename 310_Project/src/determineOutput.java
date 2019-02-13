@@ -77,16 +77,25 @@ public class determineOutput {
 		 hash_map.put("bye", "Goodbye");
 		 hash_map.put("insult", "It is not appropriate.");
 		 hash_map.put("swearing", "You cannot swear.");
-		 hash_map.put("qdoing", "I am talking to you.");
+		 hash_map.put("qdoing", "I am doing well.");
 		 hash_map.put("qage", "I am 22 year old.");
 		 hash_map.put("Invalid", "Ask more question");
 		 hash_map.put("qlikes", returnArrayList(list1));
 		 hash_map.put("qdislikes", returnArrayList(list2));
 		 hash_map.put("qjob", personality.getOccupation());
 		 hash_map.put("qzosign", personality.getZodiacSign());
-		 hash_map.put("qname", personality.getName());
-
-		 if(!hash_map.isEmpty()) {
+		 /*
+		  * New keywords added. 
+		  */
+		 hash_map.put("howru", "Keyword howru received.");
+		 hash_map.put("student", "student received.");
+		 hash_map.put("qsports", "qsports received.");
+		 hash_map.put("qmusic", "qmusic received.");
+		 hash_map.put("qanimals", "qanimals received.");
+		 hash_map.put("qcountries", "qcountries received.");
+		 hash_map.put("qmovies", "qmovies received.");
+		 
+		if(hash_map.containsKey(data)) {
 			responseBack = (String) hash_map.get(data);
 		 }else
 			 responseBack = "I am sorry, I don't get it what do you mean?";
@@ -96,7 +105,7 @@ public class determineOutput {
 		 * Returns the response for given String
 		 * 
 		 * Covert ArrayList to String
-		 * @return string with respect to getDisLikes() method
+		 * @return string with respect to getDisLikes() and getLikes() methods
 		 */
 	 public String returnArrayList(ArrayList<String> list) {
 	   String listString = "";
