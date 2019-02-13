@@ -71,6 +71,8 @@ public class determineOutput {
 	 public String respond(String data) {
 		 HashMap<String, Object> hash_map = new HashMap<String, Object>();	 
 		 String responseBack = "";
+		 ArrayList<String> list1 = personality.getLikes();
+		 ArrayList<String> list2 = personality.getDislikes();
 		 hash_map.put("greeting", "Hi! How are you?");
 		 hash_map.put("bye", "Goodbye");
 		 hash_map.put("insult", "It is not appropriate.");
@@ -78,8 +80,8 @@ public class determineOutput {
 		 hash_map.put("qdoing", "I am talking to you.");
 		 hash_map.put("qage", "I am 22 year old.");
 		 hash_map.put("Invalid", "Ask more question");
-		 hash_map.put("qlikes", personality.getLikes());
-		 hash_map.put("qdislikes", personality.getDislikes());
+		 hash_map.put("qlikes", returnArrayList(list1));
+		 hash_map.put("qdislikes", returnArrayList(list2));
 		 hash_map.put("qjob", personality.getOccupation());
 		 hash_map.put("qzosign", personality.getZodiacSign());
 		 hash_map.put("qname", personality.getName());
@@ -90,30 +92,13 @@ public class determineOutput {
 			 responseBack = "I am sorry, I don't get it what do you mean?";
 		 return responseBack;
 	 }
-	 
-	 /**
-		 * Returns the response for given String
-		 * 
-		 * Covert ArrayList to String
-		 * @return String with respect to getLikes() method
-		 */
-	 public String returnArrayList() {
-	   ArrayList<String> list = personality.getLikes();
-	   String listString = "";
-	   for(String s : list) {
-		   listString += s + "\n";
-	   }
-		 return listString;
-	 }
-	 
 	 /**
 		 * Returns the response for given String
 		 * 
 		 * Covert ArrayList to String
 		 * @return string with respect to getDisLikes() method
 		 */
-	 public String returnArrayList2() {
-	   ArrayList<String> list = personality.getDislikes();
+	 public String returnArrayList(ArrayList<String> list) {
 	   String listString = "";
 	   for(String s : list) {
 		   listString += s + "\n";
