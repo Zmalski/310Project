@@ -147,6 +147,7 @@ public class Personality {
 	 * @param item
 	 * @return
 	 */
+	
 	public static boolean contains(ArrayList<String> arr, String item) {
 		for (String n : arr) {
 			if (n.equals(item)) {
