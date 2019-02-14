@@ -76,7 +76,7 @@ public class determineOutput {
 		 ArrayList<String> list1 = personality.getLikes();
 		 ArrayList<String> list2 = personality.getDislikes();
 		 String likesReturn="";
-		 String likesReturn2="";
+		 String dislikesReturn2="";
 		 
 		 hash_map.put("greeting", "Hi! How are you?");
 		 hash_map.put("bye", "Goodbye");
@@ -90,8 +90,8 @@ public class determineOutput {
 			 hash_map.put("qlikes", likesReturn);
 		 }
 		 if(data.equals("qdislikes")) {
-			 likesReturn2 = returnArrayList(list1);
-			 hash_map.put("qlikes", likesReturn2);
+			 dislikesReturn2 = returnArrayList(list1);
+			 hash_map.put("qlikes", dislikesReturn2);
 		 }
 		 hash_map.put("qjob", personality.getOccupation());
 		 hash_map.put("qzosign", personality.getZodiacSign());
@@ -128,12 +128,15 @@ public class determineOutput {
 		 * @param gender
 		 * @return username contained within the input string
 		 */
-		public String gender(String sex) {
+		public String gender(String sex, Personality personality) {
 			String ChatbotName="";
-			if(sex.equals("woman"))
-				ChatbotName = "Jane";
+			if(sex.equals("woman")) {
+				 personality = new Personality("woman");
+				 ChatbotName = personality.getName();
+			}
 			else if(sex.equals("man"))
-				ChatbotName = "John";
+				personality = new Personality("man");
+				ChatbotName = personality.getName();
 			return ChatbotName;
 		}
 	}
