@@ -43,8 +43,6 @@ public class Personality {
 	 */
 	public Personality(String gender) {
 		
-		 
-		
 		setGender(gender);
 		setDislikes();
 		setLikes();
@@ -66,9 +64,9 @@ public class Personality {
 		setDislikesHobbies(setArray(txtToArray("hobbies.txt"),this.getLikesHobbies(), 3));
 		
 		if(gender.equals("man"))
-			setName("David Beckham");
+			setName(setString(txtToArray("names_boys.txt")));
 		else
-			setName("Jessica Alba");
+			setName(setString(txtToArray("names_girls.txt")));
 	}
 
 
@@ -93,6 +91,7 @@ public class Personality {
 			
 		} catch (IOException e) {
 			System.out.println("Error File Not Found");
+			result.add("Error File Not Found");
 			return result;
 		}
 	}
