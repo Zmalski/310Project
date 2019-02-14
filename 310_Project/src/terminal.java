@@ -14,15 +14,25 @@ public class terminal {
 		// Initialize names for identifying speakers
 		String username = "Human";
 		String chatbotname = "CHATBOTNAME";
+		String botoutput = "";
+		String data = "";
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {
 			System.out.print("\n" + username + ":");
 			String userinput = inputHandler.getUserInput();
 			// Loop is called after desired gender and name are chosen, and begins to loop through response/questions
 			if (genderchosen == true && nameknown == true) {
-				String data = inputHandler.parseInput(userinput);
-				String botoutput = outputDeterminer.respond(data, p);
+				data = inputHandler.parseInput(userinput);
+				// Pseudocode for a theoretical method of asking a question, parsing response, and determining what to follow up with.
+//				if(data.equals("nothing"){
+//					botoutput = outputDeterminer.ask();
+//					data = inputHandler.parseQResponse(userinput);
+//					botoutput = outputDeterminer.afterAsk();
+//				}
+//				else {
+				botoutput = outputDeterminer.respond(data, p);
 				System.out.print(chatbotname + ": " + botoutput);
+//				}
 			}
 			// Determine desired gender from user
 			if (genderchosen == false) {

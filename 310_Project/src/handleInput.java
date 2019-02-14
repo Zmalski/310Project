@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class handleInput {
 	private String name;
+	// Initalizing patterns to check for what user is asking or saying
 	Pattern qdoing = Pattern.compile("(?i)((what)(.*)(doing)(.*)(\\?))|((what's)(.*)(up)(.*)(\\?))");
 	Pattern qname = Pattern
 			.compile("(?i)((what)(.*)(name)(.*)(\\?))|((what)(.*)(are you called)(.*)(\\?))|((who)(.*)(you)(.*)(\\?))");
