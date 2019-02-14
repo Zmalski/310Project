@@ -1,6 +1,18 @@
+asparagus
+apples
+avacado
+almond
+applesauce
+bacon
+beans
+bagels
+beer
+bread
+broccoli
+burrito
+cabbage
 cake
-pickles
-hamburger
-ice cream
-jello
-pudding
+carrots
+celery
+cheese
+chicken

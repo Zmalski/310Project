@@ -29,6 +29,9 @@ public class Personality {
 	private ArrayList<String> dislikesHobbies;
 	private ArrayList<String> dislikesFoods;
 	
+	public Personality() {
+		this("male");
+	}
 	
 	/**
 	 * 
