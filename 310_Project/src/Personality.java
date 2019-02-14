@@ -29,6 +29,13 @@ public class Personality {
 	private ArrayList<String> dislikesHobbies;
 	private ArrayList<String> dislikesFoods;
 	
+	/**
+	 * 
+	 * 
+	 */
+	public Personality() {
+		this("man");
+	}
 	
 	/**
 	 * 
@@ -64,77 +71,6 @@ public class Personality {
 			setName("Jessica Alba");
 	}
 
-	
-
-	public ArrayList<String> getDislikesSports() {
-		return dislikesSports;
-	}
-
-
-
-	public void setDislikesSports(ArrayList<String> dislikesSports) {
-		this.dislikesSports = dislikesSports;
-	}
-
-
-
-	public ArrayList<String> getDislikesMusic() {
-		return dislikesMusic;
-	}
-
-
-
-	public void setDislikesMusic(ArrayList<String> dislikesMusic) {
-		this.dislikesMusic = dislikesMusic;
-	}
-
-
-
-	public ArrayList<String> getDislikesMovies() {
-		return dislikesMovies;
-	}
-
-
-
-	public void setDislikesMovies(ArrayList<String> dislikesMovies) {
-		this.dislikesMovies = dislikesMovies;
-	}
-
-
-
-	public ArrayList<String> getDislikesAnimals() {
-		return dislikesAnimals;
-	}
-
-
-
-	public void setDislikesAnimals(ArrayList<String> dislikesAnimals) {
-		this.dislikesAnimals = dislikesAnimals;
-	}
-
-
-
-	public ArrayList<String> getDislikesCountries() {
-		return dislikesCountries;
-	}
-
-
-
-	public void setDislikesCountries(ArrayList<String> dislikesCountries) {
-		this.dislikesCountries = dislikesCountries;
-	}
-
-
-
-	public ArrayList<String> getDislikesHobbies() {
-		return dislikesHobbies;
-	}
-
-
-
-	public void setDislikesHobbies(ArrayList<String> dislikesHobbies) {
-		this.dislikesHobbies = dislikesHobbies;
-	}
 
 
 
@@ -314,6 +250,76 @@ public class Personality {
 
 	public ArrayList<String> getLikes() {
 		return likes;
+	}
+	
+	public ArrayList<String> getDislikesSports() {
+		return dislikesSports;
+	}
+
+
+
+	public void setDislikesSports(ArrayList<String> dislikesSports) {
+		this.dislikesSports = dislikesSports;
+	}
+
+
+
+	public ArrayList<String> getDislikesMusic() {
+		return dislikesMusic;
+	}
+
+
+
+	public void setDislikesMusic(ArrayList<String> dislikesMusic) {
+		this.dislikesMusic = dislikesMusic;
+	}
+
+
+
+	public ArrayList<String> getDislikesMovies() {
+		return dislikesMovies;
+	}
+
+
+
+	public void setDislikesMovies(ArrayList<String> dislikesMovies) {
+		this.dislikesMovies = dislikesMovies;
+	}
+
+
+
+	public ArrayList<String> getDislikesAnimals() {
+		return dislikesAnimals;
+	}
+
+
+
+	public void setDislikesAnimals(ArrayList<String> dislikesAnimals) {
+		this.dislikesAnimals = dislikesAnimals;
+	}
+
+
+
+	public ArrayList<String> getDislikesCountries() {
+		return dislikesCountries;
+	}
+
+
+
+	public void setDislikesCountries(ArrayList<String> dislikesCountries) {
+		this.dislikesCountries = dislikesCountries;
+	}
+
+
+
+	public ArrayList<String> getDislikesHobbies() {
+		return dislikesHobbies;
+	}
+
+
+
+	public void setDislikesHobbies(ArrayList<String> dislikesHobbies) {
+		this.dislikesHobbies = dislikesHobbies;
 	}
 
 	public void setLikes() {
