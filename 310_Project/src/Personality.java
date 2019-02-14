@@ -39,25 +39,8 @@ public class Personality {
 		 
 		
 		setGender(gender);
-		setLikes(setArray(txtToArray("sports.txt"), random(3)+2));
-		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
-		setOccupation(setString(txtToArray("occupations.txt")));
-		setLikesSports(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesMusic(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesMovies(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesAnimals(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesCountries(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesHobbies(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesFoods(setArray(txtToArray("sports.txt"), random(3)+2));
-		setDislikesFoods(setArray(txtToArray("sports.txt"), 3));
-		setDislikesSports(setArray(txtToArray("sports.txt"), 3));
-		setDislikesMusic(setArray(txtToArray("sports.txt"), 3));
-		setDislikesMovies(setArray(txtToArray("sports.txt"), 3));
-		setDislikesAnimals(setArray(txtToArray("sports.txt"), 3));
-		setDislikesCountries(setArray(txtToArray("sports.txt"), 3));
-		setDislikesHobbies(setArray(txtToArray("sports.txt"), 3));
-		
-		/*
+		setDislikes();
+		setLikes();
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
 		setLikesSports(setArray(txtToArray("sports.txt"), random(3)+2));
@@ -74,7 +57,7 @@ public class Personality {
 		setDislikesAnimals(setArray(txtToArray("animals.txt"), 3));
 		setDislikesCountries(setArray(txtToArray("countries.txt"), 3));
 		setDislikesHobbies(setArray(txtToArray("hobbies.txt"), 3));
-		*/
+		
 		if(gender.equals("man"))
 			setName("David Beckham");
 		else
@@ -333,7 +316,16 @@ public class Personality {
 		return likes;
 	}
 
-	public void setLikes(ArrayList<String> likes) {
+	public void setLikes() {
+		ArrayList<String> likes = new ArrayList<String>();
+		likes.addAll(this.getLikesAnimals());
+		likes.addAll(this.getLikesCountries());
+		likes.addAll(this.getLikesFoods());
+		likes.addAll(this.getLikesHobbies());
+		likes.addAll(this.getLikesMovies());
+		likes.addAll(this.getLikesMusic());
+		likes.addAll(this.getLikesSports());
+		
 		this.likes = likes;
 	}
 
@@ -341,7 +333,16 @@ public class Personality {
 		return dislikes;
 	}
 
-	public void setDislikes(ArrayList<String> dislikes) {
+	public void setDislikes() {
+		ArrayList<String> dislikes = new ArrayList<String>();
+		dislikes.addAll(this.getDislikesAnimals());
+		dislikes.addAll(this.getDislikesCountries());
+		dislikes.addAll(this.getDislikesFoods());
+		dislikes.addAll(this.getDislikesHobbies());
+		dislikes.addAll(this.getDislikesMovies());
+		dislikes.addAll(this.getDislikesMusic());
+		dislikes.addAll(this.getDislikesSports());
+		
 		this.dislikes = dislikes;
 	}
 

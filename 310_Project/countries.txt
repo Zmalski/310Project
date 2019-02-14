@@ -1,0 +1,8 @@
+canada
+usa
+switzerland
+mexico
+chile
+argentina
+peru
+venezuela
