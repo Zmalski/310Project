@@ -50,20 +50,20 @@ public class Personality {
 		setLikes();
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
-		setLikesSports(setArray(txtToArray("sports.txt"), random(3)+2));
-		setLikesMusic(setArray(txtToArray("music.txt"), random(3)+2));
-		setLikesMovies(setArray(txtToArray("movies.txt"), random(3)+2));
-		setLikesAnimals(setArray(txtToArray("animals.txt"), random(3)+2));
-		setLikesCountries(setArray(txtToArray("countries.txt"), random(3)+2));
-		setLikesHobbies(setArray(txtToArray("hobbies.txt"), random(3)+2));
-		setLikesFoods(setArray(txtToArray("food.txt"), random(3)+2));
-		setDislikesFoods(setArray(txtToArray("food.txt"), 3));
-		setDislikesSports(setArray(txtToArray("sports.txt"), 3));
-		setDislikesMusic(setArray(txtToArray("music.txt"), 3));
-		setDislikesMovies(setArray(txtToArray("movies.txt"), 3));
-		setDislikesAnimals(setArray(txtToArray("animals.txt"), 3));
-		setDislikesCountries(setArray(txtToArray("countries.txt"), 3));
-		setDislikesHobbies(setArray(txtToArray("hobbies.txt"), 3));
+		setLikesSports(setArray(txtToArray("sports.txt"), random(5)+3));
+		setLikesMusic(setArray(txtToArray("music.txt"), random(5)+3));
+		setLikesMovies(setArray(txtToArray("movies.txt"), random(5)+3));
+		setLikesAnimals(setArray(txtToArray("animals.txt"), random(5)+3));
+		setLikesCountries(setArray(txtToArray("countries.txt"), random(5)+3));
+		setLikesHobbies(setArray(txtToArray("hobbies.txt"), random(5)+3));
+		setLikesFoods(setArray(txtToArray("food.txt"), random(5)+3));
+		setDislikesFoods(setArray(txtToArray("food.txt"),this.getLikesFoods(), 3));
+		setDislikesSports(setArray(txtToArray("sports.txt"),this.getLikesSports(), 3));
+		setDislikesMusic(setArray(txtToArray("music.txt"),this.getLikesMusic(), 3));
+		setDislikesMovies(setArray(txtToArray("movies.txt"),this.getLikesMovies(), 3));
+		setDislikesAnimals(setArray(txtToArray("animals.txt"),this.getLikesAnimals(), 3));
+		setDislikesCountries(setArray(txtToArray("countries.txt"),this.getLikesCountries(), 3));
+		setDislikesHobbies(setArray(txtToArray("hobbies.txt"),this.getLikesHobbies(), 3));
 		
 		if(gender.equals("man"))
 			setName("David Beckham");
@@ -126,6 +126,21 @@ public class Personality {
 		}
 		return result;
 	}
+	
+	private ArrayList<String> setArray(ArrayList<String> array,  ArrayList<String> array2, int choose) {
+
+		ArrayList<String> result = new ArrayList<>();
+
+		for (int i = 0; i < choose; i++) {
+			int random = random(array.size() - 1);
+			if (i > 0 && contains(result, array2, array.get(random))) {
+				i--;
+			} else {
+				result.add(array.get(random));
+			}
+		}
+		return result;
+	}
 
 	/**
 	 * 
@@ -139,6 +154,18 @@ public class Personality {
 				return true;
 			}
 		}
+		return false;
+	}
+	
+	public static boolean contains(ArrayList<String> arr, ArrayList<String> arr1, String item) {
+		for (String n : arr) {
+			if (n.equals(item)) 
+				return true;
+			}
+		for (String n : arr1) {
+			if (n.equals(item)) 
+				return true;
+			}
 		return false;
 	}
 
