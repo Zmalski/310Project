@@ -76,6 +76,8 @@ public class determineOutput {
 		 */
 		 ArrayList<String> list1 = personality.getLikes();
 		 ArrayList<String> list2 = personality.getDislikes();
+		 String likesReturn="";
+		 String likesReturn2="";
 		 
 		 hash_map.put("greeting", "Hi! How are you?");
 		 hash_map.put("bye", "Goodbye");
@@ -84,8 +86,14 @@ public class determineOutput {
 		 hash_map.put("qdoing", "I am doing well.");
 		 hash_map.put("qage", "I am 22 year old.");
 		 hash_map.put("Invalid", "Ask more question");
-		 hash_map.put("qlikes", returnArrayList(list1));
-		 hash_map.put("qdislikes", returnArrayList(list2));
+		 if(data.equals("qlikes")) {
+			 likesReturn = returnArrayList(list1);
+			 hash_map.put("qlikes", likesReturn);
+		 }
+		 if(data.equals("qdislikes")) {
+			 likesReturn2 = returnArrayList(list1);
+			 hash_map.put("qlikes", likesReturn2);
+		 }
 		 hash_map.put("qjob", personality.getOccupation());
 		 hash_map.put("qzosign", personality.getZodiacSign());
 		 /*
