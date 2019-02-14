@@ -28,7 +28,6 @@ bird
 shark
 barracuda
 bat
-bearded dragon
 dragon
 pegasus
 beaver
@@ -87,7 +86,6 @@ jaguar
 kangaroo
 kiwi
 koala
-komodo dragon
 lemming
 leopard
 liger
