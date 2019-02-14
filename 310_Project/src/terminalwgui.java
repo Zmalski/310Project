@@ -1,4 +1,21 @@
-
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 public class terminalwgui {
 
 	public static void main(String[] args) {
@@ -7,6 +24,7 @@ public class terminalwgui {
 		handleInput inputHandler = new handleInput();
 		// Used to determine output based on processed input
 		determineOutput outputDeterminer = new determineOutput();
+		Personality p = new Personality("man");
 		// Initialize booleans for determining steps in conversation
 		boolean genderchosen = false;
 		boolean turn = false;
@@ -21,15 +39,16 @@ public class terminalwgui {
 			// Loop is called after desired gender and name are chosen, and begins to loop through response/questions
 			if (genderchosen == true && nameknown == true) {
 				String data = inputHandler.parseInput(userinput);
-				String botoutput = outputDeterminer.respond(data);
+				String botoutput = outputDeterminer.respond(data, p);
 				System.out.print(chatbotname + ": " + botoutput);
 			}
 			// Determine desired gender from user
 			if (genderchosen == false) {
 				String gender = inputHandler.checkGender(userinput);
-				chatbotname = outputDeterminer.gender(gender);
+				chatbotname = outputDeterminer.gender(gender,p);
 				//This is just an example of setting the chatbotname, will be changed
 				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
+				p = new Personality(gender);
 				genderchosen = true;
 			}
 			// Determining users name, occupation from user
@@ -58,4 +77,5 @@ public class terminalwgui {
 			turn = !turn;
 		}
 	}
+
 }
