@@ -122,12 +122,14 @@ public class determineOutput {
 	   }
 		 return listString;
 	 }
-		/**
+}
+	 /**
 		 * Returns the response to gender
 		 * 
 		 * @param gender
 		 * @return username contained within the input string
 		 */
+	 /*
 		public String gender(String sex, Personality personality) {
 			String ChatbotName="";
 			if(sex.equals("woman")) {
@@ -141,6 +143,7 @@ public class determineOutput {
 		}
 	}
 
+/*
 /*
 	 * I have created a method that parse the whole string, and if in the given
 	 * string by the user has the profession matches to our scope, the bot will

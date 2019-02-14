@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class testing {
 	/*
-	 * Pardeep & Swakhar
+	 * Pardeep Rathore
 	 * 
 	 */
 	/**
@@ -57,5 +57,16 @@ public class testing {
 		String expectedOutput = "waterboarding" + "\n" + "tennis" + "\n" + "curling" + "\n" + "skiing" + "\n";
 		
 		assertTrue(expectedOutput.equals(returnAsStrings));		
+	}
+	/**
+	 * The following method tests the getName method of handleInput Class.  
+	 */
+	
+	@Test
+	public void hadleInputGetName() {
+		String name = "Adrian";
+		handleInput j = new handleInput(name);
+		String outputname = j.getName();
+		assertTrue(name.equals(outputname));
 	}
 }
