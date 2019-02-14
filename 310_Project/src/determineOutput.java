@@ -5,7 +5,6 @@ public class determineOutput {
 	/*
 	 * Pardeep
 	 */
-	handleInput hInput = new handleInput();
 	String professionResponse = "";
 	/**
 	 * Returns the response to occupations
