@@ -60,7 +60,6 @@ public class determineOutput {
 		}
 		return professionResponse;
 	}
-	
 	/**
 	 * Returns the response for given String
 	 * 
@@ -96,9 +95,6 @@ public class determineOutput {
 		 }
 		 hash_map.put("qjob", personality.getOccupation());
 		 hash_map.put("qzosign", personality.getZodiacSign());
-		 /*
-		  * New keywords added. 
-		  */
 		 hash_map.put("howru", "Keyword howru received.");
 		 hash_map.put("student", "student received.");
 		 hash_map.put("qsports", "qsports received.");
@@ -126,7 +122,6 @@ public class determineOutput {
 	   }
 		 return listString;
 	 }
-
 		/**
 		 * Returns the response to gender
 		 * 
