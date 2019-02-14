@@ -6,7 +6,7 @@ public class terminal {
 		handleInput inputHandler = new handleInput();
 		// Used to determine output based on processed input
 		determineOutput outputDeterminer = new determineOutput();
-		Personality p = new Personality("man");
+		Personality p = new Personality();
 		// Initialize booleans for determining steps in conversation
 		boolean genderchosen = false;
 		boolean turn = false;
@@ -27,10 +27,10 @@ public class terminal {
 			// Determine desired gender from user
 			if (genderchosen == false) {
 				String gender = inputHandler.checkGender(userinput);
-				chatbotname = outputDeterminer.gender(gender,p);
 				//This is just an example of setting the chatbotname, will be changed
 				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
 				p = new Personality(gender);
+				chatbotname = p.getName();
 				genderchosen = true;
 			}
 			// Determining users name, occupation from user
