@@ -39,9 +39,9 @@ public class terminal {
 			// Determine desired gender from user
 			if (genderchosen == false) {
 				String gender = inputHandler.checkGender(userinput);
-				//This is just an example of setting the chatbotname, will be changed
 				p = new Personality(gender);
 				chatbotname = p.getName();
+				System.out.println(chatbotname);
 				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
 				genderchosen = true;
 			}
