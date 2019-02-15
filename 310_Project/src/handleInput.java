@@ -341,7 +341,53 @@ public class handleInput {
 		else
 			return words[0];
 	}
-	
+
+	/**
+	 * Does a decent job at guessing what a user responded to a question
+	 * 
+	 * @param input and data
+	 * @return response data
+	 */
+	public String parseQResponse(String input, String data) {
+		String outputArray[] = {};
+		Scanner scanner = null;
+		String inputArray[] = input.split(" ");
+		if (data.equals("movies")) {
+			// Scan through movies file, check for matches
+			try {
+				scanner = new Scanner(new File("movies.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			while (scanner.hasNextLine()) {
+				String s = scanner.nextLine();
+				for(int i = 0; i < inputArray.length; i++)
+					
+					if (input.matches("(.*)" + inputArray[i] + "(.*)")) {
+					data = "swear";
+					break;
+					}
+			}
+		}
+		if (data.equals("countries")) {
+
+		}
+		if (data.equals("howru")) {
+
+		}
+		if (data.equals("music")) {
+
+		}
+		if (data.equals("likes")) {
+
+		}
+		if (data.equals("dislikes")) {
+
+		}
+		if (data.equals("sports")) {
+
+		}
+	}
 	// method for parsing input and returning relvenat values / semantics / meaning
 	// of the string.
 }
