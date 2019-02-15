@@ -6,3 +6,7 @@ chile
 argentina
 peru
 venezuela
+china
+japan
+korea
+india
