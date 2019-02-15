@@ -28,10 +28,10 @@ public class terminalwgui {
 			// Determine desired gender from user
 			if (genderchosen == false) {
 				String gender = inputHandler.checkGender(userinput);
-				chatbotname = outputDeterminer.gender(gender,p);
 				//This is just an example of setting the chatbotname, will be changed
 				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
 				p = new Personality(gender);
+				chatbotname = p.getName();
 				genderchosen = true;
 			}
 			// Determining users name, occupation from user

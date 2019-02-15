@@ -11,23 +11,23 @@ public class Personality {
 	private String zodiacSign;
 	private String occupation;
 	
-	private ArrayList<String> likes;
-	private ArrayList<String> dislikes;
+	private ArrayList<String> likes = new ArrayList<String>();
+	private ArrayList<String> dislikes = new ArrayList<String>();
 
-	private ArrayList<String> likesSports;
-	private ArrayList<String> likesMusic;
-	private ArrayList<String> likesMovies;
-	private ArrayList<String> likesAnimals;
-	private ArrayList<String> likesCountries;
-	private ArrayList<String> likesHobbies;
-	private ArrayList<String> likesFoods;
-	private ArrayList<String> dislikesSports;
-	private ArrayList<String> dislikesMusic;
-	private ArrayList<String> dislikesMovies;
-	private ArrayList<String> dislikesAnimals;
-	private ArrayList<String> dislikesCountries;
-	private ArrayList<String> dislikesHobbies;
-	private ArrayList<String> dislikesFoods;
+	private ArrayList<String> likesSports = new ArrayList<String>();
+	private ArrayList<String> likesMusic = new ArrayList<String>();
+	private ArrayList<String> likesMovies = new ArrayList<String>();
+	private ArrayList<String> likesAnimals = new ArrayList<String>();
+	private ArrayList<String> likesCountries = new ArrayList<String>();
+	private ArrayList<String> likesHobbies = new ArrayList<String>();
+	private ArrayList<String> likesFoods = new ArrayList<String>();
+	private ArrayList<String> dislikesSports = new ArrayList<String>();
+	private ArrayList<String> dislikesMusic = new ArrayList<String>();
+	private ArrayList<String> dislikesMovies = new ArrayList<String>();
+	private ArrayList<String> dislikesAnimals = new ArrayList<String>();
+	private ArrayList<String> dislikesCountries = new ArrayList<String>();
+	private ArrayList<String> dislikesHobbies = new ArrayList<String>();
+	private ArrayList<String> dislikesFoods = new ArrayList<String>();
 	
 	/**
 	 * 
