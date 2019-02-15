@@ -64,6 +64,7 @@ public class Personality {
 		setDislikesCountries(setArray(txtToArray("countries.txt"),this.getLikesCountries(), 3));
 		setDislikesHobbies(setArray(txtToArray("hobbies.txt"),this.getLikesHobbies(), 3));
 		
+		
 		if(gender.equals("man"))
 			setName(setString(txtToArray("names_boys.txt")));
 		else
