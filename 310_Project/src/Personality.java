@@ -119,7 +119,7 @@ public class Personality {
 		for (int i = 0; i < choose; i++) {
 			int random = random(array.size() - 1);
 			if (i > 0 && result.contains(array.get(random))) {
-				i--;
+				System.out.print("");
 			} else {
 				result.add(array.get(random));
 			}
