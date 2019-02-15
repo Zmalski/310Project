@@ -117,7 +117,7 @@ public class Personality {
 
 		for (int i = 0; i < choose; i++) {
 			int random = random(array.size() - 1);
-			if (i > 0 && contains(result, array.get(random))) {
+			if (i > 0 && result.contains(array.get(random))) {
 				i--;
 			} else {
 				result.add(array.get(random));
@@ -126,16 +126,20 @@ public class Personality {
 		return result;
 	}
 	
-	private ArrayList<String> setArray(ArrayList<String> array,  ArrayList<String> array2, int choose) {
+private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<String> comparatorArray, int choose) {
 
+		
 		ArrayList<String> result = new ArrayList<>();
 
-		for (int i = 0; i < choose; i++) {
-			int random = random(array.size() - 1);
-			if (i > 0 && contains(result, array2, array.get(random))) {
-				i--;
+		for (int i = 0; i < choose;) {
+			int random = random(textFileArray.size() - 1);
+			if (i > 0 && (result.contains(textFileArray.get(random)))) {
+			System.out.print("");
+			} else if (comparatorArray.contains(textFileArray.get(random))) {
+				System.out.print("");
 			} else {
-				result.add(array.get(random));
+				result.add(textFileArray.get(random));
+				i++;
 			}
 		}
 		return result;
