@@ -25,9 +25,11 @@ public class terminal {
 				data = inputHandler.parseInput(userinput);
 				// Pseudocode for a theoretical method of asking a question, parsing response, and determining what to follow up with.
 //				if(data.equals("nothing"){
-//					botoutput = outputDeterminer.ask();
-//					data = inputHandler.parseQResponse(userinput);
-//					botoutput = outputDeterminer.afterAsk();
+//					question[] = questionAsker.ask();
+//					sysout question[0] This is the question
+//					qdata = question[1] This is a keyword that identifies what the question is
+//					data = inputHandler.parseQResponse(userinput, qdata);
+//					botoutput = questionAsker.afterAsk(data, question);
 //				}
 //				else {
 				botoutput = outputDeterminer.respond(data, p);
