@@ -59,6 +59,7 @@ public class determineOutput {
 		}
 		return professionResponse;
 	}
+	
 	/**
 	 * Returns the response for given String
 	 * 
@@ -80,48 +81,68 @@ public class determineOutput {
 		 String swearing = "";
 		 String greeting = "";
 		 String endDate = "";
-		 
+		 String insult = "";
+		 String howru = "";
+		 /**Greeting*/
 		 if(data.equals("greeting")) {
 			greeting = returnGreeting();
 			hash_map.put("gretting", greeting);
 		 }
-		 
+		 /**bye*/
 		 if(data.equals("bye")) {
 				endDate = returnEndDate();
 				hash_map.put("bye", endDate);
 			 }
-		 
-		 
-		 hash_map.put("bye", "Goodbye");
-		 hash_map.put("insult", "It is not appropriate.");
+		 /**insult*/
+		 if(data.equals("insult")) {
+				insult = returnInsult(data);
+				hash_map.put("insult", insult);
+			 }
+		 /**swearing*/
 		 if(data.equals("swearing")) {
-			 swearing = returnSwearing(); 
+			 swearing = returnSwearing(data); 
 			 hash_map.put("swearing", swearing);
 		 }
+		 /**qdoing*/
 		 if(data.equals("qdoing")) {
 			 qdoing = returnQdoing(); 
 			 hash_map.put("qdoing", qdoing);
 		 }
-		 hash_map.put("qdoing", "I am doing well.");
+		 /**age */
 		 hash_map.put("qage", "I am 22 year old.");
-		 hash_map.put("Invalid", "Ask more question");
+		 /**invalid*/
+		 hash_map.put("invalid", "Ask more question");
+		 /**qlikes */
 		 if(data.equals("qlikes")) {
 			 likesReturn = returnArrayList(list1);
 			 hash_map.put("qlikes", likesReturn);
 		 }
+		 /**qdislikes*/
 		 if(data.equals("qdislikes")) {
 			 dislikesReturn2 = returnArrayList(list2);
 			 hash_map.put("qlikes", dislikesReturn2);
 		 }
+		 /**qjob*/
 		 hash_map.put("qjob", personality.getOccupation());
+		 /**qzosign*/
 		 hash_map.put("qzosign", personality.getZodiacSign());
-		 hash_map.put("howru", "Keyword howru received.");
-		 hash_map.put("student", "student received.");
-		 hash_map.put("qsports", "qsports received.");
-		 hash_map.put("qmusic", "qmusic received.");
-		 hash_map.put("qanimals", "qanimals received.");
-		 hash_map.put("qcountries", "qcountries received.");
-		 hash_map.put("qmovies", "qmovies received.");
+		 /**howru*/
+		 if(data.equals("howru")) {
+			 howru = returnHouwru(); 
+			 hash_map.put("qdoing", howru);
+		 }
+		 /**student */
+		 hash_map.put("student", "I am a Computer Science student at UBC-Okanagan.");
+		 /**qsports*/
+		 hash_map.put("qsports", personality.getLikesSports());
+		 /**qmusic*/
+		 hash_map.put("qmusic", personality.getLikesMusic());
+		 /**qanimals*/
+		 hash_map.put("qanimals", personality.getLikesAnimals());
+		 /**qcountries*/
+		 hash_map.put("qcountries", personality.getLikesCountries());
+		 /**qmovies*/
+		 hash_map.put("qmovies", personality.getLikesMovies());
 		 
 		if(hash_map.containsKey(data)) {
 			responseBack = (String) hash_map.get(data);
@@ -129,10 +150,23 @@ public class determineOutput {
 			 responseBack = "I am sorry, I don't get it what do you mean?";
 		 return responseBack;
 	 }
-	 /**
+	 	 
+	 	 /** 
+		 * Covert ArrayList to String
+		 * @return string with respect to getDisLikes() and getLikes() methods
+		 */
+	 public String returnArrayList(ArrayList<String> list) {
+	   String listString = "";
+	   for(String s : list) {
+		   listString += s + "\n";
+	   }
+		 return listString;
+	 }
+	 	 
+	  	 /**
 		 * Returns a random response for "greeting" keyword
 		 * 
-		 * "swearing" keyword is for when a user swear or unappropriated words.
+		 * "greeting" keyword is for when a user say hi or greet.
 		 * @return string 
 		 */
 	 private String returnGreeting() {
@@ -145,40 +179,26 @@ public class determineOutput {
 		int random = (int)(Math.random()*3);
 
 		greeting = greetingList.get(random);
-		
-			return greeting;
-		}
-	/**
-		 * Returns the response for given String
-		 * 
-		 * Covert ArrayList to String
-		 * @return string with respect to getDisLikes() and getLikes() methods
-		 */
-	 public String returnArrayList(ArrayList<String> list) {
-	   String listString = "";
-	   for(String s : list) {
-		   listString += s + "\n";
-	   }
-		 return listString;
-	 }
-	 /**
+		return greeting;
+		}	 
+	 	 /**
 		 * Returns a random responses for "bye" keyword
 		 * 
 		 * @return string 
 		 */
 	 public String returnEndDate() {
-		 String bye = "";
-		 ArrayList<String> byeList = new ArrayList<String>();
-			byeList.add("Goodbye!!!");
-			byeList.add("Bye!!!");
-			byeList.add("See you later!!!");
+		String bye = "";
+		ArrayList<String> byeList = new ArrayList<String>();
+		byeList.add("Goodbye!!!");
+		byeList.add("Bye!!!");
+		byeList.add("See you later!!!");
 		
 		int random = (int)(Math.random()*3);	
 		
 		bye = byeList.get(random);
 		return bye;
 	 }
-	 /**
+	 	 /**
 		 * Returns a random response for "qdoing" keyword
 		 * 
 		 * "qdoing" keyword is for when a user will ask what are you doing?
@@ -194,38 +214,71 @@ public class determineOutput {
 		int j = (int)(Math.random()*3);
 	
 		qdoing = qdoingList.get(j);
-		
-		 return qdoing; 
+		return qdoing; 
 	 }
-	 /**
+	 	 /**
 		 * Returns a random response for "swearing" keyword
 		 * 
-		 * "swearing" keyword is for when a user swear or unappropriated words.
+		 * "swearing" keyword is received when a user swear or unappropriated words.
 		 * @return string 
 		 */
-	 public String returnSwearing() {
+	 public String returnSwearing(String data) {
 		 String swearing = "";
 		 ArrayList<String> swearingList = new ArrayList<String>();
-		 swearingList.add("I did not know that you are swearing.");
-		 swearingList.add("It is not appropriate.");
-		 swearingList.add("Did you just actually swear?");
+		 swearingList.add(data + " ? " +"I do not know that you are swearing.");
+		 swearingList.add(data + " ? " + "It is not appropriate.");
+		 swearingList.add("Did you just actually say " + data + " ?");
 		 
 		 int random = (int)(Math.random()*3);
 			
-		swearing = swearingList.get(random);
-			
+		 swearing = swearingList.get(random);
 		 return swearing;
 	 }
-
+	 	 /**
+		 * Returns a random response for "insult" keyword
+		 * 
+		 * "insult" keyword is received when user use unappropriated words.
+		 * @return string 
+		 */
+	 public String returnInsult(String data) {
+		 String insult = "";
+		 ArrayList<String> insultList = new ArrayList<String>();
+		 insultList.add("Don't call me " + data);
+		 insultList.add("Why are you calling me "+ data);
+		 insultList.add("You cannot call me " + data);
+		 
+		 int random = (int)(Math.random()*3);
+		 
+		 insult = insultList.get(random);
+		 return insult;
+	 }
+	 	/**
+		 * Returns a random response for "howru" keyword
+		 * 
+		 * "howru" keyword is received when user ask how are you?.
+		 * @return string 
+		 */
+	 public String returnHouwru(){
+		 String howru = "";
+		 ArrayList<String> howruList = new ArrayList<String>();
+		 howruList.add("I am doing well.");
+		 howruList.add("I am great.");
+		 howruList.add("I am fine.");
+		 
+		 int random = (int)(Math.random()*3);
+		 
+		 howruList.get(random);
+		 return howru;
+	 }
 }
 
-	 /**
+	/*
+		/**
 		 * Returns the response to gender
 		 * 
 		 * @param gender
 		 * @return username contained within the input string
-		 */
-	 /*
+	 
 		public String gender(String sex, Personality personality) {
 			String ChatbotName="";
 			if(sex.equals("woman")) {
