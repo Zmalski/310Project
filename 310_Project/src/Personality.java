@@ -10,6 +10,7 @@ public class Personality {
 	private String name;
 	private String zodiacSign;
 	private String occupation;
+
 	
 	private ArrayList<String> likes = new ArrayList<String>();
 	private ArrayList<String> dislikes = new ArrayList<String>();
