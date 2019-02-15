@@ -76,11 +76,32 @@ public class determineOutput {
 		 ArrayList<String> list2 = personality.getDislikes();
 		 String likesReturn="";
 		 String dislikesReturn2="";
+		 String qdoing="";
+		 String swearing = "";
+		 String greeting = "";
+		 String endDate = "";
 		 
-		 hash_map.put("greeting", "Hi! How are you?");
+		 if(data.equals("greeting")) {
+			greeting = returnGreeting();
+			hash_map.put("gretting", greeting);
+		 }
+		 
+		 if(data.equals("bye")) {
+				endDate = returnEndDate();
+				hash_map.put("bye", endDate);
+			 }
+		 
+		 
 		 hash_map.put("bye", "Goodbye");
 		 hash_map.put("insult", "It is not appropriate.");
-		 hash_map.put("swearing", "You cannot swear.");
+		 if(data.equals("swearing")) {
+			 swearing = returnSwearing(); 
+			 hash_map.put("swearing", swearing);
+		 }
+		 if(data.equals("qdoing")) {
+			 qdoing = returnQdoing(); 
+			 hash_map.put("qdoing", qdoing);
+		 }
 		 hash_map.put("qdoing", "I am doing well.");
 		 hash_map.put("qage", "I am 22 year old.");
 		 hash_map.put("Invalid", "Ask more question");
@@ -89,7 +110,7 @@ public class determineOutput {
 			 hash_map.put("qlikes", likesReturn);
 		 }
 		 if(data.equals("qdislikes")) {
-			 dislikesReturn2 = returnArrayList(list1);
+			 dislikesReturn2 = returnArrayList(list2);
 			 hash_map.put("qlikes", dislikesReturn2);
 		 }
 		 hash_map.put("qjob", personality.getOccupation());
@@ -109,6 +130,25 @@ public class determineOutput {
 		 return responseBack;
 	 }
 	 /**
+		 * Returns a random response for "greeting" keyword
+		 * 
+		 * "swearing" keyword is for when a user swear or unappropriated words.
+		 * @return string 
+		 */
+	 private String returnGreeting() {
+		String greeting = "";
+		ArrayList<String> greetingList = new ArrayList<String>();
+		greetingList.add("Hey!!!");
+		greetingList.add("Hello!!!");
+		greetingList.add("Hi!!!");
+		
+		int random = (int)(Math.random()*3);
+
+		greeting = greetingList.get(random);
+		
+			return greeting;
+		}
+	/**
 		 * Returns the response for given String
 		 * 
 		 * Covert ArrayList to String
@@ -121,7 +161,64 @@ public class determineOutput {
 	   }
 		 return listString;
 	 }
+	 /**
+		 * Returns a random responses for "bye" keyword
+		 * 
+		 * @return string 
+		 */
+	 public String returnEndDate() {
+		 String bye = "";
+		 ArrayList<String> byeList = new ArrayList<String>();
+			byeList.add("Goodbye!!!");
+			byeList.add("Bye!!!");
+			byeList.add("See you later!!!");
+		
+		int random = (int)(Math.random()*3);	
+		
+		bye = byeList.get(random);
+		return bye;
+	 }
+	 /**
+		 * Returns a random response for "qdoing" keyword
+		 * 
+		 * "qdoing" keyword is for when a user will ask what are you doing?
+		 * @return string 
+		 */
+	 public String returnQdoing() {
+		String qdoing = "";
+		ArrayList<String> qdoingList = new ArrayList<String>();
+		qdoingList.add("I am eating pasta.");
+		qdoingList.add("I am doing homework.");
+		qdoingList.add("I am basically talking to you.");
+		
+		int j = (int)(Math.random()*3);
+	
+		qdoing = qdoingList.get(j);
+		
+		 return qdoing; 
+	 }
+	 /**
+		 * Returns a random response for "swearing" keyword
+		 * 
+		 * "swearing" keyword is for when a user swear or unappropriated words.
+		 * @return string 
+		 */
+	 public String returnSwearing() {
+		 String swearing = "";
+		 ArrayList<String> swearingList = new ArrayList<String>();
+		 swearingList.add("I did not know that you are swearing.");
+		 swearingList.add("It is not appropriate.");
+		 swearingList.add("Did you just actually swear?");
+		 
+		 int random = (int)(Math.random()*3);
+			
+		swearing = swearingList.get(random);
+			
+		 return swearing;
+	 }
+
 }
+
 	 /**
 		 * Returns the response to gender
 		 * 
