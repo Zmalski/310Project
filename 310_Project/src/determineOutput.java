@@ -67,7 +67,7 @@ public class determineOutput {
 	 * @return response contained within the input string
 	 */	
 	 public String respond(String data, Personality personality) {
-		 HashMap<String, Object> hash_map = new HashMap<String, Object>();	 
+		 HashMap<String, String> hash_map = new HashMap<String, String>();	 
 		 String responseBack = "";
 		 /*
 		 * Create two ArrayLists to store the arraylists received from two different methods.
@@ -75,6 +75,16 @@ public class determineOutput {
 		 */
 		 ArrayList<String> list1 = personality.getLikes();
 		 ArrayList<String> list2 = personality.getDislikes();
+		 ArrayList<String> likeSportsList = personality.getLikesSports();
+		 ArrayList<String> likeMusic = personality.getLikesMusic();
+		 ArrayList<String> likeAnimal = personality.getLikesAnimals();
+		 ArrayList<String> likeCountries = personality.getLikesCountries();
+		 ArrayList<String> likeMovies = personality.getLikesMovies();
+		 String likeMoviesString = "";
+		 String likeCountriesString = "";
+		 String likeAnimalString = "";
+		 String likeMusicString = "";
+		 String likeSports = "";
 		 String likesReturn="";
 		 String dislikesReturn2="";
 		 String qdoing="";
@@ -86,7 +96,7 @@ public class determineOutput {
 		 /**Greeting*/
 		 if(data.equals("greeting")) {
 			greeting = returnGreeting();
-			hash_map.put("gretting", greeting);
+			hash_map.put("greeting", greeting);
 		 }
 		 /**bye*/
 		 if(data.equals("bye")) {
@@ -120,7 +130,7 @@ public class determineOutput {
 		 /**qdislikes*/
 		 if(data.equals("qdislikes")) {
 			 dislikesReturn2 = returnArrayList(list2);
-			 hash_map.put("qlikes", dislikesReturn2);
+			 hash_map.put("qdislikes", dislikesReturn2);
 		 }
 		 /**qjob*/
 		 hash_map.put("qjob", personality.getOccupation());
@@ -129,28 +139,44 @@ public class determineOutput {
 		 /**howru*/
 		 if(data.equals("howru")) {
 			 howru = returnHouwru(); 
-			 hash_map.put("qdoing", howru);
+			 hash_map.put("howru", howru);
 		 }
 		 /**student */
 		 hash_map.put("student", "I am a Computer Science student at UBC-Okanagan.");
 		 /**qsports*/
-		 hash_map.put("qsports", personality.getLikesSports());
+		 if(data.equals("qsports")) {
+			 likeSports = returnArrayList(likeSportsList);
+			 hash_map.put("qsports", likeSports);
+		 }
 		 /**qmusic*/
-		 hash_map.put("qmusic", personality.getLikesMusic());
+		 if(data.equals("qmusic")) {
+			 likeMusicString = returnArrayList(likeMusic);
+			 hash_map.put("qmusic", likeMusicString);
+			 
+		 }
 		 /**qanimals*/
-		 hash_map.put("qanimals", personality.getLikesAnimals());
+		 if(data.equals("qanimals")) {
+			 likeAnimalString = returnArrayList(likeAnimal);
+			 hash_map.put("qanimals", likeAnimalString);
+		 }
 		 /**qcountries*/
-		 hash_map.put("qcountries", personality.getLikesCountries());
+		 if(data.equals("qcountries")) {
+			 likeCountriesString = returnArrayList(likeCountries);
+			 hash_map.put("qcountries", likeCountriesString );
+		 }
 		 /**qmovies*/
-		 hash_map.put("qmovies", personality.getLikesMovies());
+		 if(data.equals("qmovies")) {
+			 likeMoviesString = returnArrayList(likeMovies);
+			 hash_map.put("qmovies", likeMoviesString);
+		 }
+		 
 		 
 		if(hash_map.containsKey(data)) {
 			responseBack = (String) hash_map.get(data);
 		 }else
 			 responseBack = "I am sorry, I don't get it what do you mean?";
 		 return responseBack;
-	 }
-	 	 
+	 } 
 	 	 /** 
 		 * Covert ArrayList to String
 		 * @return string with respect to getDisLikes() and getLikes() methods
@@ -162,14 +188,13 @@ public class determineOutput {
 	   }
 		 return listString;
 	 }
-	 	 
 	  	 /**
 		 * Returns a random response for "greeting" keyword
 		 * 
 		 * "greeting" keyword is for when a user say hi or greet.
 		 * @return string 
 		 */
-	 private String returnGreeting() {
+	 public String returnGreeting() {
 		String greeting = "";
 		ArrayList<String> greetingList = new ArrayList<String>();
 		greetingList.add("Hey!!!");
@@ -267,7 +292,8 @@ public class determineOutput {
 		 
 		 int random = (int)(Math.random()*3);
 		 
-		 howruList.get(random);
+		 howru = howruList.get(random);
+		 
 		 return howru;
 	 }
 }

@@ -430,7 +430,9 @@ public class handleInput {
 				}
 			}
 		}
+
 		return outputArray;
+
 	}
 	// method for parsing input and returning relvenat values / semantics / meaning
 	// of the string.
