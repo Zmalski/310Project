@@ -43,6 +43,10 @@ public class questionAsker {
 			outputArray[1] = "music";
 			music = true;
 		}
+		else {
+			outputArray[0] = "Sorry, I'm out of things to talk about!";
+			outputArray[1] = "invalid";
+		}
 		return outputArray;
 	}
 	
