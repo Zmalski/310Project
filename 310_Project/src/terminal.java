@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class terminal {
 
 	public static void main(String[] args) {
@@ -16,6 +17,7 @@ public class terminal {
 		String chatbotname = "CHATBOTNAME";
 		String botoutput = "";
 		String data = "";
+		System.out.println(java.util.Arrays.toString(inputHandler.parseQResponse("I love jumanji, a bugs life, the mummy and harriet's world, up and finding dory and antz.", "movies", p)));
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {
 			System.out.print("\n" + username + ":");
