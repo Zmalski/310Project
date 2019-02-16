@@ -1,5 +1,5 @@
 /*Swakhar
- * 
+ * This version shows null somewhere
  */
 public class askQuestion {
 //	boolean movies = false;
@@ -43,7 +43,7 @@ public class askQuestion {
 		}
 		a[0] = questions[j];
 		}
-		return a;
+		return a; //a[0] = question, a[1] = keyword
 	}
 
 }
