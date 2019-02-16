@@ -345,13 +345,14 @@ public class handleInput {
 	/**
 	 * Does a decent job at guessing what a user responded to a question
 	 * 
-	 * @param input and data
+	 * @param input and data and personality
 	 * @return response data
 	 */
-	public String parseQResponse(String input, String data) {
-		String outputArray[] = {};
+	public String[] parseQResponse(String input, String data, Personality personality) {
+		String outputArray[] = new String[50];
 		Scanner scanner = null;
-		String inputArray[] = input.split(" ");
+		input = processInput(input);
+		int count = 0;
 		if (data.equals("movies")) {
 			// Scan through movies file, check for matches
 			try {
@@ -361,22 +362,50 @@ public class handleInput {
 			}
 			while (scanner.hasNextLine()) {
 				String s = scanner.nextLine();
-				for(int i = 0; i < inputArray.length; i++)
-					
-					if (input.matches("(.*)" + inputArray[i] + "(.*)")) {
-					data = "swear";
+				System.out.println(s);
+				if (input.matches("(.*)" + s + "(.*)")) {
+					outputArray[count] = s;
+					count++;
 					break;
-					}
+				}
 			}
 		}
 		if (data.equals("countries")) {
-
+			// Scan through countries file, check for matches
+			try {
+				scanner = new Scanner(new File("countries.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			while (scanner.hasNextLine()) {
+				String s = scanner.nextLine();
+				System.out.println(s);
+				if (input.matches("(.*)" + s + "(.*)")) {
+					outputArray[count] = s;
+					count++;
+					break;
+				}
+			}
 		}
 		if (data.equals("howru")) {
 
 		}
 		if (data.equals("music")) {
-
+			// Scan through music file, check for matches
+			try {
+				scanner = new Scanner(new File("music.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			while (scanner.hasNextLine()) {
+				String s = scanner.nextLine();
+				System.out.println(s);
+				if (input.matches("(.*)" + s + "(.*)")) {
+					outputArray[count] = s;
+					count++;
+					break;
+				}
+			}
 		}
 		if (data.equals("likes")) {
 
@@ -385,8 +414,23 @@ public class handleInput {
 
 		}
 		if (data.equals("sports")) {
-
+			// Scan through sports file, check for matches
+			try {
+				scanner = new Scanner(new File("sports.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			while (scanner.hasNextLine()) {
+				String s = scanner.nextLine();
+				System.out.println(s);
+				if (input.matches("(.*)" + s + "(.*)")) {
+					outputArray[count] = s;
+					count++;
+					break;
+				}
+			}
 		}
+		return outputArray;
 	}
 	// method for parsing input and returning relvenat values / semantics / meaning
 	// of the string.
