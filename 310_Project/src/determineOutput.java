@@ -67,7 +67,7 @@ public class determineOutput {
 	 * @return response contained within the input string
 	 */	
 	 public String respond(String data, Personality personality) {
-		 HashMap<String, Object> hash_map = new HashMap<String, Object>();	 
+		 HashMap<String, String> hash_map = new HashMap<String, String>();	 
 		 String responseBack = "";
 		 /*
 		 * Create two ArrayLists to store the arraylists received from two different methods.
@@ -86,7 +86,7 @@ public class determineOutput {
 		 /**Greeting*/
 		 if(data.equals("greeting")) {
 			greeting = returnGreeting();
-			hash_map.put("gretting", greeting);
+			hash_map.put("greeting", greeting);
 		 }
 		 /**bye*/
 		 if(data.equals("bye")) {
@@ -120,7 +120,7 @@ public class determineOutput {
 		 /**qdislikes*/
 		 if(data.equals("qdislikes")) {
 			 dislikesReturn2 = returnArrayList(list2);
-			 hash_map.put("qlikes", dislikesReturn2);
+			 hash_map.put("qdislikes", dislikesReturn2);
 		 }
 		 /**qjob*/
 		 hash_map.put("qjob", personality.getOccupation());
@@ -129,7 +129,7 @@ public class determineOutput {
 		 /**howru*/
 		 if(data.equals("howru")) {
 			 howru = returnHouwru(); 
-			 hash_map.put("qdoing", howru);
+			 hash_map.put("howru", howru);
 		 }
 		 /**student */
 		 hash_map.put("student", "I am a Computer Science student at UBC-Okanagan.");
@@ -149,8 +149,7 @@ public class determineOutput {
 		 }else
 			 responseBack = "I am sorry, I don't get it what do you mean?";
 		 return responseBack;
-	 }
-	 	 
+	 } 
 	 	 /** 
 		 * Covert ArrayList to String
 		 * @return string with respect to getDisLikes() and getLikes() methods
@@ -162,14 +161,13 @@ public class determineOutput {
 	   }
 		 return listString;
 	 }
-	 	 
 	  	 /**
 		 * Returns a random response for "greeting" keyword
 		 * 
 		 * "greeting" keyword is for when a user say hi or greet.
 		 * @return string 
 		 */
-	 private String returnGreeting() {
+	 public String returnGreeting() {
 		String greeting = "";
 		ArrayList<String> greetingList = new ArrayList<String>();
 		greetingList.add("Hey!!!");
@@ -267,7 +265,8 @@ public class determineOutput {
 		 
 		 int random = (int)(Math.random()*3);
 		 
-		 howruList.get(random);
+		 howru = howruList.get(random);
+		 
 		 return howru;
 	 }
 }
