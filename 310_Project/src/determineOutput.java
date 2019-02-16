@@ -75,6 +75,16 @@ public class determineOutput {
 		 */
 		 ArrayList<String> list1 = personality.getLikes();
 		 ArrayList<String> list2 = personality.getDislikes();
+		 ArrayList<String> likeSportsList = personality.getLikesSports();
+		 ArrayList<String> likeMusic = personality.getLikesMusic();
+		 ArrayList<String> likeAnimal = personality.getLikesAnimals();
+		 ArrayList<String> likeCountries = personality.getLikesCountries();
+		 ArrayList<String> likeMovies = personality.getLikesMovies();
+		 String likeMoviesString = "";
+		 String likeCountriesString = "";
+		 String likeAnimalString = "";
+		 String likeMusicString = "";
+		 String likeSports = "";
 		 String likesReturn="";
 		 String dislikesReturn2="";
 		 String qdoing="";
@@ -134,15 +144,32 @@ public class determineOutput {
 		 /**student */
 		 hash_map.put("student", "I am a Computer Science student at UBC-Okanagan.");
 		 /**qsports*/
-		 hash_map.put("qsports", personality.getLikesSports());
+		 if(data.equals("qsports")) {
+			 likeSports = returnArrayList(likeSportsList);
+			 hash_map.put("qsports", likeSports);
+		 }
 		 /**qmusic*/
-		 hash_map.put("qmusic", personality.getLikesMusic());
+		 if(data.equals("qmusic")) {
+			 likeMusicString = returnArrayList(likeMusic);
+			 hash_map.put("qmusic", likeMusicString);
+			 
+		 }
 		 /**qanimals*/
-		 hash_map.put("qanimals", personality.getLikesAnimals());
+		 if(data.equals("qanimals")) {
+			 likeAnimalString = returnArrayList(likeAnimal);
+			 hash_map.put("qanimals", likeAnimalString);
+		 }
 		 /**qcountries*/
-		 hash_map.put("qcountries", personality.getLikesCountries());
+		 if(data.equals("qcountries")) {
+			 likeCountriesString = returnArrayList(likeCountries);
+			 hash_map.put("qcountries", likeCountriesString );
+		 }
 		 /**qmovies*/
-		 hash_map.put("qmovies", personality.getLikesMovies());
+		 if(data.equals("qmovies")) {
+			 likeMoviesString = returnArrayList(likeMovies);
+			 hash_map.put("qmovies", likeMoviesString);
+		 }
+		 
 		 
 		if(hash_map.containsKey(data)) {
 			responseBack = (String) hash_map.get(data);
