@@ -89,6 +89,7 @@ public class questionAsker {
 
 	public String afterAsk(String input, String qdata, Personality personality) {
 		String output = "Sorry?";
+		/*
 		if(input.endsWith("?")) {
 			if(qdata.equals("music")) {
 				output = "Some music I like is: " + listToString(personality.getLikesMusic());
@@ -112,7 +113,7 @@ public class questionAsker {
 				output = "Some Things I dislike are: " + listToString(personality.getDislikes());
 			}
 		}
-
+*/
 		return output;
 	}
 

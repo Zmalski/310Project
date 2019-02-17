@@ -36,7 +36,10 @@ public class terminal {
 					qdata = question[1];
 					userinput = inputHandler.getUserInput();
 					qresponse = inputHandler.parseQResponse(userinput, qdata, p);
-					botoutput = questionAsker.afterAsk(userinput, question[1], p);
+					if (userinput.endsWith("?"))
+						botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
+					else
+						botoutput = questionAsker.afterAsk(userinput, question[1], p);
 				} else {
 					botoutput = outputDeterminer.respond(data, p);
 
