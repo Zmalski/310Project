@@ -304,6 +304,11 @@ public class handleInput {
 				matchfound = true;
 				break;
 			}
+			if(!input.endsWith("?")) {
+				data = "nothing";
+				matchfound = true;
+				break;
+			}
 			if (matchfound == false) {
 				matchfound = true;
 				data = "invalid";

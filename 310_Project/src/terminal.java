@@ -1,4 +1,5 @@
 import java.util.Arrays;
+
 public class terminal {
 
 	public static void main(String[] args) {
@@ -8,6 +9,7 @@ public class terminal {
 		// Used to determine output based on processed input
 		determineOutput outputDeterminer = new determineOutput();
 		Personality p = new Personality();
+		questionAsker questionAsker = new questionAsker();
 		// Initialize booleans for determining steps in conversation
 		boolean genderchosen = false;
 		boolean turn = false;
@@ -17,26 +19,31 @@ public class terminal {
 		String chatbotname = "CHATBOTNAME";
 		String botoutput = "";
 		String data = "";
-		System.out.println(java.util.Arrays.toString(inputHandler.parseQResponse("I love jumanji, a bugs life, the mummy and harriet's world, up and finding dory and antz.", "movies", p)));
+		String qdata = "";
+		String qresponse[] = new String[50];
+		String question[] = new String[1];
+		System.out.println(java.util.Arrays.toString(inputHandler.parseQResponse(
+				"I love jumanji, a bugs life, the mummy and harriet's world, up and finding dory and antz.", "movies",
+				p)));
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {
 			System.out.print("\n" + username + ":");
 			String userinput = inputHandler.getUserInput();
-			// Loop is called after desired gender and name are chosen, and begins to loop through response/questions
+			// Loop is called after desired gender and name are chosen, and begins to loop
+			// through response/questions
 			if (genderchosen == true && nameknown == true) {
 				data = inputHandler.parseInput(userinput);
-				// Pseudocode for a theoretical method of asking a question, parsing response, and determining what to follow up with.
-//				if(data.equals("nothing"){
-//					question[] = questionAsker.ask();
-//					sysout question[0] This is the question
-//					qdata = question[1] This is a keyword that identifies what the question is
-//					data = inputHandler.parseQResponse(userinput, qdata);
-//					botoutput = questionAsker.afterAsk(data, question);
-//				}
-//				else {
-				botoutput = outputDeterminer.respond(data, p);
+				if (data.equals("nothing")) {
+					question = questionAsker.ask();
+					System.out.println(chatbotname + ": " + question[0]);
+					qdata = question[1];
+					qresponse = inputHandler.parseQResponse(userinput, qdata, p);
+					botoutput = questionAsker.afterAsk(userinput, question[1], p);
+				} else {
+					botoutput = outputDeterminer.respond(data, p);
+
+				}
 				System.out.print(chatbotname + ": " + botoutput);
-//				}
 			}
 			// Determine desired gender from user
 			if (genderchosen == false) {
@@ -64,10 +71,11 @@ public class terminal {
 							chatbotname + ": That's a lovely name, " + username + ". So, what do you do for a living?");
 				System.out.println(username + ":");
 				userinput = inputHandler.getUserInput();
-				System.out.println(chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(userinput)));
+				System.out.println(
+						chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(userinput)));
 
 			}
-			//End conversation if user types "bye"
+			// End conversation if user types "bye"
 			if (inputHandler.parseInput(userinput).equals("bye"))
 				break;
 			turn = !turn;
