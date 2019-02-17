@@ -95,7 +95,9 @@ public class questionAsker {
 		if (qdata.equals("dislikes"))
 			output = "I don't like " + input[0] + " either!";
 		if(!input[0].equals(""))
-			output = "I like " + input[0] + " too!\n";
+			output = "I like " + input[0] + " too!";
+		if(!input[0].equals("") && !input[1].equals(""))
+			output = output  + "\n";
 		if(!input[1].equals(""))
 			output = output + "I don't like " + input[1] + ", sorry.";
 		if (qdata.equals("music")) {

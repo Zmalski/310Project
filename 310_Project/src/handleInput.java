@@ -370,7 +370,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[0] = output[0] + ", " + s;
+					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesMovies());
@@ -378,7 +378,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[1] = output[1] + ", " + s;
+					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
@@ -388,7 +388,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[0] = output[0] + ", " + s;
+					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesCountries());
@@ -396,7 +396,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[1] = output[1] + ", " + s;
+					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
@@ -409,7 +409,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[0] = output[0] + ", " + s;
+					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesMusic());
@@ -417,7 +417,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[1] = output[1] + ", " + s;
+					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
@@ -427,7 +427,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[0] = output[0] + ", " + s;
+					output[0] = output[0] + s + ", ";
 				}
 			}
 		}
@@ -437,7 +437,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[0] = output[0] + ", " + s;
+					output[0] = output[0] + s + ", ";
 				}
 			}
 		}
@@ -447,7 +447,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[0] = output[0] + ", " + s;
+					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesSports());
@@ -455,7 +455,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output[1] = output[1] + ", " + s;
+					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
