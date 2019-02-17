@@ -330,5 +330,3 @@ public class determineOutput {
 		 return howru;
 	 }
 }
-
-}
