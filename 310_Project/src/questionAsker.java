@@ -31,15 +31,33 @@ public class questionAsker {
 			outputArray[1] = "movies";
 			movies = true;
 		} else if (music == false) {
-			outputArray[0] = "What music do you like?";
+			//Picks one of three questions, randomly.
+			if (random == 1)
+				outputArray[0] = "What music do you like?";
+			else if (random == 2)
+				outputArray[0] = "What genres of music do you listen to?";
+			else
+				outputArray[0] = "Heard any good music lately?";
 			outputArray[1] = "music";
 			music = true;
 		} else if (countries == false) {
-			outputArray[0] = "What music do you like?";
+			//Picks one of three questions, randomly.
+			if (random == 1)
+				outputArray[0] = "What countries do you like?";
+			else if (random == 2)
+				outputArray[0] = "What countries would you like to travel to?";
+			else
+				outputArray[0] = "Where would you travel if you could travel anywhere?";
 			outputArray[1] = "music";
 			music = true;
 		} else if (likes == false) {
-			outputArray[0] = "What music do you like?";
+			//Picks one of three questions, randomly.
+			if (random == 1)
+				outputArray[0] = "What are your hobbies?";
+			else if (random == 2)
+				outputArray[0] = "What do you like to do in your spare time?";
+			else
+				outputArray[0] = "What are some of your favourite movies?";
 			outputArray[1] = "music";
 			music = true;
 		} else if (dislikes == false) {
