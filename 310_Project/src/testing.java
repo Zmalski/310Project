@@ -1,4 +1,3 @@
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -42,13 +41,18 @@ public class testing {
 	@Test
 	public void testrespond() {
 		String input = "What is your age?";
+		String input2 = "hi";
 		//The string will be trimmed by parseinput() method and will return a keyword(qage)
 		String parseIn = handleInput.parseInput(input);
+		String parseIn2 = handleInput.parseInput(input2);
 		//The keyword(qage) will call the response and produce the output
 		String output = determineOutput.respond(parseIn, p);
+		String output2 = determineOutput.respond(parseIn2, p);
 
+		String s1 = "Hey!!!",s2 = "Hello!!!", s3 = "Hi!!!";
 		String expectedOutput = "I am 22 year old.";
 		assertTrue(expectedOutput.equals(output));
+		assertTrue(s1.equals(output2)||s2.equals(output2)||s3.equals(output2));
 	}
 	@Test
 	public void ArrayListToString() {
