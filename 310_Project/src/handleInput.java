@@ -459,6 +459,10 @@ public class handleInput {
 				}
 			}
 		}
+		if (output[0].endsWith(", "))
+			output[0] = output[0].substring(0, output[0].length() - 2);
+		if (output[1].endsWith(", "))
+			output[1] = output[1].substring(0, output[1].length() - 2);
 
 		return output;
 
