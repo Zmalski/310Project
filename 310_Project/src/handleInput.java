@@ -435,6 +435,26 @@ public class handleInput {
 		return outputArray;
 
 	}
+	
+	public String keywordConvert(String keyword) {
+		if(keyword == "music")
+			return "qmusic";
+		if(keyword == "movies")
+			return "qmovies";
+		if(keyword == "countries")
+			return "qcountries";
+		if(keyword == "sports")
+			return "qsports";
+		if(keyword == "howru")
+			return keyword;
+		if(keyword == "likes")
+			return "qlikes";
+		if(keyword == "dislikes")
+			return "qdislikes";
+		if(keyword == "food")
+			return "qfood";
+		else
+			return "invalid";	}
 	// method for parsing input and returning relvenat values / semantics / meaning
 	// of the string.
 }
