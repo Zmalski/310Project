@@ -83,6 +83,7 @@ public class determineOutput {
 		 ArrayList<String> list1 = personality.getLikes();
 		 //System.out.println(list1);
 		 ArrayList<String> list2 = personality.getDislikes();
+		 System.out.println(list2);
 		 ArrayList<String> likeSportsList = personality.getLikesSports();
 		 ArrayList<String> likeMusic = personality.getLikesMusic();
 		 ArrayList<String> likeAnimal = personality.getLikesAnimals();
@@ -331,43 +332,3 @@ public class determineOutput {
 	 }
 }
 
-	/*
-		/**
-		 * Returns the response to gender
-		 * 
-		 * @param gender
-		 * @return username contained within the input string
-	 
-		public String gender(String sex, Personality personality) {
-			String ChatbotName="";
-			if(sex.equals("woman")) {
-				 personality = new Personality("woman");
-				 ChatbotName = personality.getName();
-			}
-			else if(sex.equals("man"))
-				personality = new Personality("man");
-				ChatbotName = personality.getName();
-			return ChatbotName;
-		}
-	}
-
-/*
-/*
-	 * I have created a method that parse the whole string, and if in the given
-	 * string by the user has the profession matches to our scope, the bot will
-	 * response accordingly. 
-	 * 
-	 * public static int response(String profession) { 
-	 * 		String Str = new String(profession); 
-	 * 		if(Str.matches("(.*)developer(.*)")) {
-	 *  	return 1; 
-	 *  	}
-	 *  	if(Str.matches("(.*)musician(.*)")) { 
-	 *  	return 2;
-	 * 		}
-	 * 		if(Str.matches("(.*)player(.*)")) { 
-	 * 		return 3; }
-	 * 		else 
-	 * 		return -1; 
-	 * }
-	 */
