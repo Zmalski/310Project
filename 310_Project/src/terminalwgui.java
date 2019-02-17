@@ -115,6 +115,8 @@ public class terminalwgui extends Application{
 			turn = !turn;
 		    }
 		 });
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 }
 

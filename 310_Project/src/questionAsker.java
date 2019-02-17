@@ -57,15 +57,27 @@ public class questionAsker {
 			else if (random == 2)
 				outputArray[0] = "What do you like to do in your spare time?";
 			else
-				outputArray[0] = "What are some of your favourite movies?";
+				outputArray[0] = "What are some things you like?";
 			outputArray[1] = "music";
 			music = true;
 		} else if (dislikes == false) {
-			outputArray[0] = "What music do you like?";
+			//Picks one of three questions, randomly.
+			if (random == 1)
+				outputArray[0] = "What are your hobbies?";
+			else if (random == 2)
+				outputArray[0] = "What do you like to do in your spare time?";
+			else
+				outputArray[0] = "What are some of your favourite movies?";
 			outputArray[1] = "music";
 			music = true;
 		} else if (sports == false) {
-			outputArray[0] = "What music do you like?";
+			//Picks one of three questions, randomly.
+			if (random == 1)
+				outputArray[0] = "What are your hobbies?";
+			else if (random == 2)
+				outputArray[0] = "What do you like to do in your spare time?";
+			else
+				outputArray[0] = "What are some of your favourite movies?";
 			outputArray[1] = "music";
 			music = true;
 		} else {
