@@ -36,11 +36,11 @@ public class terminal {
 					qdata = question[1];
 					userinput = inputHandler.getUserInput();
 					qresponse = inputHandler.parseQResponse(userinput, qdata, p);
-					System.out.println(qresponse);
-					if (userinput.endsWith("?"))
+					if (userinput.endsWith("?")) {
 						botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
-					else
-						botoutput = questionAsker.afterAsk(qresponse, qdata);
+						System.out.println(chatbotname + botoutput);
+					}
+					botoutput = questionAsker.afterAsk(qresponse, qdata);
 				} else {
 					botoutput = outputDeterminer.respond(data, p);
 
@@ -52,7 +52,6 @@ public class terminal {
 				String gender = inputHandler.checkGender(userinput);
 				p = new Personality(gender);
 				chatbotname = p.getName();
-				System.out.println(chatbotname);
 				System.out.println("You are now on a date with a " + gender + " named " + chatbotname + ".");
 				genderchosen = true;
 			}
