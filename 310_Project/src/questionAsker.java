@@ -18,7 +18,7 @@ public class questionAsker {
 	 * @return Array containing question and question keyword
 	 */
 	public String[] ask() {
-		String outputArray[] = new String[1];
+		String outputArray[] = new String[2];
 		int random = (int) (Math.random() * 2 + 1);
 		if (movies == false) {
 			// Picks one of three questions, randomly.

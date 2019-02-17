@@ -21,7 +21,7 @@ public class terminal {
 		String data = "";
 		String qdata = "";
 		String qresponse[] = new String[50];
-		String question[] = new String[1];
+		String question[] = new String[2];
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {
 			System.out.print("\n" + username + ":");
@@ -34,6 +34,7 @@ public class terminal {
 					question = questionAsker.ask();
 					System.out.println(chatbotname + ": " + question[0]);
 					qdata = question[1];
+					userinput = inputHandler.getUserInput();
 					qresponse = inputHandler.parseQResponse(userinput, qdata, p);
 					botoutput = questionAsker.afterAsk(userinput, question[1], p);
 				} else {

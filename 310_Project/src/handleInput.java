@@ -367,7 +367,6 @@ public class handleInput {
 			}
 			while (scanner.hasNextLine()) {
 				String s = scanner.nextLine();
-				System.out.println(s);
 				if (input.matches("(.*)" + s + "(.*)")) {
 					outputArray[count] = s;
 					count++;
@@ -384,7 +383,6 @@ public class handleInput {
 			}
 			while (scanner.hasNextLine()) {
 				String s = scanner.nextLine();
-				System.out.println(s);
 				if (input.matches("(.*)" + s + "(.*)")) {
 					outputArray[count] = s;
 					count++;
@@ -404,7 +402,6 @@ public class handleInput {
 			}
 			while (scanner.hasNextLine()) {
 				String s = scanner.nextLine();
-				System.out.println(s);
 				if (input.matches("(.*)" + s + "(.*)")) {
 					outputArray[count] = s;
 					count++;
@@ -427,7 +424,6 @@ public class handleInput {
 			}
 			while (scanner.hasNextLine()) {
 				String s = scanner.nextLine();
-				System.out.println(s);
 				if (input.matches("(.*)" + s + "(.*)")) {
 					outputArray[count] = s;
 					count++;
