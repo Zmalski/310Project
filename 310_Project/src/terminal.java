@@ -20,7 +20,7 @@ public class terminal {
 		String botoutput = "";
 		String data = "";
 		String qdata = "";
-		String qresponse[] = new String[50];
+		String qresponse = "";
 		String question[] = new String[2];
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {

@@ -117,17 +117,6 @@ public class questionAsker {
 		return output;
 	}
 
-	/**
-	 * Covert ArrayList to String
-	 * 
-	 * @return string with respect to getDisLikes() and getLikes() methods
-	 */
-	public String listToString(ArrayList<String> list) {
-		String listString = "";
-		for (String s : list) {
-			listString += s + "\n";
-		}
-		return listString;
-	}
+
 
 }
