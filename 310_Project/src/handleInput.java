@@ -352,10 +352,12 @@ public class handleInput {
 	 * Determines what a user responded to a question and returns any matches to the bots likes/dislikes
 	 * 
 	 * @param input and data and personality
-	 * @return string of matches seperated by comma
+	 * @return string of matches seperated by comma, first array index is likes, second is dislikes
 	 */
-	public String parseQResponse(String input, String data, Personality personality) {
-		String output = "";
+	public String[] parseQResponse(String input, String data, Personality personality) {
+		String[] output = new String[2];
+		output[0] = "";
+		output[1] = "";
 		Scanner scanner = null;
 		input = processInput(input);
 		String arrayString = "";
@@ -368,17 +370,33 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output = output + ", " + s;
+					output[0] = output[0] + ", " + s;
 				}
 			}
-		}
-		if (data.equals("countries")) {
-			arrayString = listToString(personality.getLikesMovies());
+			arrayString = listToString(personality.getDislikesMovies());
 			scanner = new Scanner(arrayString);
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output = output + ", " + s;
+					output[1] = output[1] + ", " + s;
+				}
+			}
+		}
+		if (data.equals("countries")) {
+			arrayString = listToString(personality.getLikesCountries());
+			scanner = new Scanner(arrayString);
+			while(scanner.hasNextLine()) {
+				s = scanner.nextLine();
+				if(input.matches("(.*)" + s + "(.*)")) {
+					output[0] = output[0] + ", " + s;
+				}
+			}
+			arrayString = listToString(personality.getDislikesCountries());
+			scanner = new Scanner(arrayString);
+			while(scanner.hasNextLine()) {
+				s = scanner.nextLine();
+				if(input.matches("(.*)" + s + "(.*)")) {
+					output[1] = output[1] + ", " + s;
 				}
 			}
 		}
@@ -391,7 +409,15 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output = output + ", " + s;
+					output[0] = output[0] + ", " + s;
+				}
+			}
+			arrayString = listToString(personality.getDislikesMusic());
+			scanner = new Scanner(arrayString);
+			while(scanner.hasNextLine()) {
+				s = scanner.nextLine();
+				if(input.matches("(.*)" + s + "(.*)")) {
+					output[1] = output[1] + ", " + s;
 				}
 			}
 		}
@@ -401,7 +427,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output = output + ", " + s;
+					output[0] = output[0] + ", " + s;
 				}
 			}
 		}
@@ -411,7 +437,7 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output = output + ", " + s;
+					output[0] = output[0] + ", " + s;
 				}
 			}
 		}
@@ -421,7 +447,15 @@ public class handleInput {
 			while(scanner.hasNextLine()) {
 				s = scanner.nextLine();
 				if(input.matches("(.*)" + s + "(.*)")) {
-					output = output + ", " + s;
+					output[0] = output[0] + ", " + s;
+				}
+			}
+			arrayString = listToString(personality.getDislikesSports());
+			scanner = new Scanner(arrayString);
+			while(scanner.hasNextLine()) {
+				s = scanner.nextLine();
+				if(input.matches("(.*)" + s + "(.*)")) {
+					output[1] = output[1] + ", " + s;
 				}
 			}
 		}

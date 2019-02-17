@@ -87,36 +87,48 @@ public class questionAsker {
 		return outputArray;
 	}
 
-	public String afterAsk(String input, String qdata, Personality personality) {
-		String output = "Sorry?";
-		/*
-		if(input.endsWith("?")) {
-			if(qdata.equals("music")) {
-				output = "Some music I like is: " + listToString(personality.getLikesMusic());
-			}
-			if(qdata.equals("movies")) {
-				output = "Some movies I like are: " + listToString(personality.getLikesMovies());
-			}
-			if(qdata.equals("sports")) {
-				output = "Some sports I like are: " + listToString(personality.getLikesSports());
-			}
-			if(qdata.equals("countries")) {
-				output = "Some countries I like are: " + listToString(personality.getLikesCountries());
-			}
-			if(qdata.equals("howru")) {
-				output = "I'm good, thanks for asking!";
-			}
-			if(qdata.equals("likes")) {
-				output = "Some things I like are: " + listToString(personality.getLikes());
-			}
-			if(qdata.equals("dislikes")) {
-				output = "Some Things I dislike are: " + listToString(personality.getDislikes());
-			}
+	public String afterAsk(String input[], String qdata) {
+		String output = "";
+		boolean empty = false;
+		if (input[0].equals("") && input[1].equals(""))
+			empty = true;
+		if (qdata.equals("dislikes"))
+			output = "I don't like " + input[0] + " either!";
+		if(!input[0].equals(""))
+			output = "I like " + input[0] + " too!\n";
+		if(!input[1].equals(""))
+			output = output + "I don't like " + input[1] + ", sorry.";
+		if (qdata.equals("music")) {
+			if (empty)
+				output = "Oh! I haven't heard of those music genres.";
 		}
-*/
+		if (qdata.equals("movies")) {
+			if (empty)
+				output = "Oh! I haven't heard of those movies.";
+		}
+		if (qdata.equals("sports")) {
+			if (empty)
+				output = "Oh! I haven't heard of those sports.";
+		}
+		if (qdata.equals("countries")) {
+			if (empty)
+				output = "Oh! I haven't heard of those countries.";
+		}
+		if (qdata.equals("howru")) {
+			if (input[0].equals("no"))
+				output = "I'm sorry to hear that.";
+			else
+				output = "That's good to hear! :)";
+			if(empty)
+				output = "Sorry?";
+		}
+		if (qdata.equals("likes") || qdata.equals("dislikes")) {
+			if (empty)
+				output = "Oh! I haven't heard of those things before.";
+		}
+
 		return output;
+
 	}
-
-
 
 }

@@ -20,7 +20,7 @@ public class terminal {
 		String botoutput = "";
 		String data = "";
 		String qdata = "";
-		String qresponse = "";
+		String qresponse[] = new String[2];
 		String question[] = new String[2];
 		System.out.println("You are on a blind date. Would you like to date a man or a woman?");
 		while (true) {
@@ -36,10 +36,11 @@ public class terminal {
 					qdata = question[1];
 					userinput = inputHandler.getUserInput();
 					qresponse = inputHandler.parseQResponse(userinput, qdata, p);
+					System.out.println(qresponse);
 					if (userinput.endsWith("?"))
 						botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
 					else
-						botoutput = questionAsker.afterAsk(userinput, question[1], p);
+						botoutput = questionAsker.afterAsk(qresponse, qdata);
 				} else {
 					botoutput = outputDeterminer.respond(data, p);
 
