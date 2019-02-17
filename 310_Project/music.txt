@@ -1,0 +1,29 @@
+blues
+hip hop
+classical
+electronic
+dance
+rap
+rock
+jazz
+pop
+country
+folk
+r&b
+heavy metal
+screamo
+reggae
+punk
+alternative
+soul
+funk
+disco
+techno
+instrumental
+house
+dubstep
+indie
+gospel
+latin
+ballad
+grunge

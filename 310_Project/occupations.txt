@@ -20,4 +20,6 @@ military
 manager
 banker
 philosopher
-comedian
+professor
+student
+ta
