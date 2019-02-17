@@ -224,4 +224,111 @@ public class determineOutput {
 		 }
 		 return name;
 	 }
+ 	 /**
+		 * Returns a random response for "greeting" keyword
+		 * 
+		 * "greeting" keyword is for when a user say hi or greet.
+		 * @return string 
+		 */
+	 public String returnGreeting() {
+		String greeting = "";
+		ArrayList<String> greetingList = new ArrayList<String>();
+		greetingList.add("Hey!!!");
+		greetingList.add("Hello!!!");
+		greetingList.add("Hi!!!");
+		
+		int random = (int)(Math.random()*3);
+		greeting = greetingList.get(random);
+		return greeting;
+		}	 
+	 	 /**
+		 * Returns a random responses for "bye" keyword
+		 * 
+		 * @return string 
+		 */
+	 public String returnEndDate() {
+		String bye = "";
+		ArrayList<String> byeList = new ArrayList<String>();
+		byeList.add("Goodbye!!!");
+		byeList.add("Bye!!!");
+		byeList.add("See you later!!!");
+		
+		int random = (int)(Math.random()*3);	
+		
+		bye = byeList.get(random);
+		return bye;
+	 }
+	 	 /**
+		 * Returns a random response for "qdoing" keyword
+		 * 
+		 * "qdoing" keyword is for when a user will ask what are you doing?
+		 * @return string 
+		 */
+	 public String returnQdoing() {
+		String qdoing = "";
+		ArrayList<String> qdoingList = new ArrayList<String>();
+		qdoingList.add("I am eating pasta.");
+		qdoingList.add("I am doing homework.");
+		qdoingList.add("I am basically talking to you.");
+		
+		int j = (int)(Math.random()*3);
+	
+		qdoing = qdoingList.get(j);
+		return qdoing; 
+	 }
+	 	 /**
+		 * Returns a random response for "swearing" keyword
+		 * 
+		 * "swearing" keyword is received when a user swear or unappropriated words.
+		 * @return string 
+		 */
+	 public String returnSwearing(String data) {
+		 String swearing = "";
+		 ArrayList<String> swearingList = new ArrayList<String>();
+		 swearingList.add(data + " ? " +"I do not know that you are swearing.");
+		 swearingList.add(data + " ? " + "It is not appropriate.");
+		 swearingList.add("Did you just actually say " + data + " ?");
+		 
+		 int random = (int)(Math.random()*3);
+			
+		 swearing = swearingList.get(random);
+		 return swearing;
+	 }
+	 	 /**
+		 * Returns a random response for "insult" keyword
+		 * 
+		 * "insult" keyword is received when user use unappropriated words.
+		 * @return string 
+		 */
+	 public String returnInsult(String data) {
+		 String insult = "";
+		 ArrayList<String> insultList = new ArrayList<String>();
+		 insultList.add("Don't call me " + data);
+		 insultList.add("Why are you calling me "+ data);
+		 insultList.add("You cannot call me " + data);
+		 
+		 int random = (int)(Math.random()*3);
+		 
+		 insult = insultList.get(random);
+		 return insult;
+	 }
+	 	/**
+		 * Returns a random response for "howru" keyword
+		 * 
+		 * "howru" keyword is received when user ask how are you?.
+		 * @return string 
+		 */
+	 public String returnHouwru(){
+		 ArrayList<String> howruList = new ArrayList<String>();
+		 howruList.add("I am doing well.");
+		 howruList.add("I am great.");
+		 howruList.add("I am fine.");
+
+		 int random = (int)(Math.random()*3);
+
+		 String howru = howruList.get(random);
+		 return howru;
+	 }
+}
+
 }
