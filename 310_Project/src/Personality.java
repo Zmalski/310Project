@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Personality {
-	// James Boonstra
+	/*
+	 * An instance of 'Personality' can be called from within the terminal class. 
+	 * This will create a randomized personality object that contains arrays
+	 * of likes and dislikes. As well as basic chat-bot information
+	 */
 
 	private String gender;
 	private String name;
@@ -31,22 +35,19 @@ public class Personality {
 	private ArrayList<String> dislikesFoods = new ArrayList<String>();
 	
 	/**
-	 * 
-	 * 
+	 * Personality Constructor that has male as the default gender setting
 	 */
 	public Personality() {
 		this("man");
 	}
 	
 	/**
-	 * 
+	 * Personality Constructor that randomly generates all variables for a new personality instance.
 	 * @param gender
 	 */
 	public Personality(String gender) {
 		
 		setGender(gender);
-		setDislikes();
-		setLikes();
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
 		setLikesSports(setArray(txtToArray("sports.txt"), random(5)+3));
@@ -69,15 +70,18 @@ public class Personality {
 			setName(setString(txtToArray("names_boys.txt")));
 		else
 			setName(setString(txtToArray("names_girls.txt")));
+		
+		setLikes();
+		setDislikes();
 	}
 
 
 
 
 	/**
-	 * 
+	 * Method that converts the contents of a given .txt file to an ArrayList<String>
 	 * @param filename
-	 * @return
+	 * @return ArrayList<String>
 	 */
 	public ArrayList<String> txtToArray(String filename) {
 		ArrayList<String> result = new ArrayList<>();
@@ -99,19 +103,20 @@ public class Personality {
 	}
 
 	/**
-	 * 
-	 * @param string
-	 * @return
+	 * Method that returns a random string selected from the given arraylist<String>
+	 * @param arraylist 
+	 * @return String
 	 */
-	public static String setString(ArrayList<String> string) {
-		int random = random(string.size()-1);
-		return string.get(random);
+	public static String setString(ArrayList<String> arraylist) {
+		int random = random(arraylist.size()-1);
+		return arraylist.get(random);
 	}
 
 	/**
-	 * 
-	 * @param array
-	 * @return An array of randomized strings from the given list
+	 * Method that return an array of randomized strings from the given list. Avoiding duplicates
+	 * @param array to choose from
+	 * @param choose number of strings in the returned arraylist
+	 * @return ArrayList<String>
 	 */
 	private ArrayList<String> setArray(ArrayList<String> array, int choose) {
 
@@ -128,6 +133,15 @@ public class Personality {
 		return result;
 	}
 	
+	/**
+	 * Method that return an array of randomized strings from the given list, also avoids adding
+	 * strings that are already in the comparatorArray. Use this method to ensure dislikes are
+	 * set randomly but are not the same as likes.
+	 * @param textFileArray array to choose from
+	 * @param comparatorArray array to check for duplicates in
+	 * @param choose number of strings in the returned arraylist
+	 * @return
+	 */
 private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<String> comparatorArray, int choose) {
 
 		
@@ -148,14 +162,13 @@ private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<St
 	}
 
 	/**
-	 * 
+	 * Checks an array to see if it contains an item
 	 * @param arr
 	 * @param item
-	 * @return
+	 * @return boolean
 	 */
-	
-	public static boolean contains(ArrayList<String> arr, String item) {
-		for (String n : arr) {
+	public static boolean contains(ArrayList<String> array, String item) {
+		for (String n : array) {
 			if (n.equals(item)) {
 				return true;
 			}
@@ -163,12 +176,19 @@ private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<St
 		return false;
 	}
 	
-	public static boolean contains(ArrayList<String> arr, ArrayList<String> arr1, String item) {
-		for (String n : arr) {
+	/**
+	 * Checks two arrays to see if it contains an item
+	 * @param array
+	 * @param comparatorArray
+	 * @param item
+	 * @return
+	 */
+	public static boolean contains(ArrayList<String> array, ArrayList<String> comparatorArray, String item) {
+		for (String n : array) {
 			if (n.equals(item)) 
 				return true;
 			}
-		for (String n : arr1) {
+		for (String n : comparatorArray) {
 			if (n.equals(item)) 
 				return true;
 			}
@@ -183,6 +203,46 @@ private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<St
 	 */
 	static int random(int upperBound) {
 		return (int) (Math.random() * upperBound + 1);
+	}
+	
+	/**
+	 * Combines all the arrays of likes into a single array
+	 */
+	public void setLikes() {
+		ArrayList<String> likes = new ArrayList<String>();
+		likes.addAll(this.getLikesAnimals());
+		likes.addAll(this.getLikesCountries());
+		likes.addAll(this.getLikesFoods());
+		likes.addAll(this.getLikesHobbies());
+		likes.addAll(this.getLikesMovies());
+		likes.addAll(this.getLikesMusic());
+		likes.addAll(this.getLikesSports());
+		
+		this.likes = likes;
+	}
+
+	public ArrayList<String> getDislikes() {
+		return dislikes;
+	}
+
+	/**
+	 * Combines all the arrays of dislikes into a single array
+	 */
+	public void setDislikes() {
+		ArrayList<String> dislikes = new ArrayList<String>();
+		dislikes.addAll(this.getDislikesAnimals());
+		dislikes.addAll(this.getDislikesCountries());
+		dislikes.addAll(this.getDislikesFoods());
+		dislikes.addAll(this.getDislikesHobbies());
+		dislikes.addAll(this.getDislikesMovies());
+		dislikes.addAll(this.getDislikesMusic());
+		dislikes.addAll(this.getDislikesSports());
+		
+		this.dislikes = dislikes;
+	}
+	
+	public ArrayList<String> getLikes() {
+		return likes;
 	}
 
 	public String getGender() {
@@ -280,109 +340,55 @@ private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<St
 	public void setDislikesFoods(ArrayList<String> dislikesFoods) {
 		this.dislikesFoods = dislikesFoods;
 	}
-
-	public ArrayList<String> getLikes() {
-		return likes;
-	}
 	
 	public ArrayList<String> getDislikesSports() {
 		return dislikesSports;
 	}
 
-
-
 	public void setDislikesSports(ArrayList<String> dislikesSports) {
 		this.dislikesSports = dislikesSports;
 	}
-
-
 
 	public ArrayList<String> getDislikesMusic() {
 		return dislikesMusic;
 	}
 
-
-
 	public void setDislikesMusic(ArrayList<String> dislikesMusic) {
 		this.dislikesMusic = dislikesMusic;
 	}
-
-
 
 	public ArrayList<String> getDislikesMovies() {
 		return dislikesMovies;
 	}
 
-
-
 	public void setDislikesMovies(ArrayList<String> dislikesMovies) {
 		this.dislikesMovies = dislikesMovies;
 	}
-
-
 
 	public ArrayList<String> getDislikesAnimals() {
 		return dislikesAnimals;
 	}
 
-
-
 	public void setDislikesAnimals(ArrayList<String> dislikesAnimals) {
 		this.dislikesAnimals = dislikesAnimals;
 	}
-
-
 
 	public ArrayList<String> getDislikesCountries() {
 		return dislikesCountries;
 	}
 
-
-
 	public void setDislikesCountries(ArrayList<String> dislikesCountries) {
 		this.dislikesCountries = dislikesCountries;
 	}
-
-
 
 	public ArrayList<String> getDislikesHobbies() {
 		return dislikesHobbies;
 	}
 
-
-
 	public void setDislikesHobbies(ArrayList<String> dislikesHobbies) {
 		this.dislikesHobbies = dislikesHobbies;
 	}
 
-	public void setLikes() {
-		ArrayList<String> likes = new ArrayList<String>();
-		likes.addAll(this.getLikesAnimals());
-		likes.addAll(this.getLikesCountries());
-		likes.addAll(this.getLikesFoods());
-		likes.addAll(this.getLikesHobbies());
-		likes.addAll(this.getLikesMovies());
-		likes.addAll(this.getLikesMusic());
-		likes.addAll(this.getLikesSports());
-		
-		this.likes = likes;
-	}
-
-	public ArrayList<String> getDislikes() {
-		return dislikes;
-	}
-
-	public void setDislikes() {
-		ArrayList<String> dislikes = new ArrayList<String>();
-		dislikes.addAll(this.getDislikesAnimals());
-		dislikes.addAll(this.getDislikesCountries());
-		dislikes.addAll(this.getDislikesFoods());
-		dislikes.addAll(this.getDislikesHobbies());
-		dislikes.addAll(this.getDislikesMovies());
-		dislikes.addAll(this.getDislikesMusic());
-		dislikes.addAll(this.getDislikesSports());
-		
-		this.dislikes = dislikes;
-	}
+	
 
 }

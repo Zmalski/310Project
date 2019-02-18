@@ -8,30 +8,36 @@ import java.util.Scanner;
 public class handleInput {
 	private String name;
 	// Initalizing patterns to check for what user is asking or saying
-	Pattern qdoing = Pattern.compile("(?i)((\\bwhat\\b)(.*)(\\bdoing\\b)(.*)(\\?))|((\\bwhat's\\b)(.*)(\\bup\\b)(.*)(\\?))");
-	Pattern qname = Pattern
-			.compile("(?i)((\\bwhat\\b)(.*)(\\bname\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bare you called\\b)(.*)(\\?))|((\\bwho\\b)(.*)(\\byou\\b)(.*)(\\?))");
-	Pattern qage = Pattern
-			.compile("(?i)((\\bhow\\b)(.*)(\\bold\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bage\\b)(.*)(\\?))|((\\bwhen\\b)(.*)(\\bborn\\b)(.*)(\\?))");
+	Pattern qdoing = Pattern
+			.compile("(?i)((.*)(\\bwhat\\b)(.*)(\\bdoing\\b)(.*)(\\?))|((.*)(\\bwhat's\\b)(.*)(\\bup\\b)(.*)(\\?))");
+	Pattern qname = Pattern.compile(
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bname\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bare you called\\b)(.*)(\\?))|((.*)(\\bwho\\b)(.*)(\\byou\\b)(.*)(\\?))");
+	Pattern qage = Pattern.compile(
+			"(?i)((.*)(\\bhow\\b)(.*)(\\bold\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bage\\b)(.*)(\\?))|((.*)(\\bwhen\\b)(.*)(\\bborn\\b)(.*)(\\?))");
 	Pattern qlikes = Pattern.compile(
-			"(?i)((\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bdo for fun\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\blikes\\b)(.*)(\\?))");
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bdo for fun\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blikes\\b)(.*)(\\?))");
 	Pattern qdislikes = Pattern.compile(
-			"(?i)((\\bwhat\\b)(.*)(\\bdislike(s)?\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bnot like\\b)(.*)(\\?))|((\\bdo you\\b)(.*)(\\bnot like\\b)(.*)(\\?))");
-	Pattern qjob = Pattern
-			.compile("(?i)((\\bwhat\\b)(.*)(\\bfor living\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bjob\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bwork\\b)(.*)(\\?))");
-	Pattern qzosign = Pattern.compile("(?i)(\\bwhat\\b)(.*)(\\bsign\\b)(.*)(\\?)");
-	Pattern howru = Pattern.compile("(?i)(\\bhow\\b)(.*)(\\byou\\b)(.*)(\\?)");
-	Pattern student = Pattern.compile("(?i)((\\bare\\b)(.*)(\\byou\\b)(.*)(\\bstudent\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bstudy\\b)(.*)(\\?))");
-	Pattern qsports = Pattern
-			.compile("(?i)((\\bdo\\b)(.*)(\\bsports\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bsports\\b)(.*)(\\?))|((\\bplay\\b)(.*)(\\bsports\\b)(.*)(\\?))");
-	Pattern qmusic = Pattern
-			.compile("(?i)((\\bdo\\b)(.*)(\\bmusic\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bmusic\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\blisten to\\b)(.*)(\\?))");
-	Pattern qmovies = Pattern
-			.compile("(?i)((\\bdo\\b)(.*)(\\bmovies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bmovies\\b)(.*)(\\?))|((\\bseen\\b)(.*)(\\bmovies\\b)(.*)(\\?))");
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bdislike(s)?\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bnot like\\b)(.*)(\\?))|((.*)(\\bdo you\\b)(.*)(\\bnot like\\b)(.*)(\\?))");
+	Pattern qjob = Pattern.compile(
+			"(?i)((\\bwhat\\b)(.*)(\\bfor living\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bjob\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bwork\\b)(.*)(\\?))");
+	Pattern qzosign = Pattern.compile("(?i)(.*)(\\bwhat\\b)(.*)(\\bsign\\b)(.*)(\\?)");
+	Pattern howru = Pattern.compile("(?i)(.*)(\\bhow\\b)(.*)(\\byou\\b)(.*)(\\?)");
+	Pattern student = Pattern.compile(
+			"(?i)((\\bare\\b)(.*)(\\byou\\b)(.*)(\\bstudent\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bstudy\\b)(.*)(\\?))");
+	Pattern qsports = Pattern.compile(
+			"(?i)((.*)(\\bdo\\b)(.*)(\\bsports\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bsports\\b)(.*)(\\?))|((.*)(\\bplay\\b)(.*)(\\bsports\\b)(.*)(\\?))");
+	Pattern qmusic = Pattern.compile(
+			"(?i)((.*)(\\bdo\\b)(.*)(\\bmusic\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bmusic\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blisten to\\b)(.*)(\\?))");
+	Pattern qmovies = Pattern.compile(
+			"(?i)((.*)(\\bdo\\b)(.*)(\\bmovies\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bmovies\\b)(.*)(\\?))|((.*)(\\bseen\\b)(.*)(\\bmovies\\b)(.*)(\\?))");
 	Pattern qanimals = Pattern.compile(
-			"(?i)((\\bwhat\\b)(.*)(\\banimals\\b)(.*)(\\?))|((\\bdo\\b)(.*)(\\bpets\\b|\\banimals\\b)(.*)(\\?))|((\\blike\\b)(.*)(\\bcats\\b|\\bdogs\\b)(.*)(\\?))");
-	Pattern qcountries = Pattern
-			.compile("(?i)((\\bwhere\\b)(.*)(\\btravel\\b)(.*)(\\?))|((\\bdo\\b)(.*)(\\btravel\\b)(.*)(\\?))|((\\bif\\b)(.*)(\\btravel\\b)(.*)(\\?))");
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\banimals\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\bpets\\b|\\banimals\\b)(.*)(\\?))|((.*)(\\blike\\b)(.*)(\\bcats\\b|\\bdogs\\b)(.*)(\\?))");
+	Pattern qcountries = Pattern.compile(
+			"(?i)((.*)(\\bwhere\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bif\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bcountries\\b)(.*)(\\?))");
+	Pattern qfood = Pattern.compile(
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bfood\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\beat\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\bfood\\b)(.*)(\\?))");
+	Pattern qhobbies = Pattern.compile(
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bspare time\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blike to do\\b)(.*)(\\?))");
 
 	public handleInput(String name) {
 		this.name = name;
@@ -143,66 +149,6 @@ public class handleInput {
 		Scanner scanner = null;// REGEX for what followed by doing followed by ? = (?i)(what)(.*)(doing)(.*)(?)
 		boolean end = false;
 		// Work in Progress
-		try {
-			scanner = new Scanner(new File("greetings.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "greeting";
-					end = true;
-					scanner2.close();
-					break;
-				}
-			}
-			if (end == true)
-				break;
-		}
-		// ^^ Work in progress
-		// Scan through insults file, check if input matches any words.
-		try {
-			scanner = new Scanner(new File("insults.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "insult";
-					end = true;
-					scanner2.close();
-					break;
-				}
-			}
-			if (end == true)
-				break;
-		}
-		// Scan through swears file, check if input matches any words.
-		try {
-			scanner = new Scanner(new File("swears.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "swear";
-					end = true;
-					scanner2.close();
-					break;
-				}
-			}
-			if (end == true)
-				break;
-		}
 		// Attention Pardeep - The following data values need to be handled in the
 		// respond method within the determineOutput Class.
 		boolean matchfound = false;
@@ -228,10 +174,10 @@ public class handleInput {
 				matchfound = true;
 				break;
 			} else
-				m = qlikes.matcher(input);
+				m = qhobbies.matcher(input);
 			// Asks what the bot's likes are
 			if (m.matches()) {
-				data = "qlikes";
+				data = "qhobbies";
 				matchfound = true;
 				break;
 			} else
@@ -304,8 +250,14 @@ public class handleInput {
 				data = "qcountries";
 				matchfound = true;
 				break;
+			} else
+				m = qfood.matcher(input);
+			if (m.matches()) {
+				data = "qfood";
+				matchfound = true;
+				break;
 			}
-			if(!input.endsWith("?")) {
+			if (!input.endsWith("?")) {
 				data = "nothing";
 				matchfound = true;
 				break;
@@ -314,6 +266,66 @@ public class handleInput {
 				matchfound = true;
 				data = "invalid";
 			}
+		}
+		if (!input.endsWith("?")) {
+			try {
+				scanner = new Scanner(new File("greetings.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			while (scanner.hasNextLine()) {
+				Scanner scanner2 = new Scanner(scanner.nextLine());
+				while (scanner2.hasNext()) {
+					String s = scanner2.next();
+					if (pinput.matches("(.*)\\b" + s + "\\b(.*)")) {
+						data = "greeting";
+						end = true;
+						scanner2.close();
+						break;
+					}
+				}
+				if (end == true)
+					break;
+			}
+		}
+		try {
+			scanner = new Scanner(new File("insults.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while (scanner.hasNextLine()) {
+			Scanner scanner2 = new Scanner(scanner.nextLine());
+			while (scanner2.hasNext()) {
+				String s = scanner2.next();
+				if (pinput.matches("(.*)\\b" + s + "\\b(.*)")) {
+					data = "insult";
+					end = true;
+					scanner2.close();
+					break;
+				}
+			}
+			if (end == true)
+				break;
+		}
+		// Scan through swears file, check if input matches any words.
+		try {
+			scanner = new Scanner(new File("swears.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while (scanner.hasNextLine()) {
+			Scanner scanner2 = new Scanner(scanner.nextLine());
+			while (scanner2.hasNext()) {
+				String s = scanner2.next();
+				if (pinput.matches("(.*)\\b" + s + "\\b(.*)")) {
+					data = "swear";
+					end = true;
+					scanner2.close();
+					break;
+				}
+			}
+			if (end == true)
+				break;
 		}
 
 		return data;
@@ -349,10 +361,12 @@ public class handleInput {
 	}
 
 	/**
-	 * Determines what a user responded to a question and returns any matches to the bots likes/dislikes
+	 * Determines what a user responded to a question and returns any matches to the
+	 * bots likes/dislikes
 	 * 
 	 * @param input and data and personality
-	 * @return string of matches seperated by comma, first array index is likes, second is dislikes
+	 * @return string of matches seperated by comma, first array index is likes,
+	 *         second is dislikes
 	 */
 	public String[] parseQResponse(String input, String data, Personality personality) {
 		String[] output = new String[2];
@@ -362,22 +376,20 @@ public class handleInput {
 		input = processInput(input);
 		String arrayString = "";
 		String s = "";
-		input = processInput(input);
-		int count = 0;
 		if (data.equals("movies")) {
 			arrayString = listToString(personality.getLikesMovies());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesMovies());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[1] = output[1] + s + ", ";
 				}
 			}
@@ -385,48 +397,52 @@ public class handleInput {
 		if (data.equals("countries")) {
 			arrayString = listToString(personality.getLikesCountries());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesCountries());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
 		if (data.equals("howru")) {
-			
+			if(input.matches("(?i)(.*)\\bnot good\\b(.*)|(.*)\\bnot great\\b(.*)|(.*)\\bad day\\b(.*)|(.*)\\bsucks\\b(.*)|(.*)\\bbad\\b(.*)"))
+				output[0] = "bad";
+			else
+				output[0] = "good";
+
 		}
 		if (data.equals("music")) {
 			arrayString = listToString(personality.getLikesMusic());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesMusic());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
-		if (data.equals("likes")) {
-			arrayString = listToString(personality.getLikes());
+		if (data.equals("hobbies")) {
+			arrayString = listToString(personality.getLikesHobbies());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[0] = output[0] + s + ", ";
 				}
 			}
@@ -434,9 +450,9 @@ public class handleInput {
 		if (data.equals("dislikes")) {
 			arrayString = listToString(personality.getDislikes());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[0] = output[0] + s + ", ";
 				}
 			}
@@ -444,21 +460,34 @@ public class handleInput {
 		if (data.equals("sports")) {
 			arrayString = listToString(personality.getLikesSports());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[0] = output[0] + s + ", ";
 				}
 			}
 			arrayString = listToString(personality.getDislikesSports());
 			scanner = new Scanner(arrayString);
-			while(scanner.hasNextLine()) {
+			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
-				if(input.matches("(.*)" + s + "(.*)")) {
+				if (input.matches("(.*)" + s + "(.*)")) {
 					output[1] = output[1] + s + ", ";
 				}
 			}
 		}
+		if(data.equals("rps")) {
+			if(input.matches("(.*)\\brock\\b(.*)"))
+				output[0] = "rock";
+			else if(input.matches("(.*)\\bpaper\\b(.*)"))
+				output[0] = "paper";
+			else if(input.matches("(.*)\\bscissors\\b(.*)"))
+				output[0] = "scissors";
+			else
+				output[0] = "nothing";
+		}
+			
+		if (input.equals("what"))
+			output[0] = "what";
 		if (output[0].endsWith(", "))
 			output[0] = output[0].substring(0, output[0].length() - 2);
 		if (output[1].endsWith(", "))
@@ -467,27 +496,28 @@ public class handleInput {
 		return output;
 
 	}
-	
+
 	public String keywordConvert(String keyword) {
-		if(keyword == "music")
+		if (keyword == "music")
 			return "qmusic";
-		if(keyword == "movies")
+		if (keyword == "movies")
 			return "qmovies";
-		if(keyword == "countries")
+		if (keyword == "countries")
 			return "qcountries";
-		if(keyword == "sports")
+		if (keyword == "sports")
 			return "qsports";
-		if(keyword == "howru")
+		if (keyword == "howru")
 			return keyword;
-		if(keyword == "likes")
-			return "qlikes";
-		if(keyword == "dislikes")
+		if (keyword == "hobbies")
+			return "qhobbies";
+		if (keyword == "dislikes")
 			return "qdislikes";
-		if(keyword == "food")
+		if (keyword == "food")
 			return "qfood";
 		else
-			return "invalid";	}
-	
+			return "invalid";
+	}
+
 	/**
 	 * Covert ArrayList to String
 	 * 

@@ -31,14 +31,17 @@ public class terminal {
 			if (genderchosen == true && nameknown == true) {
 				data = inputHandler.parseInput(userinput);
 				if (data.equals("nothing")) {
-					question = questionAsker.ask();
-					System.out.println(chatbotname + ": " + question[0]);
-					qdata = question[1];
-					userinput = inputHandler.getUserInput();
-					qresponse = inputHandler.parseQResponse(userinput, qdata, p);
+					qresponse[0] = "what";
+					while (qresponse[0].equals("what")) {
+						question = questionAsker.ask();
+						System.out.println(chatbotname + ": " + question[0]);
+						qdata = question[1];
+						userinput = inputHandler.getUserInput();
+						qresponse = inputHandler.parseQResponse(userinput, qdata, p);
+					}
 					if (userinput.endsWith("?")) {
 						botoutput = outputDeterminer.respond(inputHandler.keywordConvert(qdata), p);
-						System.out.println(chatbotname + botoutput);
+						System.out.println(chatbotname + ": " + botoutput);
 					}
 					botoutput = questionAsker.afterAsk(qresponse, qdata);
 				} else {

@@ -22,4 +22,6 @@ banker
 philosopher
 professor
 student
-ta
+astronaut
+doctor
+magician
