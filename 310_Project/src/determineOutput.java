@@ -134,7 +134,6 @@ public class determineOutput {
 			responseBack = "I am sorry, I don't understand the question.";
 		return responseBack;
 	}
-
 	
 	/**
 	 * Returns the response to occupations
