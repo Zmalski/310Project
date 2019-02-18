@@ -80,8 +80,8 @@ public class determineOutput {
 		 }
 		 /**qjob*/
 		 hash_map.put("qjob", personality.getOccupation());
-		 if(data.equals("qzosign")) {
-			 hash_map.put("qjob", "My job is " + personality.getOccupation());
+		 if(data.equals("qjob")) {
+			 hash_map.put("qjob", "I am a " + personality.getOccupation());
 		}
 		 /**qzosign*/
 		 hash_map.put("qzosign", personality.getZodiacSign());
