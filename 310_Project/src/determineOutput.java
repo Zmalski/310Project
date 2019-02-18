@@ -15,53 +15,52 @@ public class determineOutput {
 		// Switch statement returns the output according to the response.
 		switch (response) {
 		case "developer":
-			professionResponse = "Software developer. Wow! thats great.";
+			professionResponse = "Like a programmer? Cool!";
 			break;
 		case "musician":
-			professionResponse = "Musician. I love music.";
+			professionResponse = "Oh cool, I love music.";
 			break;
 		case "player":
-			professionResponse = "Player!!! Are you a soccer player. I love soccer";
-			professionResponse = "Player!!! Are you a soccer player? I love sports";
+			professionResponse = "Wow, that's cool, I always wanted to be a professional sports player.";
 			break;
 		case "professor":
-			professionResponse = "Professor!!! This would be a though job.";
+			professionResponse = "Wow, professors are truly the greatest members of society.";
 			break;
 		case "studnent":
-			professionResponse = "Student!!! that's great.";
+			professionResponse = "I'm a student too!";
 			break;
 		case "butcher":
-			professionResponse = "Butcher!!! thats a good job.";
+			professionResponse = "Oh. Gross.";
 			break;
 		case "cook":
-			professionResponse = "Cook!!! I love cooking.";
+			professionResponse = "I love cooking! You must love that job.";
 			break;
 		case "farmer":
-			professionResponse = "Farmer!!! I love fields.";
+			professionResponse = "Farmer! I love plowing!";
 			break;
 		case "firefighter":
-			professionResponse = "Firefighter!!! that's cool.";
+			professionResponse = "Wow, you must be strong!";
 			break;
 		case "hairdresser":
-			professionResponse = "Hairdresser, wow!!! thats a cool job.";
+			professionResponse = "I could sure use a haircut!";
 			break;
 		case "journalist":
-			professionResponse = "Journalist!!! it must be a hectic job.";
+			professionResponse = "You must chat with some pretty interesting people!";
 			break;
 		case "lawyer":
-			professionResponse = "Lawyer!!! great.";
+			professionResponse = "Oh boy, I'm sure you're good at arguing.";
 			break;
 		case "mechanic":
-			professionResponse = "Mechanic!!! great.";
+			professionResponse = "I bet it's fun to work on cars all day.";
 			break;
 		case "painter":
-			professionResponse = "Painter!!! You are an artist.";
+			professionResponse = "Wow, you're the next Bob Ross.";
 			break;
 		case "notfound":
-			professionResponse = "Sounds cool, but I never heard about this before.";
+			professionResponse = "Huh, I've never heard of that job before!";
 			break;
 		default:
-			professionResponse = "You are a " + response + ". Sounds cool.";
+			professionResponse = "You are a " + response + "? Sounds neat.";
 			break;
 		}
 		return professionResponse;
@@ -112,9 +111,9 @@ public class determineOutput {
 			hash_map.put("insult", insult);
 			 }
 		 /**swearing*/
-		 if(data.equals("swearing")) {
+		 if(data.equals("swear")) {
 			String swearing = returnSwearing(data); 
-			 hash_map.put("swearing", swearing);
+			 hash_map.put("swear", swearing);
 		 }
 		 /**qdoing*/
 		 if(data.equals("qdoing")) {
@@ -194,7 +193,7 @@ public class determineOutput {
 		if(hash_map.containsKey(data)) {
 			responseBack = (String) hash_map.get(data);
 		 }else
-			 responseBack = "I am sorry, I don't get it what do you mean?";
+			 responseBack = "I am sorry, I don't understand the question.";
 		 return responseBack;
 	 } 
 	 	 /** 
@@ -220,7 +219,7 @@ public class determineOutput {
 			 name = "My name is " + p.getName() + ".";
 			 condition = true;
 		 }else {
-			name = "You have already asked my name but still my name is " + p.getName()+"."; 
+			name = "My name is still " + p.getName()+"."; 
 		 }
 		 return name;
 	 }
@@ -233,9 +232,9 @@ public class determineOutput {
 	 public String returnGreeting() {
 		String greeting = "";
 		ArrayList<String> greetingList = new ArrayList<String>();
-		greetingList.add("Hey!!!");
-		greetingList.add("Hello!!!");
-		greetingList.add("Hi!!!");
+		greetingList.add("Hey!");
+		greetingList.add("Hello!");
+		greetingList.add("Hi!");
 		
 		int random = (int)(Math.random()*3);
 		greeting = greetingList.get(random);
@@ -249,9 +248,9 @@ public class determineOutput {
 	 public String returnEndDate() {
 		String bye = "";
 		ArrayList<String> byeList = new ArrayList<String>();
-		byeList.add("Goodbye!!!");
-		byeList.add("Bye!!!");
-		byeList.add("See you later!!!");
+		byeList.add("Goodbye!");
+		byeList.add("Bye!");
+		byeList.add("See you later!");
 		
 		int random = (int)(Math.random()*3);	
 		
@@ -285,9 +284,9 @@ public class determineOutput {
 	 public String returnSwearing(String data) {
 		 String swearing = "";
 		 ArrayList<String> swearingList = new ArrayList<String>();
-		 swearingList.add(data + " ? " +"I do not know that you are swearing.");
-		 swearingList.add(data + " ? " + "It is not appropriate.");
-		 swearingList.add("Did you just actually say " + data + " ?");
+		 swearingList.add("That's pretty vulgar language.");
+		 swearingList.add("Watch your language.");
+		 swearingList.add("Woah! You kiss your mother with that mouth?");
 		 
 		 int random = (int)(Math.random()*3);
 			
@@ -303,9 +302,9 @@ public class determineOutput {
 	 public String returnInsult(String data) {
 		 String insult = "";
 		 ArrayList<String> insultList = new ArrayList<String>();
-		 insultList.add("Don't call me " + data);
-		 insultList.add("Why are you calling me "+ data);
-		 insultList.add("You cannot call me " + data);
+		 insultList.add("Don't call me names!");
+		 insultList.add("Why are you calling me names?");
+		 insultList.add("Don't be a jerk!");
 		 
 		 int random = (int)(Math.random()*3);
 		 
@@ -320,9 +319,9 @@ public class determineOutput {
 		 */
 	 public String returnHouwru(){
 		 ArrayList<String> howruList = new ArrayList<String>();
-		 howruList.add("I am doing well.");
-		 howruList.add("I am great.");
-		 howruList.add("I am fine.");
+		 howruList.add("I am doing well, thanks!");
+		 howruList.add("I am great, thanks!");
+		 howruList.add("I am fine. Thanks.");
 
 		 int random = (int)(Math.random()*3);
 

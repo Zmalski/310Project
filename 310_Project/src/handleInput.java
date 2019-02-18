@@ -15,7 +15,7 @@ public class handleInput {
 	Pattern qage = Pattern.compile(
 			"(?i)((.*)(\\bhow\\b)(.*)(\\bold\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bage\\b)(.*)(\\?))|((.*)(\\bwhen\\b)(.*)(\\bborn\\b)(.*)(\\?))");
 	Pattern qlikes = Pattern.compile(
-			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bdo for fun\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blikes\\b)(.*)(\\?))");
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bdo for fun\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blike(s)?\\b)(.*)(\\?))");
 	Pattern qdislikes = Pattern.compile(
 			"(?i)((.*)(\\bwhat\\b)(.*)(\\bdislike(s)?\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bnot like\\b)(.*)(\\?))|((.*)(\\bdo you\\b)(.*)(\\bnot like\\b)(.*)(\\?))");
 	Pattern qjob = Pattern.compile(
