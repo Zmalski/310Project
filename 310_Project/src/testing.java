@@ -21,7 +21,7 @@ public class testing {
 		String parseinput = handleInput.checkOccupation(input);
 		String occ = determineOutput.occupation(parseinput);
 
-		String expectedOutput = "Software developer. Wow! thats great.";
+		String expectedOutput = "Like a programmer? Cool!";
 		assertTrue(expectedOutput.equals(occ));
 	}
 	/**
@@ -62,8 +62,8 @@ public class testing {
 		ArrayLIST.add("curling");
 		ArrayLIST.add("skiing");
 		
-		String returnAsStrings = determineOutput.returnArrayList(ArrayLIST);
-		String expectedOutput = "waterboarding" + "\n" + "tennis" + "\n" + "curling" + "\n" + "skiing" + "\n";
+		String returnAsStrings = determineOutput.returnString(ArrayLIST);
+		String expectedOutput = "waterboarding" + ", " + "tennis" + ", " + "curling" + ", " + "skiing" + ", ";
 		
 		assertTrue(expectedOutput.equals(returnAsStrings));		
 	}

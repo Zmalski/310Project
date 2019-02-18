@@ -7,82 +7,22 @@ public class determineOutput {
 	String professionResponse = "";
 	boolean condition = false;
 	/**
-	 * Returns the response to occupations
-	 * @param output
-	 * @return occupation contained within the input string
-	 */
-	public String occupation(String response) {
-		// Switch statement returns the output according to the response.
-		switch (response) {
-		case "developer":
-			professionResponse = "Like a programmer? Cool!";
-			break;
-		case "musician":
-			professionResponse = "Oh cool, I love music.";
-			break;
-		case "player":
-			professionResponse = "Wow, that's cool, I always wanted to be a professional sports player.";
-			break;
-		case "professor":
-			professionResponse = "Wow, professors are truly the greatest members of society.";
-			break;
-		case "studnent":
-			professionResponse = "I'm a student too!";
-			break;
-		case "butcher":
-			professionResponse = "Oh. Gross.";
-			break;
-		case "cook":
-			professionResponse = "I love cooking! You must love that job.";
-			break;
-		case "farmer":
-			professionResponse = "Farmer! I love plowing!";
-			break;
-		case "firefighter":
-			professionResponse = "Wow, you must be strong!";
-			break;
-		case "hairdresser":
-			professionResponse = "I could sure use a haircut!";
-			break;
-		case "journalist":
-			professionResponse = "You must chat with some pretty interesting people!";
-			break;
-		case "lawyer":
-			professionResponse = "Oh boy, I'm sure you're good at arguing.";
-			break;
-		case "mechanic":
-			professionResponse = "I bet it's fun to work on cars all day.";
-			break;
-		case "painter":
-			professionResponse = "Wow, you're the next Bob Ross.";
-			break;
-		case "notfound":
-			professionResponse = "Huh, I've never heard of that job before!";
-			break;
-		default:
-			professionResponse = "You are a " + response + "? Sounds neat.";
-			break;
-		}
-		return professionResponse;
-	}
-	
-	/**
-	 * Returns the response for given String
+	 * Returns a response for a given String
+	 * 
+	 * This method stores the responses in a HashMap, and return the output(response) to user as per the given input.
+	 * The data is stored as a key value pair. As soon as the method receives a key it provides the output.
 	 * 
 	 * @param data, personality
-	 * @return response contained within the input string
+	 * @return string
 	 */	
 	 public String respond(String data, Personality personality) {
 		 HashMap<String, String> hash_map = new HashMap<String, String>();	 
 		 String responseBack = "";
 		 /*
-		 * Create two ArrayLists to store the arraylists received from two different methods.
-		 * With the help of these two different list, we can call the method(converting arraylist to string) as per user input.
-		 * Create ArrayLists to store the arraylists received from Personality Class.
-		 * With the help of these ArrayLists variables, we can call the method(converting arraylist to string) as per user input.
+		 * Create ArrayLists to store the arraylists received from Personality class.
+		 * Once we receive a arraylist, we can call the method(converting arraylist to string) as per the given user input.
 		 */
 		 ArrayList<String> list1 = personality.getLikes();
-		 //System.out.println(list1);
 		 ArrayList<String> list2 = personality.getDislikes();
 		 ArrayList<String> likeSportsList = personality.getLikesSports();
 		 ArrayList<String> likeMusic = personality.getLikesMusic();
@@ -195,9 +135,70 @@ public class determineOutput {
 			 responseBack = "I am sorry, I don't understand the question.";
 		 return responseBack;
 	 } 
-	 	 /** 
+	/**
+	 * Returns the response to occupations
+	 * @param output
+	 * @return occupation in a string
+	 */
+	public String occupation(String response) {
+		// Switch statement returns the output according to the response.
+		switch (response) {
+		case "developer":
+			professionResponse = "Like a programmer? Cool!";
+			break;
+		case "musician":
+			professionResponse = "Oh cool, I love music.";
+			break;
+		case "player":
+			professionResponse = "Wow, that's cool, I always wanted to be a professional sports player.";
+			break;
+		case "professor":
+			professionResponse = "Wow, professors are truly the greatest members of society.";
+			break;
+		case "studnent":
+			professionResponse = "I'm a student too!";
+			break;
+		case "butcher":
+			professionResponse = "Oh. Gross.";
+			break;
+		case "cook":
+			professionResponse = "I love cooking! You must love that job.";
+			break;
+		case "farmer":
+			professionResponse = "Farmer! I love plowing!";
+			break;
+		case "firefighter":
+			professionResponse = "Wow, you must be strong!";
+			break;
+		case "hairdresser":
+			professionResponse = "I could sure use a haircut!";
+			break;
+		case "journalist":
+			professionResponse = "You must chat with some pretty interesting people!";
+			break;
+		case "lawyer":
+			professionResponse = "Oh boy, I'm sure you're good at arguing.";
+			break;
+		case "mechanic":
+			professionResponse = "I bet it's fun to work on cars all day.";
+			break;
+		case "painter":
+			professionResponse = "Wow, you're the next Bob Ross.";
+			break;
+		case "notfound":
+			professionResponse = "Huh, I've never heard of that job before!";
+			break;
+		default:
+			professionResponse = "You are a " + response + "? Sounds neat.";
+			break;
+		}
+		return professionResponse;
+	}
+	
+
+	 	 /**  
 		 * Covert ArrayList to String
-		 * @return string with respect to getDisLikes() and getLikes() methods
+		 * @return a string for any given arraylist  
 		 */
 	 public String returnString(ArrayList<String> list) {
 	   String listString = "";
@@ -208,7 +209,6 @@ public class determineOutput {
 	 }
 	 /**
 		 * Returns a name
-		 * 
 		 * "qname" keyword is for when user asks Bot's name.
 		 * @return string 
 		 */
@@ -223,7 +223,7 @@ public class determineOutput {
 		 return name;
 	 }
  	 /**
-		 * Returns a random response for "greeting" keyword
+		 * Returns a related random response for "greeting" keyword
 		 * 
 		 * "greeting" keyword is for when a user say hi or greet.
 		 * @return string 
@@ -240,7 +240,7 @@ public class determineOutput {
 		return greeting;
 		}	 
 	 	 /**
-		 * Returns a random responses for "bye" keyword
+		 * Returns a related random responses for "bye" keyword
 		 * 
 		 * @return string 
 		 */
@@ -257,7 +257,7 @@ public class determineOutput {
 		return bye;
 	 }
 	 	 /**
-		 * Returns a random response for "qdoing" keyword
+		 * Returns a related random response for "qdoing" keyword
 		 * 
 		 * "qdoing" keyword is for when a user will ask what are you doing?
 		 * @return string 
@@ -275,7 +275,7 @@ public class determineOutput {
 		return qdoing; 
 	 }
 	 	 /**
-		 * Returns a random response for "swearing" keyword
+		 * Returns a related random response for "swearing" keyword
 		 * 
 		 * "swearing" keyword is received when a user swear or unappropriated words.
 		 * @return string 
@@ -293,7 +293,7 @@ public class determineOutput {
 		 return swearing;
 	 }
 	 	 /**
-		 * Returns a random response for "insult" keyword
+		 * Returns a related random response for "insult" keyword
 		 * 
 		 * "insult" keyword is received when user use unappropriated words.
 		 * @return string 
@@ -311,7 +311,7 @@ public class determineOutput {
 		 return insult;
 	 }
 	 	/**
-		 * Returns a random response for "howru" keyword
+		 * Returns a related random response for "howru" keyword
 		 * 
 		 * "howru" keyword is received when user ask how are you?.
 		 * @return string 
