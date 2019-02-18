@@ -45,8 +45,6 @@ public class Personality {
 	public Personality(String gender) {
 		
 		setGender(gender);
-		setDislikes();
-		setLikes();
 		setZodiacSign(setString(txtToArray("zodiac_signs.txt")));
 		setOccupation(setString(txtToArray("occupations.txt")));
 		setLikesSports(setArray(txtToArray("sports.txt"), random(5)+3));
@@ -69,6 +67,9 @@ public class Personality {
 			setName(setString(txtToArray("names_boys.txt")));
 		else
 			setName(setString(txtToArray("names_girls.txt")));
+		
+		setLikes();
+		setDislikes();
 	}
 
 
