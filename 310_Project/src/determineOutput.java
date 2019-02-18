@@ -22,7 +22,7 @@ public class determineOutput {
 		 * Create ArrayLists to store the arraylists received from Personality class.
 		 * Once we receive a arraylist, we can call the method(converting arraylist to string) as per the given user input.
 		 */
-		 ArrayList<String> list1 = personality.getLikes();
+		 ArrayList<String> list1 = personality.getLikesHobbies();
 		 ArrayList<String> list2 = personality.getDislikes();
 		 ArrayList<String> likeSportsList = personality.getLikesSports();
 		 ArrayList<String> likeMusic = personality.getLikesMusic();
@@ -69,9 +69,9 @@ public class determineOutput {
 		 hash_map.put("invalid", "I am sorry, I don't understand the question.");
 		 }
 		 /**qlikes */
-		 if(data.equals("qlikes")) {
-			String likesReturn = returnString(list1);
-			 hash_map.put("qlikes", "I like " + likesReturn);
+		 if(data.equals("qhobbies")) {
+			 String hobbiesReturn = returnString(list1);
+			 hash_map.put("qhobbies", "My hobbies are " + hobbiesReturn);
 		 }
 		 /**qdislikes*/
 		 if(data.equals("qdislikes")) {
