@@ -203,7 +203,7 @@ public class determineOutput {
 	 public String returnArrayList(ArrayList<String> list) {
 	   String listString = "";
 	   for(String s : list) {
-		   listString += s + "\n";
+		   listString += s + ", ";
 	   }
 		 return listString;
 	 }
