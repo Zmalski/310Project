@@ -49,7 +49,7 @@ public class testing {
 		String output = determineOutput.respond(parseIn, p);
 		String output2 = determineOutput.respond(parseIn2, p);
 
-		String s1 = "Hey!!!",s2 = "Hello!!!", s3 = "Hi!!!";
+		String s1 = "Hey!",s2 = "Hello!", s3 = "Hi!";
 		String expectedOutput = "I am 22 year old.";
 		assertTrue(expectedOutput.equals(output));
 		assertTrue(s1.equals(output2)||s2.equals(output2)||s3.equals(output2));
@@ -79,14 +79,14 @@ public class testing {
 	}
 	@Test
 	public void testReturnGreeting() {
-		String s1 = "Hey!!!",s2 = "Hello!!!", s3 = "Hi!!!";
+		String s1 = "Hey!",s2 = "Hello!", s3 = "Hi!";
 		String methodOutput = determineOutput.returnGreeting();
 		
 		assertTrue((s1.equals(methodOutput))||(s2.equals(methodOutput))||(s3.equals(methodOutput)));
 	}
 	@Test
 	public void testEndDate() {
-		String s1 = "Goodbye!!!",s2 ="Bye!!!",s3 ="See you later!!!";
+		String s1 = "Goodbye!",s2 ="Bye!",s3 ="See you later!";
 		String methodOutput = determineOutput.returnEndDate();
 		
 		assertTrue(s1.equals(methodOutput)||s2.equals(methodOutput)||s3.equals(methodOutput));
@@ -101,24 +101,24 @@ public class testing {
 	@Test
 	public void testSwearing() {
 		 String data = "hell";
-		 String s1 = data + " ? " +"I do not know that you are swearing.", s2= data + " ? " + "It is not appropriate.", s3 = "Did you just actually say " + data + " ?";
+		 String s1 = "That's pretty vulgar language.", s2= "Watch your language.", s3 = "Woah! You kiss your mother with that mouth?";
 		 
 		 String methodOutput = determineOutput.returnSwearing(data);
 		 assertTrue(s1.equals(methodOutput)||s2.equals(methodOutput)||s3.equals(methodOutput));
 	}
 	@Test
 	public void testHowru() {
-		String s1 = "I am doing well.";
-		String s2 = "I am great.";
-		String s3 = "I am fine.";
+		String s1 = "I am doing well, thanks!";
+		String s2 = "I am great, thanks!";
+		String s3 = "I am fine. Thanks.";
 		String methodOutput = determineOutput.returnHouwru();	
 		
 		assertTrue(s1.equals(methodOutput)||s2.equals(methodOutput)||s3.equals(methodOutput));
-	}
+   }
 	@Test
 	public void testInsult() {
 		String data = "idiot";
-		String s1 = "Don't call me " + data, s2= "Why are you calling me "+ data, s3 = "You cannot call me " + data;
+		String s1 = "Don't call me names!", s2= "Why are you calling me names?", s3 = "Don't be a jerk!";
 		 
 		String methodOutput = determineOutput.returnInsult(data);
 		assertTrue(s1.equals(methodOutput)||s2.equals(methodOutput)||s3.equals(methodOutput));

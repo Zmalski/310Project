@@ -86,7 +86,7 @@ public class determineOutput {
 		 /**qzosign*/
 		 hash_map.put("qzosign", personality.getZodiacSign());
 		 if(data.equals("qzosign")) {
-			 hash_map.put("qzosign", "My zodiac sign " + personality.getZodiacSign());
+			 hash_map.put("qzosign", "My zodiac sign is " + personality.getZodiacSign());
 		 }
 		 /**howru*/
 		 if(data.equals("howru")) {
