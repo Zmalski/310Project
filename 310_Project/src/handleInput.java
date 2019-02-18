@@ -15,7 +15,7 @@ public class handleInput {
 	Pattern qage = Pattern.compile(
 			"(?i)((.*)(\\bhow\\b)(.*)(\\bold\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bage\\b)(.*)(\\?))|((.*)(\\bwhen\\b)(.*)(\\bborn\\b)(.*)(\\?))");
 	Pattern qlikes = Pattern.compile(
-			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bdo for fun\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blike(s)?\\b)(.*)(\\?))");
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bdo for fun\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blikes\\b)(.*)(\\?))");
 	Pattern qdislikes = Pattern.compile(
 			"(?i)((.*)(\\bwhat\\b)(.*)(\\bdislike(s)?\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bnot like\\b)(.*)(\\?))|((.*)(\\bdo you\\b)(.*)(\\bnot like\\b)(.*)(\\?))");
 	Pattern qjob = Pattern.compile(
@@ -411,7 +411,7 @@ public class handleInput {
 			}
 		}
 		if (data.equals("howru")) {
-			if(input.matches("(?i)(.*)\\bnot good\\b(.*)|(.*)\\bnot great\\b(.*)|(.*)\\bad day\\b(.*)|(.*)\\bsucks\\b(.*)"))
+			if(input.matches("(?i)(.*)\\bnot good\\b(.*)|(.*)\\bnot great\\b(.*)|(.*)\\bad day\\b(.*)|(.*)\\bsucks\\b(.*)|(.*)\\bbad\\b(.*)"))
 				output[0] = "bad";
 			else
 				output[0] = "good";
