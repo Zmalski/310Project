@@ -20,7 +20,16 @@ public class questionAsker {
 	public String[] ask() {
 		String outputArray[] = new String[2];
 		int random = (int) (Math.random() * 2 + 1);
-		if (movies == false) {
+		if (howru == false) {
+			// Picks one of three questions, randomly.
+			if (random == 1)
+				outputArray[0] = "How are you today?";
+			else if (random == 2)
+				outputArray[0] = "How are you feeling?";
+			else
+				outputArray[0] = "How are you doing?";
+			outputArray[1] = "howru";
+		} else if (movies == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
 				outputArray[0] = "What movies do you like?";
@@ -29,7 +38,6 @@ public class questionAsker {
 			else
 				outputArray[0] = "What are some of your favourite movies?";
 			outputArray[1] = "movies";
-			movies = true;
 		} else if (music == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
@@ -39,7 +47,6 @@ public class questionAsker {
 			else
 				outputArray[0] = "Heard any good music lately?";
 			outputArray[1] = "music";
-			music = true;
 		} else if (countries == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
@@ -49,7 +56,6 @@ public class questionAsker {
 			else
 				outputArray[0] = "Where would you travel if you could travel anywhere?";
 			outputArray[1] = "countries";
-			countries = true;
 		} else if (likes == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
@@ -59,7 +65,6 @@ public class questionAsker {
 			else
 				outputArray[0] = "What are some things you like?";
 			outputArray[1] = "likes";
-			likes = true;
 		} else if (dislikes == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
@@ -69,7 +74,6 @@ public class questionAsker {
 			else
 				outputArray[0] = "What are some things you try to avoid in life?";
 			outputArray[1] = "dislikes";
-			dislikes = true;
 		} else if (sports == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
@@ -79,7 +83,6 @@ public class questionAsker {
 			else
 				outputArray[0] = "See any good sports games lately?";
 			outputArray[1] = "sports";
-			sports = true;
 		} else {
 			outputArray[0] = "Sorry, I'm out of things to talk about! This has been fun though.";
 			outputArray[1] = "invalid";
@@ -92,41 +95,49 @@ public class questionAsker {
 		boolean empty = false;
 		if (input[0].equals("") && input[1].equals(""))
 			empty = true;
-		if (qdata.equals("dislikes"))
+		if (qdata.equals("dislikes")) {
 			output = "I don't like " + input[0] + " either!";
-		if(!input[0].equals(""))
+			dislikes = true;
+		}
+		if (!input[0].equals(""))
 			output = "I like " + input[0] + " too!";
-		if(!input[0].equals("") && !input[1].equals(""))
-			output = output  + "\n";
-		if(!input[1].equals(""))
+		if (!input[0].equals("") && !input[1].equals(""))
+			output = output + "\n";
+		if (!input[1].equals(""))
 			output = output + "I don't like " + input[1] + ", sorry.";
 		if (qdata.equals("music")) {
 			if (empty)
 				output = "Oh! I haven't heard of those music genres.";
+			music = true;
 		}
 		if (qdata.equals("movies")) {
 			if (empty)
 				output = "Oh! I haven't heard of those movies.";
+			movies = true;
 		}
 		if (qdata.equals("sports")) {
-			if (empty)
+			if (empty) {
 				output = "Oh! I haven't heard of those sports.";
+			sports = true;}
 		}
 		if (qdata.equals("countries")) {
 			if (empty)
 				output = "Oh! I haven't heard of those countries.";
+			countries = true;
 		}
 		if (qdata.equals("howru")) {
-			if (input[0].equals("no"))
+			if (input[0].equals("bad"))
 				output = "I'm sorry to hear that.";
 			else
 				output = "That's good to hear! :)";
-			if(empty)
+			if (empty)
 				output = "Sorry?";
+			howru = true;
 		}
 		if (qdata.equals("likes") || qdata.equals("dislikes")) {
 			if (empty)
 				output = "Oh! I haven't heard of those things before.";
+			likes = true;
 		}
 
 		return output;

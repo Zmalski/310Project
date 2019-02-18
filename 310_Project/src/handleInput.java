@@ -265,27 +265,27 @@ public class handleInput {
 				data = "invalid";
 			}
 		}
-		try {
-			scanner = new Scanner(new File("greetings.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "greeting";
-					end = true;
-					scanner2.close();
-					break;
-				}
+		if (!input.endsWith("?")) {
+			try {
+				scanner = new Scanner(new File("greetings.txt"));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
 			}
-			if (end == true)
-				break;
+			while (scanner.hasNextLine()) {
+				Scanner scanner2 = new Scanner(scanner.nextLine());
+				while (scanner2.hasNext()) {
+					String s = scanner2.next();
+					if (pinput.matches("(.*)" + s + "(.*)")) {
+						data = "greeting";
+						end = true;
+						scanner2.close();
+						break;
+					}
+				}
+				if (end == true)
+					break;
+			}
 		}
-		// ^^ Work in progress
-		// Scan through insults file, check if input matches any words.
 		try {
 			scanner = new Scanner(new File("insults.txt"));
 		} catch (FileNotFoundException e) {
@@ -374,8 +374,6 @@ public class handleInput {
 		input = processInput(input);
 		String arrayString = "";
 		String s = "";
-		input = processInput(input);
-		int count = 0;
 		if (data.equals("movies")) {
 			arrayString = listToString(personality.getLikesMovies());
 			scanner = new Scanner(arrayString);
@@ -413,6 +411,10 @@ public class handleInput {
 			}
 		}
 		if (data.equals("howru")) {
+			if(input.matches("(?i)(.*)\\bnot good\\b(.*)|(.*)\\bnot great\\b(.*)|(.*)\\bad day\\b(.*)|(.*)\\bsucks\\b(.*)"))
+				output[0] = "bad";
+			else
+				output[0] = "good";
 
 		}
 		if (data.equals("music")) {
@@ -471,6 +473,8 @@ public class handleInput {
 				}
 			}
 		}
+		if (input.equals("what"))
+			output[0] = "what";
 		if (output[0].endsWith(", "))
 			output[0] = output[0].substring(0, output[0].length() - 2);
 		if (output[1].endsWith(", "))
