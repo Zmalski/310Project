@@ -280,10 +280,6 @@ private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<St
 	public void setDislikesFoods(ArrayList<String> dislikesFoods) {
 		this.dislikesFoods = dislikesFoods;
 	}
-
-	public ArrayList<String> getLikes() {
-		return likes;
-	}
 	
 	public ArrayList<String> getDislikesSports() {
 		return dislikesSports;
@@ -383,6 +379,10 @@ private ArrayList<String> setArray(ArrayList<String> textFileArray, ArrayList<St
 		dislikes.addAll(this.getDislikesSports());
 		
 		this.dislikes = dislikes;
+	}
+	
+	public ArrayList<String> getLikes() {
+		return likes;
 	}
 
 }
