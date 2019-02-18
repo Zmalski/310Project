@@ -275,7 +275,7 @@ public class handleInput {
 				Scanner scanner2 = new Scanner(scanner.nextLine());
 				while (scanner2.hasNext()) {
 					String s = scanner2.next();
-					if (pinput.matches("(.*)" + s + "(.*)")) {
+					if (pinput.matches("(.*)\\b" + s + "\\b(.*)")) {
 						data = "greeting";
 						end = true;
 						scanner2.close();
@@ -295,7 +295,7 @@ public class handleInput {
 			Scanner scanner2 = new Scanner(scanner.nextLine());
 			while (scanner2.hasNext()) {
 				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
+				if (pinput.matches("(.*)\\b" + s + "\\b(.*)")) {
 					data = "insult";
 					end = true;
 					scanner2.close();
@@ -315,7 +315,7 @@ public class handleInput {
 			Scanner scanner2 = new Scanner(scanner.nextLine());
 			while (scanner2.hasNext()) {
 				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
+				if (pinput.matches("(.*)\\b" + s + "\\b(.*)")) {
 					data = "swear";
 					end = true;
 					scanner2.close();
