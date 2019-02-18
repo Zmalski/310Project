@@ -9,6 +9,7 @@ public class questionAsker {
 	public boolean likes = false;
 	public boolean dislikes = false;
 	public boolean sports = false;
+	public boolean rps = false;
 
 	/**
 	 * Returns an array containing a question to ask user and a keyword for data
@@ -83,8 +84,11 @@ public class questionAsker {
 			else
 				outputArray[0] = "See any good sports games lately?";
 			outputArray[1] = "sports";
+		} else if (rps == false) {
+			outputArray[0] = "Let's play rock paper scissors! Pick rock, paper or scissors.";
+			outputArray[1] = "rps";
 		} else {
-			outputArray[0] = "Sorry, I'm out of things to talk about! This has been fun though.";
+			outputArray[0] = "Sorry, I'm out of things to talk about! This has been fun though. We should go on another date sometime.";
 			outputArray[1] = "invalid";
 		}
 		return outputArray;
@@ -118,7 +122,8 @@ public class questionAsker {
 		if (qdata.equals("sports")) {
 			if (empty) {
 				output = "Oh! I haven't heard of those sports.";
-			sports = true;}
+				sports = true;
+			}
 		}
 		if (qdata.equals("countries")) {
 			if (empty)
@@ -139,7 +144,41 @@ public class questionAsker {
 				output = "Oh! I haven't heard of those things before.";
 			likes = true;
 		}
-
+		if (qdata.equals("rps")) {
+			int random = (int) (Math.random() * 2 + 1);
+			String play = "";
+			if(random == 1)
+				play = "rock";
+			else if (random == 2)
+				play = "paper";
+			else
+				play = "scissors";
+			output = "I pick " + play;
+			if(input[0].equals("nothing"))
+				output = "Well nevermind then.";
+			else if(input[0].equals(play))
+				output = output + ". We tied! That was so fun.";
+			else if(input[0].equals("rock")) {
+				if(play.equals("paper"))
+					output = output + ". I win! That was so much fun.";
+				if(play.equals("scissors"))
+					output = output + ". You win. This game sucks anyways.";
+			}
+			else if(input[0].equals("paper")) {
+				if(play.equals("scissors"))
+					output = output + ". I win! That was so much fun.";
+				if(play.equals("rock"))
+					output = output + ". You win. This game sucks anyways.";
+			}
+			else if(input[0].equals("scissors")) {
+				if(play.equals("rock"))
+					output = output + ". I win! That was so much fun.";
+				if(play.equals("paper"))
+					output = output + ". You win. This game sucks anyways.";
+			}
+					
+			rps = true;
+		}
 		return output;
 
 	}

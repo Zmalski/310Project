@@ -473,6 +473,17 @@ public class handleInput {
 				}
 			}
 		}
+		if(data.equals("rps")) {
+			if(input.matches("(.*)\\brock\\b(.*)"))
+				output[0] = "rock";
+			else if(input.matches("(.*)\\bpaper\\b(.*)"))
+				output[0] = "paper";
+			else if(input.matches("(.*)\\bscissors\\b(.*)"))
+				output[0] = "scissors";
+			else
+				output[0] = "nothing";
+		}
+			
 		if (input.equals("what"))
 			output[0] = "what";
 		if (output[0].endsWith(", "))
