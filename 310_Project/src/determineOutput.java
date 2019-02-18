@@ -130,23 +130,23 @@ public class determineOutput {
 		 }
 		 /**qlikes */
 		 if(data.equals("qlikes")) {
-			String likesReturn = returnArrayList(list1);
+			String likesReturn = returnString(list1);
 			 hash_map.put("qlikes", likesReturn);
 		 }
 		 /**qdislikes*/
 		 if(data.equals("qdislikes")) {
-			String dislikesReturn2 = returnArrayList(list2);
+			String dislikesReturn2 = returnString(list2);
 			hash_map.put("qdislikes", dislikesReturn2);
 		 }
 		 /**qjob*/
 		 hash_map.put("qjob", personality.getOccupation());
 		 if(data.equals("qzosign")) {
-			 hash_map.put("qjob", personality.getOccupation());
+			 hash_map.put("qjob", "My job is " + personality.getOccupation());
 		}
 		 /**qzosign*/
 		 hash_map.put("qzosign", personality.getZodiacSign());
 		 if(data.equals("qzosign")) {
-			 hash_map.put("qzosign", personality.getZodiacSign());
+			 hash_map.put("qzosign", "My zodiac sign " + personality.getZodiacSign());
 		 }
 		 /**howru*/
 		 if(data.equals("howru")) {
@@ -159,39 +159,55 @@ public class determineOutput {
 		 }
 		/**qsports*/
 		 if(data.equals("qsports")) {
-			String likeSports = returnArrayList(likeSportsList);
+			String likeSports = returnString(likeSportsList);
 			 hash_map.put("qsports", likeSports);
 		 }
 		 /**qmusic*/
 		 if(data.equals("qmusic")) {
-			String likeMusicString = returnArrayList(likeMusic);
+			String likeMusicString = returnString(likeMusic);
 			 hash_map.put("qmusic", likeMusicString);
 
 		 }
 		 /**qanimals*/
 		 if(data.equals("qanimals")) {
-			String likeAnimalString = returnArrayList(likeAnimal);
+			String likeAnimalString = returnString(likeAnimal);
 			 hash_map.put("qanimals", likeAnimalString);
 		 }
 		 /**qcountries*/
 		 if(data.equals("qcountries")) {
-			 String likeCountriesString = returnArrayList(likeCountries);
+			 String likeCountriesString = returnString(likeCountries);
 			 hash_map.put("qcountries", likeCountriesString );
 		 }
 		 /**qmovies*/
 		 if(data.equals("qmovies")) {
-			String likeMoviesString = returnArrayList(likeMovies);
+			String likeMoviesString = returnString(likeMovies);
 			hash_map.put("qmovies", likeMoviesString);
 		 }
 		 /**qfood*/
 		 if(data.equals("qfood")) {
-			 String food = returnArrayList(likefood);
+			 String food = returnString(likefood);
 			 hash_map.put("qfood", food);
 		 }
-
 		 
 		if(hash_map.containsKey(data)) {
-			responseBack = (String) hash_map.get(data);
+			if(data.equals("qlikes"))
+				responseBack = "I like " + (String) hash_map.get(data);
+			else if(data.equals("qdislikes"))
+				responseBack = "I dislike " + (String) hash_map.get(data);	
+			else if(data.equals("qcountries"))
+				responseBack = "I would like to travel " + (String) hash_map.get(data);
+			else if(data.equals("qmovies"))
+				responseBack = "The movies I like " + (String) hash_map.get(data);
+			else if(data.equals("qfood"))
+				responseBack = "The food I like " + (String) hash_map.get(data);
+			else if(data.equals("qanimals"))
+				responseBack = "The animal I like " + (String) hash_map.get(data);
+			else if(data.equals("music"))
+				responseBack = "The music I like " + (String) hash_map.get(data);
+			else if(data.equals("qsports"))
+				responseBack = "The sports I like " + (String) hash_map.get(data);
+			else	
+				responseBack = (String) hash_map.get(data);	
 		 }else
 			 responseBack = "I am sorry, I don't understand the question.";
 		 return responseBack;
@@ -200,7 +216,7 @@ public class determineOutput {
 		 * Covert ArrayList to String
 		 * @return string with respect to getDisLikes() and getLikes() methods
 		 */
-	 public String returnArrayList(ArrayList<String> list) {
+	 public String returnString(ArrayList<String> list) {
 	   String listString = "";
 	   for(String s : list) {
 		   listString += s + ", ";
