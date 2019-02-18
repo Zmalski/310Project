@@ -8,9 +8,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -19,6 +21,7 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class terminalwgui extends Application{
 	public handleInput inputHandler = new handleInput();
@@ -56,10 +59,8 @@ public class terminalwgui extends Application{
 	    TextField outField = new TextField ("You are on a blind date. Would you like to date a man or a woman?");
 	    outField.setPrefWidth(500);
 	    outField.setPrefHeight(75);
-	    
-	    
 	   
-	    hb.getChildren().add(outField);
+	    hb.getChildren().addAll(outField);
 	    hb.setAlignment(Pos.TOP_LEFT);
 	    hb.setPadding(new Insets(20, 20, 20, 20));
 	    hb2.getChildren().add(actionBtn);
@@ -72,12 +73,28 @@ public class terminalwgui extends Application{
 		//layout.setStyle("-fx-background-image: url('https://media.giphy.com/media/nr6Uz7bTJo9uE/giphy.gif');");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
+		Image image = new Image("https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Blank_button.svg/1124px-Blank_button.svg.png");
+		ImageView imageView = new ImageView(image);
+		imageView.setFitHeight(1);
+		imageView.setFitWidth(1);
+    	TextInputDialog inField = new TextInputDialog();	   
+	    inField.setWidth(200);
+	    inField.setHeight(50);
+	    inField.setHeaderText(username + ":");
+	    inField.setTitle("Response");
+	    inField.setGraphic(imageView);
+	    inField.initStyle(StageStyle.UNDECORATED);
 		//***********************************************************************
 		actionBtn.setOnAction(new EventHandler<ActionEvent>() {			
 		    @Override public void handle(ActionEvent e) {	
 		    	TextInputDialog inField = new TextInputDialog();	   
 			    inField.setWidth(200);
 			    inField.setHeight(50);
+			    inField.setHeaderText(username + ":");
+			    inField.setTitle("Response");
+			    inField.setGraphic(imageView);
+			    inField.initStyle(StageStyle.UNDECORATED);
 		    	//System.out.print("\n" + username + ":");
 				//String userinput = inputHandler.getUserInput();
 				// Loop is called after desired gender and name are chosen, and begins to loop
@@ -90,6 +107,13 @@ public class terminalwgui extends Application{
 						question = questionAsker.ask();
 						outField.setText(chatbotname + ": " + question[0]);
 						qdata = question[1];
+						inField = new TextInputDialog();	   
+					    inField.setWidth(200);
+					    inField.setHeight(50);
+					    inField.setHeaderText(username + ":");
+					    inField.setGraphic(imageView);
+					    inField.setTitle("Response");
+					    inField.initStyle(StageStyle.UNDECORATED);
 						result = inField.showAndWait().toString();	
 						result = result.substring(9, result.length() - 1);
 						qresponse = inputHandler.parseQResponse(result.toString(), qdata, p);
@@ -115,6 +139,13 @@ public class terminalwgui extends Application{
 				else if (nameknown == false) {
 					outField.setText(chatbotname + ": Hi! What's your name?");
 					//System.out.println(username + ":");
+					inField = new TextInputDialog();	   
+				    inField.setWidth(200);
+				    inField.setHeight(50);
+				    inField.setHeaderText(username + ":");
+				    inField.setGraphic(imageView);
+				    inField.setTitle("");
+				    inField.initStyle(StageStyle.UNDECORATED);
 					result = inField.showAndWait().toString();
 					result = result.substring(9, result.length() - 1);
 					username = inputHandler.parseName(result).substring(0, 1).toUpperCase()
@@ -126,6 +157,13 @@ public class terminalwgui extends Application{
 					else
 						outField.setText(chatbotname + ": That's a lovely name, " + username + ". So, what do you do for a living?");
 					//System.out.println(username + ":");
+					inField = new TextInputDialog();	   
+				    inField.setWidth(200);
+				    inField.setHeight(50);
+				    inField.setHeaderText(username + ":");
+				    inField.setTitle("Response");
+				    inField.setGraphic(imageView);
+				    inField.initStyle(StageStyle.UNDECORATED);
 					result = inField.showAndWait().toString();
 					result = result.substring(9, result.length() - 1);
 					outField.setText(chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(result)));
