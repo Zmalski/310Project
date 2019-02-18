@@ -6,7 +6,7 @@ public class questionAsker {
 	public boolean music = false;
 	public boolean howru = false;
 	public boolean countries = false;
-	public boolean likes = false;
+	public boolean hobbies = false;
 	public boolean dislikes = false;
 	public boolean sports = false;
 	public boolean rps = false;
@@ -57,15 +57,15 @@ public class questionAsker {
 			else
 				outputArray[0] = "Where would you travel if you could travel anywhere?";
 			outputArray[1] = "countries";
-		} else if (likes == false) {
+		} else if (hobbies == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
 				outputArray[0] = "What are your hobbies?";
 			else if (random == 2)
 				outputArray[0] = "What do you like to do in your spare time?";
 			else
-				outputArray[0] = "What are some things you like?";
-			outputArray[1] = "likes";
+				outputArray[0] = "What do you like to do?";
+			outputArray[1] = "hobbies";
 		} else if (dislikes == false) {
 			// Picks one of three questions, randomly.
 			if (random == 1)
@@ -139,10 +139,10 @@ public class questionAsker {
 				output = "Sorry?";
 			howru = true;
 		}
-		if (qdata.equals("likes") || qdata.equals("dislikes")) {
+		if (qdata.equals("hobbies") || qdata.equals("dislikes")) {
 			if (empty)
 				output = "Oh! I haven't heard of those things before.";
-			likes = true;
+			hobbies = true;
 		}
 		if (qdata.equals("rps")) {
 			int random = (int) (Math.random() * 2 + 1);

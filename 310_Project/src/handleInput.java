@@ -36,6 +36,8 @@ public class handleInput {
 			"(?i)((.*)(\\bwhere\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bif\\b)(.*)(\\btravel\\b)(.*)(\\?))");
 	Pattern qfood = Pattern.compile(
 			"(?i)((.*)(\\bwhat\\b)(.*)(\\bfood\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\beat\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\bfood\\b)(.*)(\\?))");
+	Pattern qhobbies = Pattern.compile(
+			"(?i)((.*)(\\bwhat\\b)(.*)(\\bhobbies\\b)(.*)(\\?))|((\\bwhat\\b)(.*)(\\bspare time\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\blike to do\\b)(.*)(\\?))");
 
 	public handleInput(String name) {
 		this.name = name;
@@ -172,10 +174,10 @@ public class handleInput {
 				matchfound = true;
 				break;
 			} else
-				m = qlikes.matcher(input);
+				m = qhobbies.matcher(input);
 			// Asks what the bot's likes are
 			if (m.matches()) {
-				data = "qlikes";
+				data = "qhobbies";
 				matchfound = true;
 				break;
 			} else
@@ -435,8 +437,8 @@ public class handleInput {
 				}
 			}
 		}
-		if (data.equals("likes")) {
-			arrayString = listToString(personality.getLikes());
+		if (data.equals("hobbies")) {
+			arrayString = listToString(personality.getLikesHobbies());
 			scanner = new Scanner(arrayString);
 			while (scanner.hasNextLine()) {
 				s = scanner.nextLine();
@@ -506,8 +508,8 @@ public class handleInput {
 			return "qsports";
 		if (keyword == "howru")
 			return keyword;
-		if (keyword == "likes")
-			return "qlikes";
+		if (keyword == "hobbies")
+			return "qhobbies";
 		if (keyword == "dislikes")
 			return "qdislikes";
 		if (keyword == "food")
