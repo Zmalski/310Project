@@ -1,6 +1,5 @@
 //import test.Stage;
 import java.util.Optional;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -39,6 +38,7 @@ public class terminalwgui extends Application{
 	public String userinput = "";
 	public boolean askName = false;
 	public String result;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -57,28 +57,27 @@ public class terminalwgui extends Application{
 	    outField.setPrefWidth(500);
 	    outField.setPrefHeight(75);
 	    
-	    TextInputDialog inField = new TextInputDialog();	   
-	    inField.setWidth(200);
-	    inField.setHeight(50);
+	    
 	   
 	    hb.getChildren().add(outField);
-	    hb.setAlignment(Pos.TOP_CENTER);
-	    hb.setPadding(new Insets(100, 20, 20, 20));
+	    hb.setAlignment(Pos.TOP_LEFT);
+	    hb.setPadding(new Insets(20, 20, 20, 20));
 	    hb2.getChildren().add(actionBtn);
-	    hb2.setAlignment(Pos.BOTTOM_CENTER);
-	    hb2.setPadding(new Insets(20, 20, 20, 20));
+	    hb2.setAlignment(Pos.BOTTOM_LEFT);
+	    hb2.setPadding(new Insets(20, 20, 250, 20));
 	    
 		StackPane layout = new StackPane();
 		layout.getChildren().addAll(hb, hb2);
-		Scene scene = new Scene(layout, 900, 500);	
-		
+		Scene scene = new Scene(layout, 600, 400);	
+		//layout.setStyle("-fx-background-image: url('https://media.giphy.com/media/nr6Uz7bTJo9uE/giphy.gif');");
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		
-		layout.setStyle("-fx-background-image: url('https://wallpaperstock.net/wallpapers/thumbs1/34464wide.png');");		
 		//***********************************************************************
 		actionBtn.setOnAction(new EventHandler<ActionEvent>() {			
-		    @Override public void handle(ActionEvent e) {		    	
+		    @Override public void handle(ActionEvent e) {	
+		    	TextInputDialog inField = new TextInputDialog();	   
+			    inField.setWidth(200);
+			    inField.setHeight(50);
 		    	//System.out.print("\n" + username + ":");
 				//String userinput = inputHandler.getUserInput();
 				// Loop is called after desired gender and name are chosen, and begins to loop
@@ -101,7 +100,6 @@ public class terminalwgui extends Application{
 						botoutput = questionAsker.afterAsk(qresponse, qdata);
 					} else {
 						botoutput = outputDeterminer.respond(data, p);
-
 					}
 					outField.setText(chatbotname + ": " + botoutput);
 				}
@@ -133,8 +131,7 @@ public class terminalwgui extends Application{
 					outField.setText(chatbotname + ": " + outputDeterminer.occupation(inputHandler.checkOccupation(result)));
 				}
 				// End conversation if user types "bye"
-				if (inputHandler.parseInput(userinput).equals("bye"))
-				
+				if (inputHandler.parseInput(userinput).equals("bye"))				
 				turn = !turn;
 		}
 	});		
