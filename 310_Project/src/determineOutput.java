@@ -131,12 +131,12 @@ public class determineOutput {
 		 /**qlikes */
 		 if(data.equals("qlikes")) {
 			String likesReturn = returnString(list1);
-			 hash_map.put("qlikes", likesReturn);
+			 hash_map.put("qlikes", "I like " + likesReturn);
 		 }
 		 /**qdislikes*/
 		 if(data.equals("qdislikes")) {
 			String dislikesReturn2 = returnString(list2);
-			hash_map.put("qdislikes", dislikesReturn2);
+			hash_map.put("qdislikes","I dislike " +  dislikesReturn2);
 		 }
 		 /**qjob*/
 		 hash_map.put("qjob", personality.getOccupation());
@@ -160,54 +160,37 @@ public class determineOutput {
 		/**qsports*/
 		 if(data.equals("qsports")) {
 			String likeSports = returnString(likeSportsList);
-			 hash_map.put("qsports", likeSports);
+			 hash_map.put("qsports","The sports I like " + likeSports);
 		 }
 		 /**qmusic*/
 		 if(data.equals("qmusic")) {
 			String likeMusicString = returnString(likeMusic);
-			 hash_map.put("qmusic", likeMusicString);
+			 hash_map.put("qmusic","Music!! I really like " + likeMusicString);
 
 		 }
 		 /**qanimals*/
 		 if(data.equals("qanimals")) {
 			String likeAnimalString = returnString(likeAnimal);
-			 hash_map.put("qanimals", likeAnimalString);
+			 hash_map.put("qanimals","The animal I like " + likeAnimalString);
 		 }
 		 /**qcountries*/
 		 if(data.equals("qcountries")) {
 			 String likeCountriesString = returnString(likeCountries);
-			 hash_map.put("qcountries", likeCountriesString );
+			 hash_map.put("qcountries","The countries I would like to travel " +  likeCountriesString );
 		 }
 		 /**qmovies*/
 		 if(data.equals("qmovies")) {
 			String likeMoviesString = returnString(likeMovies);
-			hash_map.put("qmovies", likeMoviesString);
+			hash_map.put("qmovies","umm!!! The movies I like " +  likeMoviesString);
 		 }
 		 /**qfood*/
 		 if(data.equals("qfood")) {
 			 String food = returnString(likefood);
-			 hash_map.put("qfood", food);
+			 hash_map.put("qfood","food!!! The food I like " +  food);
 		 }
 		 
 		if(hash_map.containsKey(data)) {
-			if(data.equals("qlikes"))
-				responseBack = "I like " + (String) hash_map.get(data);
-			else if(data.equals("qdislikes"))
-				responseBack = "I dislike " + (String) hash_map.get(data);	
-			else if(data.equals("qcountries"))
-				responseBack = "I would like to travel " + (String) hash_map.get(data);
-			else if(data.equals("qmovies"))
-				responseBack = "The movies I like " + (String) hash_map.get(data);
-			else if(data.equals("qfood"))
-				responseBack = "The food I like " + (String) hash_map.get(data);
-			else if(data.equals("qanimals"))
-				responseBack = "The animal I like " + (String) hash_map.get(data);
-			else if(data.equals("music"))
-				responseBack = "The music I like " + (String) hash_map.get(data);
-			else if(data.equals("qsports"))
-				responseBack = "The sports I like " + (String) hash_map.get(data);
-			else	
-				responseBack = (String) hash_map.get(data);	
+			 responseBack = (String) hash_map.get(data);	
 		 }else
 			 responseBack = "I am sorry, I don't understand the question.";
 		 return responseBack;
