@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class determineOutput {
-	/*
-	 * Pardeep
-	 */
+
 	String professionResponse = "";
 	boolean condition = false;
 	/**
