@@ -33,7 +33,7 @@ public class handleInput {
 	Pattern qanimals = Pattern.compile(
 			"(?i)((.*)(\\bwhat\\b)(.*)(\\banimals\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\bpets\\b|\\banimals\\b)(.*)(\\?))|((.*)(\\blike\\b)(.*)(\\bcats\\b|\\bdogs\\b)(.*)(\\?))");
 	Pattern qcountries = Pattern.compile(
-			"(?i)((.*)(\\bwhere\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bif\\b)(.*)(\\btravel\\b)(.*)(\\?))");
+			"(?i)((.*)(\\bwhere\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bif\\b)(.*)(\\btravel\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\bcountries\\b)(.*)(\\?))");
 	Pattern qfood = Pattern.compile(
 			"(?i)((.*)(\\bwhat\\b)(.*)(\\bfood\\b)(.*)(\\?))|((.*)(\\bwhat\\b)(.*)(\\beat\\b)(.*)(\\?))|((.*)(\\bdo\\b)(.*)(\\bfood\\b)(.*)(\\?))");
 	Pattern qhobbies = Pattern.compile(
