@@ -82,7 +82,7 @@ public class testing {
 		String s1 = "Hey!!!",s2 = "Hello!!!", s3 = "Hi!!!";
 		String methodOutput = determineOutput.returnGreeting();
 		
-		assertTrue(s1.equals(methodOutput)||s2.equals(methodOutput)||s3.equals(methodOutput));
+		assertTrue((s1.equals(methodOutput))||(s2.equals(methodOutput))||(s3.equals(methodOutput)));
 	}
 	@Test
 	public void testEndDate() {
