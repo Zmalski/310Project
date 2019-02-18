@@ -147,66 +147,6 @@ public class handleInput {
 		Scanner scanner = null;// REGEX for what followed by doing followed by ? = (?i)(what)(.*)(doing)(.*)(?)
 		boolean end = false;
 		// Work in Progress
-		try {
-			scanner = new Scanner(new File("greetings.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "greeting";
-					end = true;
-					scanner2.close();
-					break;
-				}
-			}
-			if (end == true)
-				break;
-		}
-		// ^^ Work in progress
-		// Scan through insults file, check if input matches any words.
-		try {
-			scanner = new Scanner(new File("insults.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "insult";
-					end = true;
-					scanner2.close();
-					break;
-				}
-			}
-			if (end == true)
-				break;
-		}
-		// Scan through swears file, check if input matches any words.
-		try {
-			scanner = new Scanner(new File("swears.txt"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		while (scanner.hasNextLine()) {
-			Scanner scanner2 = new Scanner(scanner.nextLine());
-			while (scanner2.hasNext()) {
-				String s = scanner2.next();
-				if (pinput.matches("(.*)" + s + "(.*)")) {
-					data = "swear";
-					end = true;
-					scanner2.close();
-					break;
-				}
-			}
-			if (end == true)
-				break;
-		}
 		// Attention Pardeep - The following data values need to be handled in the
 		// respond method within the determineOutput Class.
 		boolean matchfound = false;
@@ -324,6 +264,66 @@ public class handleInput {
 				matchfound = true;
 				data = "invalid";
 			}
+		}
+		try {
+			scanner = new Scanner(new File("greetings.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while (scanner.hasNextLine()) {
+			Scanner scanner2 = new Scanner(scanner.nextLine());
+			while (scanner2.hasNext()) {
+				String s = scanner2.next();
+				if (pinput.matches("(.*)" + s + "(.*)")) {
+					data = "greeting";
+					end = true;
+					scanner2.close();
+					break;
+				}
+			}
+			if (end == true)
+				break;
+		}
+		// ^^ Work in progress
+		// Scan through insults file, check if input matches any words.
+		try {
+			scanner = new Scanner(new File("insults.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while (scanner.hasNextLine()) {
+			Scanner scanner2 = new Scanner(scanner.nextLine());
+			while (scanner2.hasNext()) {
+				String s = scanner2.next();
+				if (pinput.matches("(.*)" + s + "(.*)")) {
+					data = "insult";
+					end = true;
+					scanner2.close();
+					break;
+				}
+			}
+			if (end == true)
+				break;
+		}
+		// Scan through swears file, check if input matches any words.
+		try {
+			scanner = new Scanner(new File("swears.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		while (scanner.hasNextLine()) {
+			Scanner scanner2 = new Scanner(scanner.nextLine());
+			while (scanner2.hasNext()) {
+				String s = scanner2.next();
+				if (pinput.matches("(.*)" + s + "(.*)")) {
+					data = "swear";
+					end = true;
+					scanner2.close();
+					break;
+				}
+			}
+			if (end == true)
+				break;
 		}
 
 		return data;
