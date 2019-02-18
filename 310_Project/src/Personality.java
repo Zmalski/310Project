@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Personality {
-	// James Boonstra
+	/*
+	 * An instance of 'Personality' can be called from within the terminal class. 
+	 * This will create a randomized personality object that contains arrays
+	 * of likes and dislikes. As well as basic chat-bot information
+	 */
 
 	private String gender;
 	private String name;
