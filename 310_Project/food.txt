@@ -15,7 +15,7 @@ cake
 carrots
 celery
 cheese
-chicken
+chickenmilk
 chips
 chocolate
 coffee
